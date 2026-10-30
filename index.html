@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#05070D">
+<meta name="theme-color" content="#10213f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="ТЕХНО БОЗОРИ">
 <title>ТЕХНО БОЗОРИ</title>
@@ -11,59 +11,44 @@
 <link rel="icon" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
-:root{color-scheme:light;--bg:#f3f6fb;--s:#ffffff;--l:#e2e8f0;--n:#eaf2ff;--sky:#2563eb;--ink:#152238;--m:#64748b;--navy:#10213f;--mint:#e8f7f3;--danger:#dc3545;--shadow:0 8px 28px rgba(15,35,70,.07)}
-*{box-sizing:border-box;margin:0}
-html{background:var(--bg);scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+:root{--bg:#f3f6fb;--l:#e2e8f0;--sky:#2563eb;--ink:#152238;--m:#64748b;--sh:0 8px 28px rgba(15,35,70,.07)}
+*{box-sizing:border-box;margin:0}html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
-input,select,textarea{width:100%;background:#fff;border:1px solid #d8e1ed;border-radius:12px;padding:12px 14px;color:var(--ink);box-shadow:0 1px 2px rgba(15,35,70,.025);transition:border-color .18s,box-shadow .18s}input::placeholder,textarea::placeholder{color:#94a3b8}select{appearance:auto}textarea{min-height:112px;resize:vertical}:focus-visible{outline:3px solid rgba(37,99,235,.2);outline-offset:2px}input:focus,select:focus,textarea:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-bottom:1px solid var(--l);padding:calc(10px + env(safe-area-inset-top)) max(16px,calc((100vw - 1120px)/2)) 10px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(16px);box-shadow:0 2px 12px rgba(15,35,70,.035)}
-.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.025em;font-size:18px;color:#14243d}.brand img{width:36px;height:36px;border-radius:11px;box-shadow:0 3px 10px rgba(37,99,235,.18)}.brand i{font-style:normal;color:var(--sky)}
-header select{width:auto;max-width:132px;margin-left:auto;padding:9px 11px;border-radius:11px;background:#f8fafc;font-size:13px;font-weight:650}
-main{max-width:1120px;margin:0 auto;padding:20px 16px 28px}
-/* Home page hero: appears only on the home route where the search field exists. */
-main:has(#q)::before{content:"Харид кунед. Фурӯшед. Ёбед.";display:flex;align-items:flex-end;min-height:112px;padding:22px 22px 19px;margin:0 0 16px;border-radius:20px;color:#fff;font-size:clamp(21px,4vw,30px);font-weight:850;letter-spacing:-.035em;line-height:1.15;background:radial-gradient(circle at 85% 15%,rgba(79,195,247,.5),transparent 28%),linear-gradient(115deg,#10264b 0%,#174b91 55%,#1685b7 100%);box-shadow:0 12px 26px rgba(23,75,145,.17)}
-main:has(#q)>#q{height:52px;margin:0 0 20px;padding-left:46px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23647791' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E") no-repeat 16px center;border-radius:14px;font-size:15px}
-h1{font-size:clamp(21px,4vw,27px);line-height:1.2;letter-spacing:-.03em;font-weight:850;margin:8px 0 10px;color:#14243d}h2{font-size:17px;letter-spacing:-.015em;margin:22px 0 10px;color:#20324e;font-weight:800}small{color:var(--m)}
-.btn{border:0;border-radius:12px;background:var(--sky);color:#fff;padding:11px 17px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:7px;min-height:42px;box-shadow:0 4px 10px rgba(37,99,235,.12);transition:transform .15s,filter .15s}.btn:active{transform:translateY(1px)}.btn.g{background:#eef4ff;color:#1d4ed8;border:1px solid #d9e6ff;box-shadow:none}.btn.r{background:#fff1f2;color:#be123c;border:1px solid #ffe0e5;box-shadow:none}.btn.sm{padding:7px 11px;min-height:34px;font-size:13px;border-radius:9px}
+input,select,textarea{width:100%;background:#fff;border:1px solid #d8e1ed;border-radius:12px;padding:12px 14px;min-height:46px}textarea{min-height:105px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--sky);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);border-bottom:1px solid var(--l);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:18px;color:#14243d}.brand img{width:36px;height:36px;border-radius:11px}.brand i{font-style:normal;color:var(--sky)}
+header select{width:auto;max-width:132px;margin-left:auto;padding:8px 10px;min-height:0;font-size:13px;font-weight:650;background:#f8fafc}
+main{max-width:1120px;margin:0 auto;padding:18px 16px 28px}
+h1{font-size:clamp(21px,4vw,27px);line-height:1.2;font-weight:850;margin:8px 0 10px;color:#14243d}h2{font-size:17px;margin:20px 0 10px;color:#20324e;font-weight:800}small{color:var(--m)}
+.hero{display:flex;align-items:flex-end;min-height:112px;padding:22px;margin-bottom:16px;border-radius:20px;color:#fff;font-size:clamp(21px,4vw,30px);font-weight:850;line-height:1.15;background:radial-gradient(circle at 85% 15%,rgba(79,195,247,.5),transparent 28%),linear-gradient(115deg,#10264b,#174b91 55%,#1685b7)}
+.btn{border:0;border-radius:12px;background:var(--sky);color:#fff;padding:10px 16px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px}.btn.g{background:#eef4ff;color:#1d4ed8;border:1px solid #d9e6ff}.btn.r{background:#fff1f2;color:#be123c;border:1px solid #ffe0e5}.btn.sm{padding:6px 10px;min-height:34px;font-size:13px;border-radius:9px}.btn:disabled{opacity:.5}
 .row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.row>*{flex:1;min-width:120px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{flex:none;border:1px solid var(--l);background:#fff;border-radius:999px;padding:8px 14px;white-space:nowrap;color:#475569;font-weight:650}.chip.on{background:#eaf2ff;border-color:#9bbcff;color:#1d4ed8}
-.catgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0 18px}.catitem{min-height:68px;text-align:left;border:1px solid var(--l);border-radius:15px;background:#fff;padding:12px;display:flex;align-items:center;gap:11px;box-shadow:0 2px 8px rgba(15,35,70,.025);transition:border-color .18s,transform .18s,box-shadow .18s}.catitem:active{transform:scale(.99)}.catitem.on{border-color:#8ab4ff;background:#f0f6ff;box-shadow:0 0 0 2px rgba(37,99,235,.07)}.catitem .ico{font-size:25px;width:34px;height:34px;display:grid;place-items:center;flex:none;background:#f2f6fc;border-radius:10px}.catitem .ctxt{font-size:13px;font-weight:750;line-height:1.25;color:#263751}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}.card{background:#fff;border:1px solid var(--l);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 3px 12px rgba(15,35,70,.035);transition:transform .18s,box-shadow .18s}.card:active{transform:translateY(1px)}.ph{aspect-ratio:4/3;background:linear-gradient(145deg,#edf3fb,#e4ecf7);display:grid;place-items:center;font-size:36px;color:#7c91b0;overflow:hidden}.ph img{width:100%;height:100%;object-fit:cover}.in{padding:12px;display:flex;flex-direction:column;gap:4px}.in b{color:#1d4ed8;font-size:16px;font-weight:850}.in span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;font-weight:700;color:#263751}.in small{font-size:11px;color:#8290a5}
-.box{background:#fff;border:1px solid var(--l);border-radius:17px;padding:17px;margin:12px 0;box-shadow:var(--shadow)}.box label{display:block;margin:12px 0 6px;color:#53647c;font-size:13px;font-weight:700}
-.gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:8px 0 18px}.gal img{height:clamp(220px,55vw,360px);border-radius:15px;scroll-snap-align:start;max-width:92%;object-fit:cover;background:#e8eef7}
-.empty{text-align:center;color:var(--m);padding:48px 16px;background:#fff;border:1px dashed #cbd6e5;border-radius:16px;margin:12px 0}nav#nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--l);display:flex;padding:7px 5px max(8px,env(safe-area-inset-bottom));z-index:25;backdrop-filter:blur(16px);box-shadow:0 -5px 20px rgba(15,35,70,.05)}nav#nav a{flex:1;text-align:center;padding:6px 2px 3px;font-size:11px;font-weight:650;color:#8290a5;border-radius:12px}nav#nav a.on{color:#1d4ed8;background:#eef4ff}nav#nav a span{display:block;font-size:21px;line-height:1.25;margin-bottom:2px}
-.thumbs{display:flex;gap:9px;flex-wrap:wrap}.thumbs div{position:relative}.thumbs img{width:76px;height:76px;object-fit:cover;border-radius:12px;border:1px solid var(--l)}.thumbs button{position:absolute;top:-6px;right:-6px;border-radius:50%;width:23px;height:23px;border:2px solid white;background:#dc3545;color:#fff;font-weight:800}
-.li{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--l)}.li>a{flex:1;overflow:hidden;font-weight:700}.li:last-child{border-bottom:0}
-.dash{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:14px 0}.dashcard{background:linear-gradient(145deg,#fff,#f5f8ff);border:1px solid #dfe8f5;border-radius:16px;padding:16px;box-shadow:0 3px 12px rgba(15,35,70,.035)}.dashcard b{display:block;font-size:26px;color:#2563eb;font-weight:850}.dashcard span{font-size:12px;color:#667892;font-weight:650}
-/* Guided listing form */
-.post-intro{background:linear-gradient(125deg,#10264b,#1760a5 68%,#1685b7);color:#fff;border-radius:18px;padding:18px;margin:8px 0 14px;box-shadow:0 10px 25px rgba(23,75,145,.14)}
-.post-intro b{display:block;font-size:19px;letter-spacing:-.02em}.post-intro p{font-size:13px;color:#e4efff;margin-top:5px}
-.form-section{background:#fff;border:1px solid var(--l);border-radius:17px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
-.form-section-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.form-step{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#eaf2ff;color:#1d4ed8;font-weight:850;flex:none}.form-section-head b{font-size:15px;color:#20324e}
-.form-help{font-size:12px;color:#8190a5;margin:5px 0 0;line-height:1.45}.form-section label{display:block;margin:12px 0 6px;color:#53647c;font-size:13px;font-weight:750}.form-section input,.form-section select,.form-section textarea{min-height:48px;border-radius:13px}.form-section textarea{min-height:105px}
-.photo-drop{display:flex;align-items:center;justify-content:center;gap:10px;min-height:104px;border:2px dashed #b9cbea;border-radius:15px;background:#f7faff;color:#2458a8;font-weight:800;text-align:center;padding:15px;cursor:pointer}.photo-drop span{display:block;font-size:12px;color:#7185a4;font-weight:600}.photo-drop input{display:none}
-.post-submit{position:sticky;bottom:calc(78px + env(safe-area-inset-bottom));z-index:4;width:100%;min-height:52px;font-size:16px;border-radius:14px;box-shadow:0 8px 22px rgba(37,99,235,.23)}
-.social-banner{background:linear-gradient(120deg,#10264b,#173d78);border-radius:18px;padding:16px;color:#fff;margin:18px 0;display:flex;flex-wrap:wrap;align-items:center;gap:12px;box-shadow:0 10px 24px rgba(16,38,75,.13)}.social-banner-copy{flex:1;min-width:170px}.social-banner-copy b{display:block;font-size:16px}.social-banner-copy small{color:#d8e7ff}.social-actions{display:flex;gap:8px;flex-wrap:wrap}.social-actions a{display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:9px 12px;background:#fff;color:#173d78;font-size:12px;font-weight:850}
-@media(max-width:420px){.form-section{padding:13px}.post-intro{padding:15px}.social-banner{padding:14px}}
-.profilebox{background:#fff;border:1px solid var(--l);border-radius:18px;padding:18px;margin:14px 0;box-shadow:var(--shadow)}.profilebox label{display:block;margin:12px 0 6px;color:#53647c;font-size:13px;font-weight:700}.profiletop{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:17px}.muted{color:var(--m)}
-#toast{position:fixed;left:50%;bottom:calc(82px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#14243d;color:#fff;padding:11px 17px;border-radius:999px;display:none;z-index:40;font-weight:700;box-shadow:0 8px 24px rgba(15,35,70,.2);max-width:calc(100vw - 32px);text-align:center}
-@media(min-width:700px){main{padding:28px 24px 40px}.catgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.catitem{min-height:78px}.dash{grid-template-columns:repeat(4,minmax(0,1fr))}nav#nav{left:50%;right:auto;transform:translateX(-50%);width:min(620px,calc(100% - 32px));bottom:12px;border:1px solid var(--l);border-radius:18px;padding:7px;box-shadow:0 12px 35px rgba(15,35,70,.13)}body{padding-bottom:100px}}
-@media(max-width:420px){main{padding:15px 13px 24px}.catgrid{gap:8px}.catitem{min-height:64px;padding:10px;gap:8px}.catitem .ico{width:30px;height:30px;font-size:22px}.catitem .ctxt{font-size:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.in{padding:10px}.in b{font-size:15px}.in span{font-size:13px}.box,.profilebox{padding:14px}.row>*{min-width:calc(50% - 6px)}}
-
-/* Fast, responsive marketplace chat */
-.chat-shell{display:flex;flex-direction:column;gap:12px;min-height:calc(100dvh - 170px)}
-.chat-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.chat-heading h1{margin:0}.chat-list{display:flex;flex-direction:column;gap:9px}
-.chat-item{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid var(--l);border-radius:16px;background:#fff;text-align:left;box-shadow:0 3px 12px rgba(15,35,70,.035)}
-.chat-avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;background:linear-gradient(145deg,#dceaff,#edf5ff);color:#1d4ed8;font-size:20px;font-weight:850}
-.chat-item-main{flex:1;min-width:0}.chat-item-top{display:flex;justify-content:space-between;gap:8px;align-items:center}.chat-item-name{font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-preview{display:block;color:var(--m);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:3px}.chat-time{font-size:11px;color:#94a3b8;white-space:nowrap}.chat-unread{min-width:20px;height:20px;border-radius:99px;background:#2563eb;color:#fff;display:grid;place-items:center;padding:0 5px;font-size:11px;font-weight:800}
-.chat-window{display:flex;flex-direction:column;min-height:calc(100dvh - 170px);max-height:calc(100dvh - 155px);background:#edf3fb;border:1px solid #dce5f1;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px rgba(15,35,70,.06)}
-.chat-top{display:flex;align-items:center;gap:10px;padding:12px;background:#fff;border-bottom:1px solid var(--l)}.chat-back{border:0;background:#eef4ff;color:#1d4ed8;border-radius:11px;width:38px;height:38px;font-size:20px}.chat-top-info{flex:1;min-width:0}.chat-top-info b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-status{font-size:11px;color:#16a36a}.chat-product{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8fbff;border-bottom:1px solid var(--l);font-size:12px}.chat-product img{width:42px;height:42px;object-fit:cover;border-radius:9px;background:#e8eef7}.chat-product-info{flex:1;min-width:0}.chat-product-info b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-product-info small{display:block;color:var(--m)}
-.chat-messages{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:14px 11px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth}.chat-day{align-self:center;background:#fff;color:#718096;border-radius:99px;padding:4px 10px;font-size:10px}.chat-msg{max-width:min(84%,420px);padding:9px 11px;border-radius:15px;background:#fff;color:#24344c;box-shadow:0 2px 5px rgba(15,35,70,.045);overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.4}.chat-msg.mine{align-self:flex-end;background:#dcecff;border-bottom-right-radius:5px}.chat-msg.theirs{align-self:flex-start;border-bottom-left-radius:5px}.chat-msg-sticker{font-size:43px;line-height:1.25;padding:4px 8px;background:transparent;box-shadow:none}.chat-msg-meta{display:flex;justify-content:flex-end;gap:5px;margin-top:4px;font-size:10px;color:#8290a5}.chat-msg.mine .chat-msg-meta{color:#5477a6}.chat-typing{min-height:18px;padding:0 14px 5px;font-size:11px;color:#64748b;background:#edf3fb}
-.chat-composer-wrap{background:#fff;border-top:1px solid var(--l);padding:9px 9px max(9px,env(safe-area-inset-bottom))}.chat-tools{display:flex;align-items:center;gap:7px;margin-bottom:7px}.chat-tool{border:0;background:#f0f5fc;color:#345579;border-radius:10px;width:35px;height:35px;font-size:18px}.chat-compose{display:flex;align-items:flex-end;gap:7px}.chat-compose textarea{flex:1;min-height:43px;max-height:112px;resize:none;border-radius:15px;background:#f7f9fc;padding:10px 12px;font-size:14px}.chat-send{width:44px;height:43px;flex:none;border:0;border-radius:14px;background:#2563eb;color:#fff;font-size:19px;font-weight:800}.chat-send:disabled{opacity:.45;cursor:not-allowed}.sticker-panel{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:10px;margin-bottom:8px;background:#f4f7fc;border:1px solid var(--l);border-radius:14px;max-height:180px;overflow:auto}.sticker-choice{border:0;border-radius:11px;background:#fff;min-height:46px;font-size:26px;box-shadow:0 1px 4px rgba(15,35,70,.06)}.chat-empty{background:#fff;border:1px dashed #cbd6e5;border-radius:16px;padding:30px 16px;text-align:center;color:var(--m)}
-@media(min-width:700px){.chat-shell{min-height:650px}.chat-window{min-height:650px;max-height:760px}.chat-messages{padding:18px 22px}.chat-composer-wrap{padding:12px}}
-
+.catgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 16px}.cat{min-height:64px;text-align:left;border:1px solid var(--l);border-radius:15px;background:#fff;padding:10px;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:750;color:#263751}.cat.on{border-color:#8ab4ff;background:#f0f6ff}.cat .ico{font-size:23px;width:32px;height:32px;display:grid;place-items:center;flex:none;background:#f2f6fc;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#fff;border:1px solid var(--l);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:4/3;background:linear-gradient(145deg,#edf3fb,#e4ecf7);display:grid;place-items:center;font-size:36px;overflow:hidden}.ph img{width:100%;height:100%;object-fit:cover}
+.in{padding:10px;display:flex;flex-direction:column;gap:3px}.in b{color:#1d4ed8;font-size:15px;font-weight:850}.in span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:700}.in small{font-size:11px}
+.box{background:#fff;border:1px solid var(--l);border-radius:17px;padding:16px;margin:12px 0;box-shadow:var(--sh)}.box label,.fs label{display:block;margin:12px 0 6px;color:#53647c;font-size:13px;font-weight:700}
+.gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:8px 0 14px}.gal img{height:clamp(220px,55vw,360px);border-radius:15px;scroll-snap-align:start;max-width:92%;object-fit:cover}
+.empty{text-align:center;color:var(--m);padding:44px 16px;background:#fff;border:1px dashed #cbd6e5;border-radius:16px;margin:12px 0}
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--l);display:flex;padding:7px 5px max(8px,env(safe-area-inset-bottom));z-index:25}
+nav a{flex:1;text-align:center;padding:5px 2px;font-size:11px;font-weight:650;color:#8290a5;border-radius:12px}nav a.on{color:#1d4ed8;background:#eef4ff}nav a span{display:block;font-size:21px;line-height:1.25}
+.thumbs{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.thumbs div{position:relative}.thumbs img{width:76px;height:76px;object-fit:cover;border-radius:12px}.thumbs button{position:absolute;top:-6px;right:-6px;border-radius:50%;width:23px;height:23px;border:2px solid #fff;background:#dc3545;color:#fff;font-weight:800}
+.li{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--l)}.li>a{flex:1;overflow:hidden;font-weight:700}
+.dash{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.dc{background:#fff;border:1px solid #dfe8f5;border-radius:16px;padding:14px}.dc b{display:block;font-size:26px;color:#2563eb}.dc span{font-size:12px;color:#667892;font-weight:650}
+.intro{background:linear-gradient(125deg,#10264b,#1760a5 68%,#1685b7);color:#fff;border-radius:18px;padding:16px;margin:8px 0 12px}.intro b{display:block;font-size:18px}.intro p{font-size:13px;color:#e4efff}
+.fs{background:#fff;border:1px solid var(--l);border-radius:17px;padding:16px;margin:12px 0;box-shadow:var(--sh)}.fh{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-weight:800}.fh i{font-style:normal;width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#eaf2ff;color:#1d4ed8}
+.drop{display:flex;align-items:center;justify-content:center;min-height:90px;border:2px dashed #b9cbea;border-radius:15px;background:#f7faff;color:#2458a8;font-weight:800;text-align:center;cursor:pointer}.drop input{display:none}
+.submit{position:sticky;bottom:calc(78px + env(safe-area-inset-bottom));width:100%;min-height:52px;font-size:16px;box-shadow:0 8px 22px rgba(37,99,235,.23)}
+.soc{background:linear-gradient(120deg,#10264b,#173d78);border-radius:18px;padding:14px;color:#fff;margin:14px 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}.soc div{flex:1;min-width:160px}.soc small{color:#d8e7ff}.soc a{border-radius:11px;padding:8px 12px;background:#fff;color:#173d78;font-size:12px;font-weight:850}
+.ci{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--l);border-radius:16px;background:#fff;margin-bottom:9px}.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;background:#dceaff;color:#1d4ed8;font-weight:850}.cm{flex:1;min-width:0}.cm b,.cm small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.un{min-width:20px;height:20px;border-radius:99px;background:#2563eb;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;padding:0 5px}
+.cw{display:flex;flex-direction:column;height:calc(100dvh - 160px);background:#edf3fb;border:1px solid #dce5f1;border-radius:18px;overflow:hidden}.ct{display:flex;align-items:center;gap:10px;padding:10px;background:#fff;border-bottom:1px solid var(--l)}.ct button{border:0;background:#eef4ff;color:#1d4ed8;border-radius:11px;width:38px;height:38px;font-size:20px}
+.cp{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#f8fbff;border-bottom:1px solid var(--l);font-size:12px}.cp img{width:40px;height:40px;object-fit:cover;border-radius:9px}
+.cms{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.mg{max-width:84%;padding:8px 11px;border-radius:15px;background:#fff;overflow-wrap:anywhere;white-space:pre-wrap}.mg.me{align-self:flex-end;background:#dcecff;border-bottom-right-radius:5px}.mg.st{font-size:42px;background:transparent;padding:2px 6px}.mg small{display:block;text-align:right;font-size:10px}
+.cc{background:#fff;border-top:1px solid var(--l);padding:8px}.stk{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:8px}.stk button{border:0;background:#f4f7fc;border-radius:10px;min-height:42px;font-size:24px}.cf{display:flex;gap:7px;align-items:flex-end}.cf textarea{min-height:44px;max-height:110px;border-radius:15px;resize:none;padding:10px 12px}.cf button{flex:none;width:44px;height:44px;border:0;border-radius:14px;background:#f0f5fc;font-size:19px}.cf .snd{background:#2563eb;color:#fff}
+#toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#14243d;color:#fff;padding:11px 17px;border-radius:999px;display:none;z-index:40;font-weight:700;max-width:calc(100vw - 32px);text-align:center}
+@media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}.catgrid{grid-template-columns:repeat(4,1fr)}.dash{grid-template-columns:repeat(4,1fr)}nav{left:50%;right:auto;transform:translateX(-50%);width:min(620px,calc(100% - 32px));bottom:12px;border:1px solid var(--l);border-radius:18px}}
 </style>
 </head>
 <body>
@@ -75,62 +60,41 @@ h1{font-size:clamp(21px,4vw,27px);line-height:1.2;letter-spacing:-.03em;font-wei
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
 "use strict";
-if(!window.supabase||!window.CFG||!CFG.url||!CFG.key){
-  document.querySelector("#app").innerHTML='<section class="box"><h1>Ulanish sozlamasi topilmadi</h1><p>config.js va Supabase kutubxonasini tekshiring. Internet aloqasini ham tekshirib qayta yuklang.</p></section>';
-  throw new Error("Supabase konfiguratsiyasi yoki kutubxonasi yuklanmadi");
-}
+if(!window.supabase||!window.CFG||!CFG.url||!CFG.key){document.querySelector("#app").innerHTML='<section class="box"><h1>Ulanish sozlamasi topilmadi</h1><p>config.js va internetni tekshiring.</p></section>';throw new Error("config")}
 const sb=supabase.createClient(CFG.url,CFG.key);
-// Rasmiy ijtimoiy tarmoq havolalarini shu yerga kiriting; bo‘sh bo‘lsa tugmalar ko‘rsatilmaydi.
-const SOCIAL_LINKS={telegram:"https://t.me/tehno_bozori",instagram:"https://www.instagram.com/tehno.bozori?exln=MXhubm05YTVoZ3NseA=="};
-const CATS=[["phones","📱","Telefonlar va planshetlar","Телефонҳо ва планшетҳо","Телефоны и планшеты"],["pc","💻","Kompyuterlar va noutbuklar","Компютерҳо ва ноутбукҳо","Компьютеры и ноутбуки"],["tv","📺","Televizorlar va audio texnika","Телевизорҳо ва аудио","Телевизоры и аудио"],["home","🧊","Maishiy texnika","Техникаи маишӣ","Бытовая техника"],["cars","🚗","Avtomobillar va transport","Мошинҳо ва нақлиёт","Авто и транспорт"],["realty","🏠","Uy-joy va ko‘chmas mulk","Манзил ва амвол","Недвижимость"],["clothes","👕","Kiyim-kechak va poyabzal","Либос ва пойафзол","Одежда и обувь"],["furn","🛋️","Mebel va uy jihozlari","Мебел ва рӯзғор","Мебель и товары для дома"],["pets","🐾","Hayvonlar","Ҳайвонот","Животные"],["jobs","🛠️","Ish va xizmatlar","Кор ва хизматрасонӣ","Работа и услуги"],["kids","🧸","Bolalar va o‘yinchoqlar","Кӯдакон ва бозичаҳо","Детям и игрушки"],["sport","⚽","Sport va dam olish","Варзиш ва истироҳат","Спорт и отдых"],["build","🧱","Qurilish va ta’mirlash","Сохтмон ва таъмир","Строительство и ремонт"],["agri","🌾","Qishloq xo‘jaligi","Кишоварзӣ","Сельское хозяйство"],["business","🏪","Biznes va savdo jihozlari","Бизнес ва таҷҳизоти савдо","Бизнес и торговое оборудование"],["personal","🧳","Shaxsiy buyumlar","Ашёи шахсӣ","Личные вещи"],["books","📚","Kitoblar va ta’lim","Китоб ва маориф","Книги и образование"],["beauty","💄","Go‘zallik va parvarish","Зебоӣ ва нигоҳубин","Красота и уход"],["food","🥬","Oziq-ovqat mahsulotlari","Маҳсулоти хӯрокворӣ","Продукты питания"],["music","🎸","Musiqa va cholg‘u asboblari","Мусиқӣ ва асбобҳо","Музыка и инструменты"],["other","📦","Boshqa mahsulotlar","Дигар молҳо","Другое"]];
+const SOC={telegram:"https://t.me/tehno_bozori",instagram:"https://www.instagram.com/tehno.bozori?exln=MXhubm05YTVoZ3NseA=="};
+const CATS=[["phones","📱","Telefonlar va planshetlar","Телефонҳо ва планшетҳо","Телефоны и планшеты"],["pc","💻","Kompyuterlar va noutbuklar","Компютерҳо ва ноутбукҳо","Компьютеры и ноутбуки"],["tv","📺","Televizorlar va audio texnika","Телевизорҳо ва аудио","Телевизоры и аудио"],["home","🧊","Maishiy texnika","Техникаи маишӣ","Бытовая техника"],["cars","🚗","Avtomobillar va transport","Мошинҳо ва нақлиёт","Авто и транспорт"],["realty","🏠","Uy-joy va ko‘chmas mulk","Манзил ва амвол","Недвижимость"],["clothes","👕","Kiyim-kechak va poyabzal","Либос ва пойафзол","Одежда и обувь"],["furn","🛋️","Mebel va uy jihozlari","Мебел ва рӯзғор","Мебель и товары для дома"],["pets","🐾","Hayvonlar","Ҳайвонот","Животные"],["jobs","🛠️","Ish va xizmatlar","Кор ва хизматрасонӣ","Работа и услуги"],["kids","🧸","Bolalar va o‘yinchoqlar","Кӯдакон ва бозичаҳо","Детям и игрушки"],["sport","⚽","Sport va dam olish","Варзиш ва истироҳат","Спорт и отдых"],["build","🧱","Qurilish va ta’mirlash","Сохтмон ва таъмир","Строительство и ремонт"],["agri","🌾","Qishloq xo‘jaligi","Кишоварзӣ","Сельское хозяйство"],["business","🏪","Biznes va savdo jihozlari","Бизнес ва таҷҳизот","Бизнес и оборудование"],["personal","🧳","Shaxsiy buyumlar","Ашёи шахсӣ","Личные вещи"],["books","📚","Kitoblar va ta’lim","Китоб ва маориф","Книги и образование"],["beauty","💄","Go‘zallik va parvarish","Зебоӣ ва нигоҳубин","Красота и уход"],["food","🥬","Oziq-ovqat","Маҳсулоти хӯрокворӣ","Продукты питания"],["music","🎸","Musiqa asboblari","Мусиқӣ ва асбобҳо","Музыка и инструменты"],["other","📦","Boshqa mahsulotlar","Дигар молҳо","Другое"]];
 const CITIES=["Душанбе","Хуҷанд","Бохтар","Кӯлоб","Истаравшан","Исфара","Б. Ғафуров","Спитамен","Ҷ. Расулов","Панҷакент","Ҳисор","Вахдат","Турсунзода","Дигар ҳудудлар"];
-const L={uz:{home:"Bosh sahifa",favs:"Sevimlilar",post:"E’lon",me:"Profil",login:"Kirish",reg:"Ro‘yxatdan o‘tish",out:"Chiqish",q:"Qidirish...",all:"Hammasi",city:"Shahar",dist:"Tuman",cond:"Holati",new:"Yangi",used:"Ishlatilgan",pf:"Narx dan",pt:"Narx gacha",sort:"Saralash",s1:"Yangilari",s2:"Arzonlari",s3:"Qimmatlari",title:"Nomi",descr:"Tavsif",price:"Narxi (TJS)",photos:"Rasmlar (6 tagacha)",save:"Saqlash",del:"O‘chirish",edit:"Tahrirlash",call:"Qo‘ng‘iroq",tg:"Telegram",rep:"Shikoyat",why:"Shikoyat sababi:",sent:"Yuborildi",more:"Yana",none:"E’lonlar topilmadi",name:"Ism",phone:"Telefon",pass:"Parol (8+)",mine:"Mening e’lonlarim",ok:"Saqlandi",err:"Xatolik: ",need:"Avval tizimga kiring",admin:"Admin",hide:"Yashirish",show:"Ko‘rsatish",res:"Yopish",reps:"Shikoyatlar",lst:"E’lonlar",sure:"Ishonchingiz komilmi?",deny:"Ruxsat yo‘q",cat:"Turkum",hid:"Yashirin",chk:"Emailni tasdiqlang yoki qayta kiring"},
-tg:{home:"Асосӣ",favs:"Дӯстдошта",post:"Эълон",me:"Профил",login:"Ворид шудан",reg:"Бақайдгирӣ",out:"Баромадан",q:"Ҷустуҷӯ...",all:"Ҳама",city:"Шаҳр",dist:"Ноҳия",cond:"Ҳолат",new:"Нав",used:"Истифодашуда",pf:"Нарх аз",pt:"Нарх то",sort:"Тартиб",s1:"Навҳо",s2:"Арзонҳо",s3:"Гаронҳо",title:"Ном",descr:"Тавсиф",price:"Нарх (TJS)",photos:"Аксҳо (то 6)",save:"Нигоҳ доштан",del:"Нест кардан",edit:"Таҳрир",call:"Занг",tg:"Telegram",rep:"Шикоят",why:"Сабаби шикоят:",sent:"Фиристода шуд",more:"Боз",none:"Эълон ёфт нашуд",name:"Ном",phone:"Телефон",pass:"Рамз (8+)",mine:"Эълонҳои ман",ok:"Нигоҳ дошта шуд",err:"Хато: ",need:"Аввал ворид шавед",admin:"Админ",hide:"Пинҳон",show:"Нишон",res:"Бастан",reps:"Шикоятҳо",lst:"Эълонҳо",sure:"Боварӣ доред?",deny:"Иҷозат нест",cat:"Категория",hid:"Пинҳон",chk:"Emailро тасдиқ кунед ё дубора ворид шавед"},
-ru:{home:"Главная",favs:"Избранное",post:"Объявление",me:"Профиль",login:"Войти",reg:"Регистрация",out:"Выйти",q:"Поиск...",all:"Все",city:"Город",dist:"Район",cond:"Состояние",new:"Новое",used:"Б/у",pf:"Цена от",pt:"Цена до",sort:"Сортировка",s1:"Новые",s2:"Дешевле",s3:"Дороже",title:"Название",descr:"Описание",price:"Цена (TJS)",photos:"Фото (до 6)",save:"Сохранить",del:"Удалить",edit:"Изменить",call:"Позвонить",tg:"Telegram",rep:"Жалоба",why:"Причина жалобы:",sent:"Отправлено",more:"Ещё",none:"Объявлений нет",name:"Имя",phone:"Телефон",pass:"Пароль (8+)",mine:"Мои объявления",ok:"Сохранено",err:"Ошибка: ",need:"Сначала войдите",admin:"Админ",hide:"Скрыть",show:"Показать",res:"Закрыть",reps:"Жалобы",lst:"Объявления",sure:"Вы уверены?",deny:"Нет доступа",cat:"Категория",hid:"Скрыто",chk:"Подтвердите email или войдите снова"}};
-const CHAT_TXT={
-uz:{chats:"Xabarlar",chat:"Chat",newchat:"Sotuvchiga xabar yozish",nochat:"Hozircha suhbatlar yo‘q",startchat:"Mahsulot sahifasidan sotuvchiga yozishingiz mumkin.",write:"Xabar yozing...",send:"Yuborish",stickers:"Stikerlar",online:"Online",offline:"Oxirgi faollik",typing:"Yozmoqda...",listing:"E’lon",noMessages:"Suhbatni boshlang 👋",chatError:"Chatni ochib bo‘lmadi",selfChat:"O‘zingizga xabar yubora olmaysiz",chatLogin:"Xabar yuborish uchun tizimga kiring",chatSent:"Xabar yuborildi",today:"Bugun",yesterday:"Kecha",unread:"Yangi"},
-tg:{chats:"Паёмҳо",chat:"Чат",newchat:"Ба фурӯшанда паём нависед",nochat:"Ҳоло суҳбат нест",startchat:"Аз саҳифаи маҳсулот ба фурӯшанда нависед.",write:"Паём нависед...",send:"Фиристодан",stickers:"Стикерҳо",online:"Онлайн",offline:"Охирин фаъолият",typing:"Менависад...",listing:"Эълон",noMessages:"Суҳбатро оғоз кунед 👋",chatError:"Чат кушода нашуд",selfChat:"Ба худ паём фиристода намешавад",chatLogin:"Барои паём фиристодан ворид шавед",chatSent:"Паём фиристода шуд",today:"Имрӯз",yesterday:"Дирӯз",unread:"Нав"},
-ru:{chats:"Сообщения",chat:"Чат",newchat:"Написать продавцу",nochat:"Пока нет переписок",startchat:"Напишите продавцу со страницы товара.",write:"Введите сообщение...",send:"Отправить",stickers:"Стикеры",online:"В сети",offline:"Был(а) недавно",typing:"Печатает...",listing:"Объявление",noMessages:"Начните общение 👋",chatError:"Не удалось открыть чат",selfChat:"Нельзя написать самому себе",chatLogin:"Войдите, чтобы отправить сообщение",chatSent:"Сообщение отправлено",today:"Сегодня",yesterday:"Вчера",unread:"Новое"}
-};
-const chatT=k=>(CHAT_TXT[lang]||CHAT_TXT.uz)[k]||CHAT_TXT.uz[k]||k;
-let activeChatChannel=null,activeChatId=null,typingTimer=null,chatTypingTimer=null;
-const CHAT_STICKERS=["😀","😁","😂","🤣","🥰","😍","😘","😎","🤩","🥳","😊","😉","🤝","👍","👎","👏","🙏","💪","🔥","❤️","💙","💯","🎉","😅","🤔","🙌","🫶","🤗","😴","😭"];
-
-let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:"",cond:"",min:"",max:"",sort:"new",n:1},mode="login";
-const t=k=>L[lang][k]||k,$=s=>document.querySelector(s),app=$("#app"),LI={uz:2,tg:3,ru:4};
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const fmt=n=>Number(n).toLocaleString("ru-RU")+" TJS",cn=s=>(CATS.find(c=>c[0]===s)||CATS[CATS.length-1])[LI[lang]];
-const toast=m=>{const e=$("#toast");e.textContent=m;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2200)};
-const fail=e=>toast(t("err")+(e.message||e)),adm=()=>me&&me.role==="admin";
-const opts=(a,sel,f)=>a.map(x=>`<option value="${esc(f?x[0]:x)}"${(f?x[0]:x)===sel?" selected":""}>${esc(f?f(x):x)}</option>`).join("");
-const card=l=>`<a class="card" href="#/l/${l.id}"><div class="ph">${l.images&&l.images[0]?`<img loading="lazy" src="${esc(l.images[0])}" alt="">`:"📷"}</div><div class="in"><b>${fmt(l.price)}</b><span>${esc(l.title)}</span><small>${esc(l.city)} · ${new Date(l.created_at).toLocaleDateString("ru-RU")}</small></div></a>`;
+const D={home:["Bosh sahifa","Асосӣ","Главная"],favs:["Sevimlilar","Дӯстдошта","Избранное"],chats:["Xabarlar","Паёмҳо","Сообщения"],post:["E’lon","Эълон","Объявление"],me:["Profil","Профил","Профиль"],login:["Kirish","Ворид шудан","Войти"],reg:["Ro‘yxatdan o‘tish","Бақайдгирӣ","Регистрация"],out:["Chiqish","Баромадан","Выйти"],q:["Qidirish...","Ҷустуҷӯ...","Поиск..."],all:["Hammasi","Ҳама","Все"],city:["Shahar","Шаҳр","Город"],dist:["Tuman","Ноҳия","Район"],cond:["Holati","Ҳолат","Состояние"],new:["Yangi","Нав","Новое"],used:["Ishlatilgan","Истифодашуда","Б/у"],pf:["Narx dan","Нарх аз","Цена от"],pt:["Narx gacha","Нарх то","Цена до"],s1:["Yangilari","Навҳо","Новые"],s2:["Arzonlari","Арзонҳо","Дешевле"],s3:["Qimmatlari","Гаронҳо","Дороже"],title:["Nomi","Ном","Название"],descr:["Tavsif","Тавсиф","Описание"],price:["Narxi (TJS)","Нарх (TJS)","Цена (TJS)"],photos:["Rasm qo‘shish (6 tagacha)","Иловаи акс (то 6)","Добавить фото (до 6)"],save:["Saqlash","Нигоҳ доштан","Сохранить"],del:["O‘chirish","Нест кардан","Удалить"],edit:["Tahrirlash","Таҳрир","Изменить"],call:["Qo‘ng‘iroq","Занг","Позвонить"],rep:["Shikoyat","Шикоят","Жалоба"],why:["Shikoyat sababi:","Сабаби шикоят:","Причина жалобы:"],sent:["Yuborildi","Фиристода шуд","Отправлено"],more:["Yana","Боз","Ещё"],none:["E’lonlar topilmadi","Эълон ёфт нашуд","Объявлений нет"],name:["Ism","Ном","Имя"],phone:["Telefon","Телефон","Телефон"],pass:["Parol (8+)","Рамз (8+)","Пароль (8+)"],mine:["Mening e’lonlarim","Эълонҳои ман","Мои объявления"],ok:["Saqlandi","Нигоҳ дошта шуд","Сохранено"],err:["Xatolik: ","Хато: ","Ошибка: "],need:["Avval tizimga kiring","Аввал ворид шавед","Сначала войдите"],admin:["Admin","Админ","Админ"],hide:["Yashirish","Пинҳон","Скрыть"],show:["Ko‘rsatish","Нишон","Показать"],res:["Yopish","Бастан","Закрыть"],reps:["Shikoyatlar","Шикоятҳо","Жалобы"],lst:["E’lonlar","Эълонҳо","Объявления"],sure:["Ishonchingiz komilmi?","Боварӣ доред?","Вы уверены?"],deny:["Ruxsat yo‘q","Иҷозат нест","Нет доступа"],cat:["Turkum","Категория","Категория"],hid:["Yashirin","Пинҳон","Скрыто"],chk:["Emailni tasdiqlang yoki qayta kiring","Emailро тасдиқ кунед ё дубора ворид шавед","Подтвердите email или войдите снова"],write:["Xabar yozing...","Паём нависед...","Введите сообщение..."],msg:["Sotuvchiga yozish","Ба фурӯшанда нависед","Написать продавцу"],nochat:["Hozircha suhbatlar yo‘q. Mahsulot sahifasidan sotuvchiga yozing.","Ҳоло суҳбат нест. Аз саҳифаи маҳсулот нависед.","Пока нет переписок. Напишите продавцу со страницы товара."],nomsg:["Suhbatni boshlang 👋","Суҳбатро оғоз кунед 👋","Начните общение 👋"],self:["O‘zingizga yozib bo‘lmaydi","Ба худ навиштан мумкин нест","Нельзя писать самому себе"],tot:["Jami e’lonlar","Ҳамаи эълонҳо","Всего объявлений"],act:["Faol","Фаъол","Активные"],hidn:["Yashirin","Пинҳон","Скрытые"],posth:["E’lon joylashtirish","Гузоштани эълон","Подать объявление"],postp:["Ma’lumotlarni to‘ldiring, rasm qo‘shing va xaridorlarga ko‘rsating.","Маълумотро пур кунед, акс илова кунед.","Заполните данные, добавьте фото."],hero:["Sotib oling. Soting. Toping.","Харид кунед. Фурӯшед. Ёбед.","Покупай. Продавай. Находи."],foll:["ТЕХНО БОЗОРИни кузатиб боринг","ТЕХНО БОЗОРИро пайгирӣ кунед","Следите за ТЕХНО БОЗОРИ"],step1:["Mahsulot haqida","Дар бораи маҳсулот","О товаре"],step2:["Narx va holati","Нарх ва ҳолат","Цена и состояние"],step3:["Joylashuv","Ҷойгиршавӣ","Местоположение"],step4:["Rasmlar","Аксҳо","Фото"],pers:["Shaxsiy ma’lumotlar","Маълумоти шахсӣ","Личные данные"],load:["Saqlanmoqda...","Нигоҳ дошта мешавад...","Сохранение..."]};
+const LN={uz:0,tg:1,ru:2},CI={uz:2,tg:3,ru:4};
+let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:"",cond:"",min:"",max:"",sort:"new",n:1},mode="login",chan=null;
+const t=k=>(D[k]||[k,k,k])[LN[lang]],$=s=>document.querySelector(s),app=$("#app");
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>Number(n).toLocaleString("ru-RU")+" TJS",cn=s=>(CATS.find(c=>c[0]===s)||CATS[CATS.length-1])[CI[lang]];
+const toast=m=>{const e=$("#toast");e.textContent=m;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2600)};
+const fail=e=>{console.error(e);toast(t("err")+(e&&e.message||e))},adm=()=>me&&me.role==="admin";
+const opts=(a,sel,f)=>a.map(x=>{const v=f?x[0]:x;return`<option value="${esc(v)}"${v===sel?" selected":""}>${esc(f?f(x):x)}</option>`}).join("");
+const dt=v=>new Date(v).toLocaleDateString("ru-RU"),tm=v=>new Date(v).toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"});
+const card=l=>`<a class="card" href="#/l/${l.id}"><div class="ph">${l.images&&l.images[0]?`<img loading="lazy" src="${esc(l.images[0])}" alt="">`:"📷"}</div><div class="in"><b>${fmt(l.price)}</b><span>${esc(l.title)}</span><small>${esc(l.city)} · ${dt(l.created_at)}</small></div></a>`;
 const comp=f=>new Promise((ok,no)=>{const i=new Image();i.onload=()=>{const s=Math.min(1,1200/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*s;c.height=i.height*s;c.getContext("2d").drawImage(i,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error("img")),"image/jpeg",.8)};i.onerror=()=>no(new Error("img"));i.src=URL.createObjectURL(f)});
-const path=u=>{const i=u.indexOf("/images/");return i<0?null:decodeURIComponent(u.slice(i+8))};
-const rmImgs=a=>{const p=(a||[]).map(path).filter(Boolean);return p.length?sb.storage.from("images").remove(p):0};
+const rmImgs=a=>{const p=(a||[]).map(u=>{const i=u.indexOf("/images/");return i<0?null:decodeURIComponent(u.slice(i+8))}).filter(Boolean);return p.length?sb.storage.from("images").remove(p):0};
+const must=r=>{if(r.error)throw r.error;return r.data};
 
-async function refreshMe(){
-const{data:{session},error:sessionError}=await sb.auth.getSession();
-if(sessionError)throw sessionError;
-if(!session){me=null;favs=new Set();return}
-const[a,b]=await Promise.all([
-  sb.from("profiles").select("id,name,phone,telegram,role").eq("id",session.user.id).maybeSingle(),
-  sb.from("favorites").select("listing_id")
-]);
-if(a.error)throw a.error;if(b.error)throw b.error;
-const meta=session.user.user_metadata||{};
-me=Object.assign({name:meta.name||"Foydalanuvchi",phone:meta.phone||"",telegram:meta.telegram||"",role:"user"},a.data||{},{id:session.user.id,email:session.user.email});
-favs=new Set((b.data||[]).map(x=>Number(x.listing_id)))
-}
-function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],[me?"#/chats":"#/auth","💬",chatT("chats")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
+async function refreshMe(){const{data:{session}}=await sb.auth.getSession();if(!session){me=null;favs=new Set();return}
+const[a,b]=await Promise.all([sb.from("profiles").select("id,name,phone,telegram,role").eq("id",session.user.id).maybeSingle(),sb.from("favorites").select("listing_id")]);
+const m=session.user.user_metadata||{};
+me=Object.assign({name:m.name||"User",phone:m.phone||"",telegram:m.telegram||"",role:"user"},a.data||{},{id:session.user.id,email:session.user.email});
+favs=new Set((b.data||[]).map(x=>Number(x.listing_id)))}
+function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],[me?"#/chats":"#/auth","💬",t("chats")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
 $("#nav").innerHTML=it.map(x=>`<a href="${x[0]}" class="${h===x[0]?"on":""}"><span>${x[1]}</span>${esc(x[2])}</a>`).join("")}
 
 async function home(){
-const socialBlock=(SOCIAL_LINKS.telegram||SOCIAL_LINKS.instagram)?`<section class="social-banner"><div class="social-banner-copy"><b>📣 ТЕХНО БОЗОРИни кузатиб боринг</b><small>Янги эълонлар, фойдали таклифлар ва янгиликлар</small></div><div class="social-actions">${SOCIAL_LINKS.telegram?`<a href="${esc(SOCIAL_LINKS.telegram)}" target="_blank" rel="noopener">✈ Telegram</a>`:""}${SOCIAL_LINKS.instagram?`<a href="${esc(SOCIAL_LINKS.instagram)}" target="_blank" rel="noopener">◎ Instagram</a>`:""}</div></section>`:"";
-app.innerHTML=`<input id="q" placeholder="${t("q")}" value="${esc(F.q)}">${socialBlock}<h2>${t("cat")}</h2><div class="catgrid"><button class="catitem${F.cat?"":" on"}" data-c=""><span class="ico">▦</span><span class="ctxt">${t("all")}</span></button>${CATS.map(c=>`<button class="catitem${F.cat===c[0]?" on":""}" data-c="${c[0]}"><span class="ico">${c[1]}</span><span class="ctxt">${esc(c[LI[lang]])}</span></button>`).join("")}</div>
+const soc=`<section class="soc"><div><b>📣 ${t("foll")}</b></div>${SOC.telegram?`<a href="${esc(SOC.telegram)}" target="_blank" rel="noopener">✈ Telegram</a>`:""}${SOC.instagram?`<a href="${esc(SOC.instagram)}" target="_blank" rel="noopener">◎ Instagram</a>`:""}</section>`;
+app.innerHTML=`<div class="hero">${t("hero")}</div><input id="q" placeholder="${t("q")}" value="${esc(F.q)}">${soc}<h2>${t("cat")}</h2><div class="catgrid"><button class="cat${F.cat?"":" on"}" data-c=""><span class="ico">▦</span>${t("all")}</button>${CATS.map(c=>`<button class="cat${F.cat===c[0]?" on":""}" data-c="${c[0]}"><span class="ico">${c[1]}</span>${esc(c[CI[lang]])}</button>`).join("")}</div>
 <div class="row"><select id="fc"><option value="">${t("city")}: ${t("all")}</option>${opts(CITIES,F.city)}</select><select id="fd"><option value="">${t("cond")}: ${t("all")}</option><option value="new"${F.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${F.cond==="used"?" selected":""}>${t("used")}</option></select><select id="fs"><option value="new">${t("s1")}</option><option value="asc"${F.sort==="asc"?" selected":""}>${t("s2")}</option><option value="desc"${F.sort==="desc"?" selected":""}>${t("s3")}</option></select></div>
 <div class="row"><input id="pf" type="number" min="0" placeholder="${t("pf")}" value="${esc(F.min)}"><input id="pt" type="number" min="0" placeholder="${t("pt")}" value="${esc(F.max)}"></div><div id="list"></div>`;
-const go=()=>{F.n=1;list()};let tm;
-$("#q").oninput=e=>{F.q=e.target.value;clearTimeout(tm);tm=setTimeout(go,350)};
+const go=()=>{F.n=1;list()};let tmr;
+$("#q").oninput=e=>{F.q=e.target.value;clearTimeout(tmr);tmr=setTimeout(go,350)};
 $("#fc").onchange=e=>{F.city=e.target.value;go()};$("#fd").onchange=e=>{F.cond=e.target.value;go()};$("#fs").onchange=e=>{F.sort=e.target.value;go()};
 $("#pf").onchange=e=>{F.min=e.target.value;go()};$("#pt").onchange=e=>{F.max=e.target.value;go()};
 app.querySelector(".catgrid").onclick=e=>{const c=e.target.closest("[data-c]");if(c){F.cat=c.dataset.c;home()}};list()}
@@ -139,156 +103,119 @@ let q=sb.from("listings").select("id,title,price,city,images,created_at",{count:
 if(F.cat)q=q.eq("cat",F.cat);if(F.city)q=q.eq("city",F.city);if(F.cond)q=q.eq("cond",F.cond);if(F.min!=="")q=q.gte("price",F.min);if(F.max!=="")q=q.lte("price",F.max);
 if(F.q.trim())q=q.ilike("title","%"+F.q.replace(/[%,_()]/g," ").trim()+"%");
 q=(F.sort==="new"?q.order("created_at",{ascending:false}):q.order("price",{ascending:F.sort==="asc"})).range(0,F.n*20-1);
-const{data,count,error}=await q;if(error)return fail(error);const el=$("#list");if(!el)return;const rows=data||[];
-el.innerHTML=rows.length?`<div class="grid">${rows.map(card).join("")}</div>`+(count>rows.length?`<p style="text-align:center;margin:14px"><button class="btn g" id="more">${t("more")}</button></p>`:""):`<p class="empty">${t("none")}</p>`;
+const{data,count,error}=await q;if(error)return fail(error);const el=$("#list");if(!el)return;const r=data||[];
+el.innerHTML=r.length?`<div class="grid">${r.map(card).join("")}</div>`+(count>r.length?`<p style="text-align:center;margin:14px"><button class="btn g" id="more">${t("more")}</button></p>`:""):`<p class="empty">${t("none")}</p>`;
 const m=$("#more");if(m)m.onclick=()=>{F.n++;list()}}
 
 async function favsV(){if(!me){location.hash="#/auth";return}
-const{data,error}=await sb.from("favorites").select("listings(id,title,price,city,images,created_at,status)").order("listing_id",{ascending:false});if(error)return fail(error);
-const a=(data||[]).map(x=>x.listings).filter(x=>x&&x.status==="active");
+const ids=must(await sb.from("favorites").select("listing_id")).map(x=>x.listing_id);
+const a=ids.length?must(await sb.from("listings").select("id,title,price,city,images,created_at").in("id",ids).eq("status","active")):[];
 app.innerHTML=`<h1>♥ ${t("favs")}</h1>`+(a.length?`<div class="grid">${a.map(card).join("")}</div>`:`<p class="empty">${t("none")}</p>`)}
 
 async function detail(id){
-const{data:l,error}=await sb.from("listings").select("*,profiles(name,phone,telegram)").eq("id",id).maybeSingle();
-if(error||!l){app.innerHTML=`<p class="empty">${t("none")}</p>`;return}
-const p=l.profiles||{},own=me&&me.id===l.user_id,tgu=(p.telegram||"").replace(/^@/,"").replace(/[^\w]/g,""),ph=(p.phone||"").replace(/[^\d+]/g,"");
-app.innerHTML=`${l.images.length?`<div class="gal">${l.images.map(u=>`<img src="${esc(u)}" alt="">`).join("")}</div>`:""}
-<h1>${esc(l.title)}</h1><h2 style="color:var(--sky)">${fmt(l.price)}</h2>
-<small>${esc(cn(l.cat))} · ${t(l.cond)} · ${esc(l.city)}${l.district?", "+esc(l.district):""} · ${new Date(l.created_at).toLocaleDateString("ru-RU")}${l.status==="hidden"?" · "+t("hid"):""}</small>
+const{data:l,error}=await sb.from("listings").select("*").eq("id",id).maybeSingle();
+if(error)fail(error);if(error||!l){app.innerHTML=`<p class="empty">${t("none")}</p>`;return}
+const pr=await sb.from("profiles").select("name,phone,telegram").eq("id",l.user_id).maybeSingle(),p=pr.data||{};
+const own=me&&me.id===l.user_id,tgu=(p.telegram||"").replace(/^@/,"").replace(/[^\w]/g,""),ph=(p.phone||"").replace(/[^\d+]/g,""),im=l.images||[];
+app.innerHTML=`${im.length?`<div class="gal">${im.map(u=>`<img src="${esc(u)}" alt="">`).join("")}</div>`:""}
+<h1>${esc(l.title)}</h1><h2 style="color:var(--sky);margin-top:0">${fmt(l.price)}</h2>
+<small>${esc(cn(l.cat))} · ${t(l.cond)} · ${esc(l.city)}${l.district?", "+esc(l.district):""} · ${dt(l.created_at)}${l.status==="hidden"?" · "+t("hid"):""}</small>
 <div class="box" style="white-space:pre-wrap">${esc(l.descr||"")}</div>
-<div class="box"><b>${esc(p.name||"")}</b><div class="row">${!own?`<button class="btn" data-a="chat" data-listing="${l.id}" data-seller="${l.user_id}">💬 ${chatT("newchat")}</button>`:""}${ph?`<a class="btn g" href="tel:${esc(ph)}">📞 ${t("call")}: ${esc(p.phone)}</a>`:""}${tgu?`<a class="btn g" target="_blank" rel="noopener" href="https://t.me/${esc(tgu)}">✈ ${t("tg")}</a>`:""}</div></div>
+<div class="box"><b>${esc(p.name||"")}</b><div class="row">${!own?`<button class="btn" data-a="chat" data-l="${l.id}" data-s="${l.user_id}">💬 ${t("msg")}</button>`:""}${ph?`<a class="btn g" href="tel:${esc(ph)}">📞 ${t("call")}: ${esc(p.phone)}</a>`:""}${tgu?`<a class="btn g" target="_blank" rel="noopener" href="https://t.me/${esc(tgu)}">✈ Telegram</a>`:""}</div></div>
 <div class="row"><button class="btn g" data-a="fav" data-id="${l.id}">${favs.has(l.id)?"♥":"♡"} ${t("favs")}</button><button class="btn g" data-a="rep" data-id="${l.id}">⚑ ${t("rep")}</button>
 ${own||adm()?`<a class="btn g" href="#/post/${l.id}">${t("edit")}</a><button class="btn r" data-a="del" data-id="${l.id}">${t("del")}</button>`:""}${adm()?`<button class="btn g" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button>`:""}</div>`}
 
-function chatTime(v){if(!v)return "";return new Date(v).toLocaleTimeString(lang==="ru"?"ru-RU":lang==="tg"?"tg-TJ":"uz-UZ",{hour:"2-digit",minute:"2-digit"})}
-function chatDate(v){const d=new Date(v),now=new Date();if(d.toDateString()===now.toDateString())return chatT("today");const y=new Date();y.setDate(y.getDate()-1);if(d.toDateString()===y.toDateString())return chatT("yesterday");return d.toLocaleDateString()}
-async function startChat(listingId,sellerId){
- if(!me){toast(chatT("chatLogin"));location.hash="#/auth";return}
- if(sellerId===me.id){toast(chatT("selfChat"));return}
- try{
-  let q=await sb.from("conversations").select("id").eq("listing_id",listingId).eq("buyer_id",me.id).eq("seller_id",sellerId).maybeSingle();
-  if(q.error)throw q.error;
-  let cid=q.data&&q.data.id;
-  if(!cid){const ins=await sb.from("conversations").insert({listing_id:listingId,buyer_id:me.id,seller_id:sellerId}).select("id").single();if(ins.error){if(ins.error.code==="23505"){const retry=await sb.from("conversations").select("id").eq("listing_id",listingId).eq("buyer_id",me.id).eq("seller_id",sellerId).single();if(retry.error)throw retry.error;cid=retry.data.id}else throw ins.error}else cid=ins.data.id}
-  location.hash="#/chat/"+cid;
- }catch(e){fail(e)}
-}
-async function chatsV(){
- if(!me){location.hash="#/auth";return}
- app.innerHTML=`<div class="chat-shell"><div class="chat-heading"><h1>💬 ${chatT("chats")}</h1><span class="muted">ТЕХНО БОЗОРИ</span></div><div class="chat-list" id="chatList"><div class="chat-empty">⏳</div></div></div>`;
- const box=$("#chatList");
- const {data:rows,error}=await sb.from("conversations").select("id,listing_id,buyer_id,seller_id,last_message_at,created_at").or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`).order("last_message_at",{ascending:false}).limit(60);
- if(error)throw error;
- if(!rows||!rows.length){box.innerHTML=`<div class="chat-empty"><div style="font-size:34px">💬</div><b>${chatT("nochat")}</b><p style="margin-top:6px;font-size:13px">${chatT("startchat")}</p></div>`;return}
- const ids=rows.map(x=>x.id),userIds=[...new Set(rows.flatMap(x=>[x.buyer_id,x.seller_id]))],listingIds=[...new Set(rows.map(x=>x.listing_id))];
- const [pr,lr,mr]=await Promise.all([
-  sb.from("profiles").select("id,name").in("id",userIds),
-  sb.from("listings").select("id,title,images").in("id",listingIds),
-  sb.from("messages").select("id,conversation_id,sender_id,body,sticker,created_at,read_at").in("conversation_id",ids).order("created_at",{ascending:false}).limit(500)
- ]);
- if(pr.error)throw pr.error;if(lr.error)throw lr.error;if(mr.error)throw mr.error;
- const users=new Map((pr.data||[]).map(x=>[x.id,x.name||"Foydalanuvchi"])),listings=new Map((lr.data||[]).map(x=>[x.id,x]));
- const last=new Map(),unread=new Map();for(const m of mr.data||[]){if(!last.has(m.conversation_id))last.set(m.conversation_id,m);if(m.sender_id!==me.id&&!m.read_at)unread.set(m.conversation_id,(unread.get(m.conversation_id)||0)+1)}
- box.innerHTML=rows.map(c=>{const other=c.buyer_id===me.id?c.seller_id:c.buyer_id,l=listings.get(c.listing_id)||{},m=last.get(c.id),label=m?(m.sticker||m.body||"📎"):chatT("noMessages"),u=unread.get(c.id)||0;return `<a class="chat-item" href="#/chat/${c.id}"><div class="chat-avatar">${esc((users.get(other)||"?" ).slice(0,1).toUpperCase())}</div><div class="chat-item-main"><div class="chat-item-top"><span class="chat-item-name">${esc(users.get(other)||"Foydalanuvchi")}</span><span class="chat-time">${chatDate(m?m.created_at:c.last_message_at||c.created_at)}</span></div><span class="chat-preview">${esc(l.title||chatT("listing"))} · ${esc(label)}</span></div>${u?`<span class="chat-unread">${u>99?"99+":u}</span>`:""}</a>`}).join("");
-}
-function messageHTML(m){const mine=m.sender_id===me.id,sticker=!!m.sticker;return `<div class="chat-msg ${mine?"mine":"theirs"} ${sticker?"chat-msg-sticker":""}" data-message-id="${m.id}">${sticker?esc(m.sticker):esc(m.body||"")}<div class="chat-msg-meta"><span>${chatTime(m.created_at)}</span>${mine?`<span>${m.read_at?"✓✓":"✓"}</span>`:""}</div></div>`}
-async function markChatRead(id){const r=await sb.from("messages").update({read_at:new Date().toISOString()}).eq("conversation_id",id).neq("sender_id",me.id).is("read_at",null);if(r.error)console.warn("Read receipt:",r.error.message)}
-async function chatV(id){
- if(!me){location.hash="#/auth";return}
- if(activeChatChannel){await sb.removeChannel(activeChatChannel);activeChatChannel=null}activeChatId=id;
- const cr=await sb.from("conversations").select("id,listing_id,buyer_id,seller_id").eq("id",id).maybeSingle();if(cr.error)throw cr.error;if(!cr.data){app.innerHTML=`<div class="chat-empty">${chatT("chatError")}</div>`;return}
- const c=cr.data,other=c.buyer_id===me.id?c.seller_id:c.buyer_id;if(c.buyer_id!==me.id&&c.seller_id!==me.id){app.innerHTML=`<div class="chat-empty">Ruxsat yo‘q</div>`;return}
- const [pr,lr,mr]=await Promise.all([sb.from("profiles").select("id,name").eq("id",other).maybeSingle(),sb.from("listings").select("id,title,price,images").eq("id",c.listing_id).maybeSingle(),sb.from("messages").select("id,sender_id,body,sticker,created_at,read_at").eq("conversation_id",id).order("created_at",{ascending:true}).limit(100)]);
- if(pr.error)throw pr.error;if(lr.error)throw lr.error;if(mr.error)throw mr.error;
- const person=pr.data||{},listing=lr.data||{},messages=mr.data||[];
- app.innerHTML=`<div class="chat-shell"><section class="chat-window"><div class="chat-top"><button class="chat-back" id="chatBack" type="button" aria-label="Orqaga">‹</button><div class="chat-avatar">${esc((person.name||"?").slice(0,1).toUpperCase())}</div><div class="chat-top-info"><b>${esc(person.name||"Foydalanuvchi")}</b><span class="chat-status" id="chatStatus">${chatT("online")}</span></div></div><a class="chat-product" href="#/l/${listing.id||c.listing_id}">${listing.images&&listing.images[0]?`<img src="${esc(listing.images[0])}" alt="">`:`<div class="chat-avatar">📦</div>`}<span class="chat-product-info"><b>${esc(listing.title||chatT("listing"))}</b><small>${listing.price!=null?fmt(listing.price):""} · ${chatT("listing")}</small></span><span>›</span></a><div class="chat-messages" id="chatMessages">${messages.length?messages.map(messageHTML).join(""):`<div class="chat-empty">${chatT("noMessages")}</div>`}</div><div class="chat-typing" id="chatTyping"></div><div class="chat-composer-wrap"><div class="sticker-panel" id="stickerPanel" hidden>${CHAT_STICKERS.map(s=>`<button class="sticker-choice" type="button" data-sticker="${s}">${s}</button>`).join("")}</div><div class="chat-tools"><button class="chat-tool" id="stickerToggle" type="button" aria-label="${chatT("stickers")}" title="${chatT("stickers")}">☺</button><span class="form-help">${chatT("stickers")}</span></div><div class="chat-compose"><textarea id="chatInput" rows="1" maxlength="2000" placeholder="${chatT("write")}"></textarea><button class="chat-send" id="chatSend" type="button" aria-label="${chatT("send")}">➤</button></div></div></section></div>`;
- const msgBox=$("#chatMessages"),input=$("#chatInput"),send=$("#chatSend"),stickerPanel=$("#stickerPanel");
- const scrollBottom=()=>{msgBox.scrollTop=msgBox.scrollHeight};scrollBottom();await markChatRead(id);
- $("#chatBack").onclick=()=>{location.hash="#/chats"};
- $("#stickerToggle").onclick=()=>{stickerPanel.hidden=!stickerPanel.hidden};
- async function deliver(body,sticker){if(!body&&!sticker)return;if(send.disabled)return;send.disabled=true;try{const r=await sb.from("messages").insert({conversation_id:id,sender_id:me.id,body:body||null,sticker:sticker||null}).select("id,sender_id,body,sticker,created_at,read_at").single();if(r.error)throw r.error;const empty=msgBox.querySelector(".chat-empty");if(empty)empty.remove();if(!msgBox.querySelector(`[data-message-id="${r.data.id}"]`))msgBox.insertAdjacentHTML("beforeend",messageHTML(r.data));scrollBottom();input.value="";input.style.height="auto";stickerPanel.hidden=true;await channel.send({type:"broadcast",event:"typing",payload:{user_id:me.id,typing:false}})}catch(e){fail(e)}finally{send.disabled=false;input.focus()}}
- send.onclick=()=>deliver(input.value.trim(),null);
- input.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send.click()}};
- input.oninput=()=>{input.style.height="auto";input.style.height=Math.min(input.scrollHeight,112)+"px";channel.send({type:"broadcast",event:"typing",payload:{user_id:me.id,typing:!!input.value.trim()}});clearTimeout(typingTimer);typingTimer=setTimeout(()=>channel.send({type:"broadcast",event:"typing",payload:{user_id:me.id,typing:false}}),1300)};
- stickerPanel.onclick=e=>{const b=e.target.closest("[data-sticker]");if(b)deliver(null,b.dataset.sticker)};
- const channel=sb.channel("market-chat-"+id,{config:{presence:{key:me.id},broadcast:{self:false}}});
- channel.on("postgres_changes",{event:"INSERT",schema:"public",table:"messages",filter:"conversation_id=eq."+id},async payload=>{const m=payload.new;if(!msgBox.querySelector(`[data-message-id="${m.id}"]`)){const empty=msgBox.querySelector(".chat-empty");if(empty)empty.remove();msgBox.insertAdjacentHTML("beforeend",messageHTML(m));scrollBottom()}if(m.sender_id!==me.id)await markChatRead(id)});
- channel.on("broadcast",{event:"typing"},({payload})=>{if(payload.user_id!==me.id)$("#chatTyping").textContent=payload.typing?chatT("typing"):""});
- channel.on("presence",{event:"sync"},()=>{const state=channel.presenceState();const online=Object.values(state).flat().some(x=>x.user_id===other);$("#chatStatus").textContent=online?chatT("online"):chatT("offline")});
- channel.subscribe(async status=>{if(status==="SUBSCRIBED"){await channel.track({user_id:me.id,online_at:new Date().toISOString()})}});activeChatChannel=channel;
-}
+async function startChat(lid,sid){
+if(!me){toast(t("need"));location.hash="#/auth";return}if(sid===me.id){toast(t("self"));return}
+const f=()=>sb.from("conversations").select("id").eq("listing_id",lid).eq("buyer_id",me.id).eq("seller_id",sid).maybeSingle();
+let r=must(await f());if(!r){const i=await sb.from("conversations").insert({listing_id:lid,buyer_id:me.id,seller_id:sid}).select("id").single();if(i.error){if(i.error.code==="23505")r=must(await f());else throw i.error}else r=i.data}
+location.hash="#/chat/"+r.id}
+async function chatsV(){if(!me){location.hash="#/auth";return}
+const rows=must(await sb.from("conversations").select("id,listing_id,buyer_id,seller_id,last_message_at,created_at").or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`).order("last_message_at",{ascending:false}).limit(60));
+app.innerHTML=`<h1>💬 ${t("chats")}</h1><div id="cl">${rows.length?"":`<p class="empty">${t("nochat")}</p>`}</div>`;if(!rows.length)return;
+const uids=[...new Set(rows.flatMap(x=>[x.buyer_id,x.seller_id]))],lids=[...new Set(rows.map(x=>x.listing_id))],cids=rows.map(x=>x.id);
+const[p,ls,ms]=await Promise.all([sb.from("profiles").select("id,name").in("id",uids),sb.from("listings").select("id,title").in("id",lids),sb.from("messages").select("conversation_id,sender_id,body,sticker,created_at,read_at").in("conversation_id",cids).order("created_at",{ascending:false}).limit(400)]);
+const U=new Map(must(p).map(x=>[x.id,x.name||"?"])),Ls=new Map(must(ls).map(x=>[x.id,x.title])),last=new Map(),un=new Map();
+for(const m of must(ms)){if(!last.has(m.conversation_id))last.set(m.conversation_id,m);if(m.sender_id!==me.id&&!m.read_at)un.set(m.conversation_id,(un.get(m.conversation_id)||0)+1)}
+$("#cl").innerHTML=rows.map(c=>{const o=c.buyer_id===me.id?c.seller_id:c.buyer_id,m=last.get(c.id),u=un.get(c.id)||0;return`<a class="ci" href="#/chat/${c.id}"><div class="av">${esc((U.get(o)||"?").slice(0,1).toUpperCase())}</div><div class="cm"><b>${esc(U.get(o)||"?")}</b><small>${esc(Ls.get(c.listing_id)||"")} · ${esc(m?(m.sticker||m.body||""):t("nomsg"))}</small></div>${u?`<span class="un">${u}</span>`:""}</a>`}).join("")}
+const STK=["😀","😂","🥰","😍","😎","🤝","👍","👏","🙏","🔥","❤️","🎉"];
+const mh=m=>`<div class="mg ${m.sender_id===me.id?"me":""} ${m.sticker?"st":""}" data-id="${m.id}">${esc(m.sticker||m.body||"")}<small>${tm(m.created_at)}${m.sender_id===me.id?(m.read_at?" ✓✓":" ✓"):""}</small></div>`;
+const markRead=id=>sb.from("messages").update({read_at:new Date().toISOString()}).eq("conversation_id",id).neq("sender_id",me.id).is("read_at",null).then(()=>0,()=>0);
+async function chatV(id){if(!me){location.hash="#/auth";return}
+const c=must(await sb.from("conversations").select("id,listing_id,buyer_id,seller_id").eq("id",id).maybeSingle());if(!c){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}
+const o=c.buyer_id===me.id?c.seller_id:c.buyer_id;
+const[p,l,ms]=await Promise.all([sb.from("profiles").select("name").eq("id",o).maybeSingle(),sb.from("listings").select("id,title,price,images").eq("id",c.listing_id).maybeSingle(),sb.from("messages").select("id,sender_id,body,sticker,created_at,read_at").eq("conversation_id",id).order("created_at",{ascending:true}).limit(200)]);
+const pn=(p.data&&p.data.name)||"?",li=l.data||{},list=must(ms);
+app.innerHTML=`<section class="cw"><div class="ct"><button id="bk" aria-label="Back">‹</button><div class="av">${esc(pn.slice(0,1).toUpperCase())}</div><b>${esc(pn)}</b></div><a class="cp" href="#/l/${c.listing_id}">${li.images&&li.images[0]?`<img src="${esc(li.images[0])}" alt="">`:"📦"}<span class="cm"><b>${esc(li.title||"")}</b><small>${li.price!=null?fmt(li.price):""}</small></span>›</a><div class="cms" id="cms">${list.length?list.map(mh).join(""):`<p class="empty" style="margin:auto">${t("nomsg")}</p>`}</div><div class="cc"><div class="stk" id="stk" hidden>${STK.map(s=>`<button data-s="${s}">${s}</button>`).join("")}</div><div class="cf"><button id="st">☺</button><textarea id="ci" rows="1" maxlength="2000" placeholder="${t("write")}"></textarea><button class="snd" id="sn">➤</button></div></div></section>`;
+const box=$("#cms"),inp=$("#ci"),sn=$("#sn"),down=()=>{box.scrollTop=box.scrollHeight};down();markRead(id);
+const add=m=>{if(box.querySelector(`[data-id="${m.id}"]`))return;const e=box.querySelector(".empty");if(e)e.remove();box.insertAdjacentHTML("beforeend",mh(m));down()};
+$("#bk").onclick=()=>{location.hash="#/chats"};$("#st").onclick=()=>{$("#stk").hidden=!$("#stk").hidden};
+async function send(body,st){if(!body&&!st||sn.disabled)return;sn.disabled=true;try{const m=must(await sb.from("messages").insert({conversation_id:id,sender_id:me.id,body:body||null,sticker:st||null}).select("id,sender_id,body,sticker,created_at,read_at").single());add(m);inp.value="";$("#stk").hidden=true}catch(e){fail(e)}sn.disabled=false}
+sn.onclick=()=>send(inp.value.trim(),null);inp.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sn.click()}};
+$("#stk").onclick=e=>{const b=e.target.closest("[data-s]");if(b)send(null,b.dataset.s)};
+chan=sb.channel("chat-"+id).on("postgres_changes",{event:"INSERT",schema:"public",table:"messages",filter:"conversation_id=eq."+id},p=>{add(p.new);if(p.new.sender_id!==me.id)markRead(id)}).subscribe()}
 
 async function postV(id){
 if(!me){location.hash="#/auth";toast(t("need"));return}
-let old=null;if(id){const r=await sb.from("listings").select("*").eq("id",id).maybeSingle();old=r.data;if(!old||(old.user_id!==me.id&&!adm())){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}}
-let imgs=[...(old?old.images:[])],files=[];const o=old||{cat:"phones",cond:"used",city:CITIES[0]};
-app.innerHTML=`<h1>${old?t("edit"):"E’lon joylashtirish"}</h1>
-<div class="post-intro"><b>📦 Mahsulotingizni soting!</b><p>Ma’lumotlarni to‘ldiring, rasmlar qo‘shing va e’loningizni xaridorlarga ko‘rsating.</p></div>
-<form id="pf2">
-<section class="form-section"><div class="form-section-head"><span class="form-step">1</span><b>Mahsulot haqida</b></div>
-<label for="p-cat">${t("cat")} *</label><select id="p-cat" name="cat" required>${opts(CATS,o.cat,c=>c[1]+" "+c[LI[lang]])}</select>
-<label for="p-title">${t("title")} *</label><input id="p-title" name="title" required minlength="3" maxlength="120" placeholder="Masalan: iPhone 13 Pro 256GB" value="${esc(o.title)}">
-<label for="p-desc">${t("descr")}</label><textarea id="p-desc" name="descr" maxlength="3000" placeholder="Mahsulot holati, xususiyatlari va komplektatsiyasini yozing...">${esc(o.descr)}</textarea>
-<p class="form-help">Aniq va to‘liq tavsif xaridorning ishonchini oshiradi.</p></section>
-<section class="form-section"><div class="form-section-head"><span class="form-step">2</span><b>Narx va holati</b></div>
-<label for="p-price">${t("price")} *</label><input id="p-price" name="price" type="number" min="0" step="0.01" required inputmode="decimal" placeholder="Masalan: 2500" value="${esc(o.price)}"><p class="form-help">Narxni somoniyda (TJS) kiriting.</p>
-<label for="p-cond">${t("cond")} *</label><select id="p-cond" name="cond"><option value="new"${o.cond==="new"?" selected":""}>✨ ${t("new")}</option><option value="used"${o.cond==="used"?" selected":""}>♻️ ${t("used")}</option></select></section>
-<section class="form-section"><div class="form-section-head"><span class="form-step">3</span><b>Joylashuv</b></div>
-<label for="p-city">${t("city")} *</label><select id="p-city" name="city" required>${opts(CITIES,o.city)}</select>
-<label for="p-district">${t("dist")}</label><input id="p-district" name="district" maxlength="80" placeholder="Masalan: markaz, 20-mikrorayon" value="${esc(o.district)}"><p class="form-help">Joylashuv xaridorga mahsulot qayerdaligini tushunishga yordam beradi.</p></section>
-<section class="form-section"><div class="form-section-head"><span class="form-step">4</span><b>Mahsulot rasmlari</b></div>
-<label class="photo-drop" for="fi"><span style="font-size:27px">＋ 📷</span><span>Rasm qo‘shish<br><small>6 tagacha rasm · JPG, PNG yoki WEBP</small></span><input type="file" id="fi" accept="image/*" multiple></label>
-<p class="form-help">Mahsulotni turli tomondan aniq suratga oling. Rasmlar e’loningizni ishonchliroq qiladi.</p><div class="thumbs" id="th" style="margin-top:12px"></div></section>
-<button class="btn post-submit" id="sv">${old?"O‘zgarishlarni saqlash":"✓ E’lonni joylashtirish"}</button><p class="form-help" style="text-align:center;margin:10px 0 18px">E’lon joylashtirish orqali ma’lumotlar to‘g‘riligini tasdiqlaysiz.</p></form>`;
-const th=()=>{$("#th").innerHTML=imgs.map((u,i)=>`<div><img src="${esc(u)}" alt="Yuklangan rasm"><button type="button" data-i="${i}" aria-label="Rasmni olib tashlash">×</button></div>`).join("")+files.map((f,i)=>`<div><img src="${URL.createObjectURL(f)}" alt="Yangi rasm"><button type="button" data-f="${i}" aria-label="Rasmni olib tashlash">×</button></div>`).join("")+(!imgs.length&&!files.length?`<p class="form-help">Hozircha rasm tanlanmagan.</p>`:"")};th();
-$("#fi").onchange=e=>{for(const f of e.target.files){if(imgs.length+files.length>=6)break;if(!f.type.startsWith("image/"))continue;files.push(f)}e.target.value="";th()};
+let old=null;if(id){old=must(await sb.from("listings").select("*").eq("id",id).maybeSingle());if(!old||(old.user_id!==me.id&&!adm())){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}}
+let imgs=[...(old?old.images||[]:[])],files=[];const o=old||{cat:"phones",cond:"used",city:CITIES[0]};
+app.innerHTML=`<h1>${old?t("edit"):t("posth")}</h1><div class="intro"><b>📦 ${t("posth")}</b><p>${t("postp")}</p></div>
+<form id="pf2"><section class="fs"><div class="fh"><i>1</i>${t("step1")}</div><label>${t("cat")} *</label><select name="cat" required>${opts(CATS,o.cat,c=>c[1]+" "+c[CI[lang]])}</select><label>${t("title")} *</label><input name="title" required minlength="3" maxlength="120" value="${esc(o.title)}"><label>${t("descr")}</label><textarea name="descr" maxlength="3000">${esc(o.descr)}</textarea></section>
+<section class="fs"><div class="fh"><i>2</i>${t("step2")}</div><label>${t("price")} *</label><input name="price" type="number" min="0" step="0.01" required inputmode="decimal" value="${esc(o.price)}"><label>${t("cond")}</label><select name="cond"><option value="new"${o.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${o.cond==="used"?" selected":""}>${t("used")}</option></select></section>
+<section class="fs"><div class="fh"><i>3</i>${t("step3")}</div><label>${t("city")} *</label><select name="city" required>${opts(CITIES,o.city)}</select><label>${t("dist")}</label><input name="district" maxlength="80" value="${esc(o.district)}"></section>
+<section class="fs"><div class="fh"><i>4</i>${t("step4")}</div><label class="drop" for="fi">＋ 📷 ${t("photos")}<input type="file" id="fi" accept="image/*" multiple></label><div class="thumbs" id="th"></div></section>
+<button class="btn submit" id="sv">${old?t("save"):"✓ "+t("posth")}</button></form>`;
+const th=()=>{$("#th").innerHTML=imgs.map((u,i)=>`<div><img src="${esc(u)}" alt=""><button type="button" data-i="${i}">×</button></div>`).join("")+files.map((f,i)=>`<div><img src="${URL.createObjectURL(f)}" alt=""><button type="button" data-f="${i}">×</button></div>`).join("")};th();
+$("#fi").onchange=e=>{for(const f of e.target.files){if(imgs.length+files.length>=6)break;if(f.type.startsWith("image/"))files.push(f)}e.target.value="";th()};
 $("#th").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.i!=null)imgs.splice(+b.dataset.i,1);else files.splice(+b.dataset.f,1);th()};
-$("#pf2").onsubmit=async e=>{e.preventDefault();const b=$("#sv");b.disabled=true;b.textContent="Saqlanmoqda...";
-try{if(!me.phone){throw new Error(t("phone"))}const up=[];
-for(const[i,f]of files.entries()){const bl=await comp(f),pa=`${me.id}/${Date.now()}_${i}.jpg`,r=await sb.storage.from("images").upload(pa,bl,{contentType:"image/jpeg"});if(r.error)throw r.error;up.push(sb.storage.from("images").getPublicUrl(pa).data.publicUrl)}
-const d=Object.fromEntries(new FormData(e.target));const row={cat:d.cat,title:d.title.trim(),descr:d.descr.trim(),price:+d.price,cond:d.cond,city:d.city,district:d.district.trim()||null,images:[...imgs,...up]};
-const r=old?await sb.from("listings").update(row).eq("id",old.id).select("id").single():await sb.from("listings").insert(row).select("id").single();if(r.error)throw r.error;
-if(old)await rmImgs(old.images.filter(u=>!imgs.includes(u)));toast(t("ok"));location.hash="#/l/"+r.data.id}catch(x){fail(x)}b.disabled=false;b.textContent=old?"O‘zgarishlarni saqlash":"✓ E’lonni joylashtirish"}}
+$("#pf2").onsubmit=async e=>{e.preventDefault();const b=$("#sv");b.disabled=true;b.textContent=t("load");
+try{if(!me.phone)throw new Error(t("phone"));const up=[];
+for(const[i,f]of files.entries()){const bl=await comp(f),pa=`${me.id}/${Date.now()}_${i}.jpg`;must(await sb.storage.from("images").upload(pa,bl,{contentType:"image/jpeg"}));up.push(sb.storage.from("images").getPublicUrl(pa).data.publicUrl)}
+const d=Object.fromEntries(new FormData(e.target)),row={cat:d.cat,title:d.title.trim(),descr:d.descr.trim(),price:+d.price,cond:d.cond,city:d.city,district:d.district.trim()||null,images:[...imgs,...up]};
+const r=old?await sb.from("listings").update(row).eq("id",old.id).select("id").single():await sb.from("listings").insert(row).select("id").single();
+const nid=must(r).id;if(old)await rmImgs((old.images||[]).filter(u=>!imgs.includes(u)));toast(t("ok"));location.hash="#/l/"+nid}catch(x){fail(x)}
+b.disabled=false;b.textContent=old?t("save"):"✓ "+t("posth")}}
+
 function authV(){if(me){location.hash="#/me";return}const r=mode==="reg";
 app.innerHTML=`<h1>${r?t("reg"):t("login")}</h1><form class="box" id="af">${r?`<label>${t("name")}</label><input name="name" required maxlength="80"><label>${t("phone")}</label><input name="phone" type="tel" required placeholder="+992..."><label>Telegram</label><input name="telegram" placeholder="@username">`:""}
 <label>Email</label><input name="email" type="email" required autocomplete="email"><label>${t("pass")}</label><input name="pw" type="password" required minlength="8" autocomplete="${r?"new":"current"}-password"><p style="margin-top:14px"><button class="btn">${r?t("reg"):t("login")}</button> <button type="button" class="btn g" id="sw">${r?t("login"):t("reg")}</button></p></form>`;
 $("#sw").onclick=()=>{mode=r?"login":"reg";authV()};
 $("#af").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));
-const res=r?await sb.auth.signUp({email:d.email,password:d.pw,options:{data:{name:d.name,phone:d.phone,telegram:d.telegram}}}):await sb.auth.signInWithPassword({email:d.email,password:d.pw});
-if(res.error)return fail(res.error);if(r&&!res.data.session){toast(t("chk"));mode="login";return authV()}await refreshMe();location.hash="#/me"}}
+try{const res=r?await sb.auth.signUp({email:d.email,password:d.pw,options:{data:{name:d.name,phone:d.phone,telegram:d.telegram}}}):await sb.auth.signInWithPassword({email:d.email,password:d.pw});
+if(res.error)throw res.error;if(r&&!res.data.session){toast(t("chk"));mode="login";return authV()}await refreshMe();location.hash="#/me"}catch(x){fail(x)}}}
 
 async function meV(){if(!me){location.hash="#/auth";return}
-const{data,error}=await sb.from("listings").select("id,title,price,status").eq("user_id",me.id).order("created_at",{ascending:false});
-if(error)return fail(error);
-const items=data||[],active=items.filter(x=>x.status==="active").length,hidden=items.length-active;
+const items=must(await sb.from("listings").select("id,title,price,status").eq("user_id",me.id).order("created_at",{ascending:false})),act=items.filter(x=>x.status==="active").length;
 app.innerHTML=`<h1>👤 ${esc(me.name)}</h1><small>${esc(me.email)}${adm()?" · "+t("admin"):""}</small>
-<div class="dash"><div class="dashcard"><b>${items.length}</b><span>Jami e’lonlar</span></div><div class="dashcard"><b>${active}</b><span>Faol e’lonlar</span></div><div class="dashcard"><b>${hidden}</b><span>Yashirilgan e’lonlar</span></div><div class="dashcard"><b>${favs.size}</b><span>Sevimlilar</span></div></div>
-<section class="profilebox"><div class="profiletop"><b>Shaxsiy ma’lumotlar</b><span class="muted">🔒</span></div><form id="pr"><label>${t("name")}</label><input name="name" required maxlength="80" value="${esc(me.name)}"><label>${t("phone")}</label><input name="phone" type="tel" required maxlength="30" value="${esc(me.phone)}"><label>Telegram</label><input name="telegram" maxlength="40" value="${esc(me.telegram)}"><p class="muted" style="font-size:12px;margin-top:7px">Bu ma’lumotlar sotuvchi bilan aloqa uchun ishlatiladi.</p><p style="margin-top:12px"><button class="btn">${t("save")}</button></p></form></section>
+<div class="dash"><div class="dc"><b>${items.length}</b><span>${t("tot")}</span></div><div class="dc"><b>${act}</b><span>${t("act")}</span></div><div class="dc"><b>${items.length-act}</b><span>${t("hidn")}</span></div><div class="dc"><b>${favs.size}</b><span>${t("favs")}</span></div></div>
+<section class="box"><b>${t("pers")} 🔒</b><form id="pr"><label>${t("name")}</label><input name="name" required maxlength="80" value="${esc(me.name)}"><label>${t("phone")}</label><input name="phone" type="tel" required maxlength="30" value="${esc(me.phone)}"><label>Telegram</label><input name="telegram" maxlength="40" value="${esc(me.telegram)}"><p style="margin-top:12px"><button class="btn">${t("save")}</button></p></form></section>
 <div class="row">${adm()?`<a class="btn g" href="#/admin">⚙ ${t("admin")}</a>`:""}<button class="btn g" data-a="out">${t("out")}</button></div><h2>${t("mine")}</h2>
 ${items.map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><a class="btn g sm" href="#/post/${l.id}">${t("edit")}</a><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")||`<p class="empty">${t("none")}</p>`}`;
-$("#pr").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));const r=await sb.from("profiles").update({name:d.name.trim(),phone:d.phone.trim(),telegram:d.telegram.trim()}).eq("id",me.id);if(r.error)return fail(r.error);await refreshMe();toast(t("ok"))}}
+$("#pr").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));try{must(await sb.from("profiles").update({name:d.name.trim(),phone:d.phone.trim(),telegram:d.telegram.trim()}).eq("id",me.id).select("id"));await refreshMe();toast(t("ok"))}catch(x){fail(x)}}}
 
 async function adminV(){if(!adm()){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}
-const[a,b]=await Promise.all([sb.from("listings").select("id,title,price,status,city").order("created_at",{ascending:false}).limit(60),sb.from("reports").select("id,reason,resolved,listing_id,listings(title)").order("created_at",{ascending:false}).limit(60)]);
-app.innerHTML=`<h1>⚙ ${t("admin")}</h1><h2>${t("reps")}</h2>${(b.data||[]).map(r=>`<div class="li"><a href="#/l/${r.listing_id}">${esc(r.listings?r.listings.title:"—")}<br><small>${esc(r.reason)}${r.resolved?" ✓":""}</small></a>${r.resolved?"":`<button class="btn g sm" data-a="res" data-id="${r.id}">${t("res")}</button>`}</div>`).join("")||`<p class="empty">—</p>`}
-<h2>${t("lst")}</h2>${(a.data||[]).map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)} · ${esc(l.city)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><button class="btn g sm" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")}`}
+const[a,b]=await Promise.all([sb.from("listings").select("id,title,price,status,city").order("created_at",{ascending:false}).limit(60),sb.from("reports").select("id,reason,resolved,listing_id").order("created_at",{ascending:false}).limit(60)]);
+const L=must(a),R=must(b),ids=[...new Set(R.map(r=>r.listing_id))],T=new Map();
+if(ids.length)must(await sb.from("listings").select("id,title").in("id",ids)).forEach(x=>T.set(x.id,x.title));
+app.innerHTML=`<h1>⚙ ${t("admin")}</h1><h2>${t("reps")}</h2>${R.map(r=>`<div class="li"><a href="#/l/${r.listing_id}">${esc(T.get(r.listing_id)||"—")}<br><small>${esc(r.reason)}${r.resolved?" ✓":""}</small></a>${r.resolved?"":`<button class="btn g sm" data-a="res" data-id="${r.id}">${t("res")}</button>`}</div>`).join("")||`<p class="empty">—</p>`}
+<h2>${t("lst")}</h2>${L.map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)} · ${esc(l.city)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><button class="btn g sm" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")}`}
 
 app.onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
 try{if(a==="out"){await sb.auth.signOut();me=null;favs=new Set();location.hash="#/";return route()}
 if(!me)return(location.hash="#/auth",toast(t("need")));
-if(a==="chat")return startChat(+b.dataset.listing,b.dataset.seller);
-if(a==="fav"){if(favs.has(id)){await sb.from("favorites").delete().eq("listing_id",id);favs.delete(id)}else{const r=await sb.from("favorites").insert({listing_id:id});if(r.error)throw r.error;favs.add(id)}return route()}
-if(a==="rep"){const w=prompt(t("why"));if(!w||w.trim().length<3)return;const r=await sb.from("reports").insert({listing_id:id,reason:w.trim().slice(0,500)});if(r.error)throw r.error;return toast(t("sent"))}
-if(a==="del"){if(!confirm(t("sure")))return;const{data:l}=await sb.from("listings").select("images").eq("id",id).maybeSingle();const r=await sb.from("listings").delete().eq("id",id);if(r.error)throw r.error;if(l)await rmImgs(l.images);toast(t("ok"));if(location.hash.startsWith("#/l/"))location.hash="#/";else route();return}
-if(a==="hide"||a==="show"){const r=await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"});if(r.error)throw r.error;return route()}
-if(a==="res"){const r=await sb.from("reports").update({resolved:true}).eq("id",id);if(r.error)throw r.error;return route()}}catch(x){fail(x)}};
+if(a==="chat")return await startChat(+b.dataset.l,b.dataset.s);
+if(a==="fav"){if(favs.has(id)){must(await sb.from("favorites").delete().eq("listing_id",id).select());favs.delete(id)}else{must(await sb.from("favorites").insert({listing_id:id}).select());favs.add(id)}return route()}
+if(a==="rep"){const w=prompt(t("why"));if(!w||w.trim().length<3)return;must(await sb.from("reports").insert({listing_id:id,reason:w.trim().slice(0,500)}).select());return toast(t("sent"))}
+if(a==="del"){if(!confirm(t("sure")))return;const l=must(await sb.from("listings").select("images").eq("id",id).maybeSingle());must(await sb.from("listings").delete().eq("id",id).select());if(l)await rmImgs(l.images);toast(t("ok"));if(location.hash.startsWith("#/l/"))location.hash="#/";else route();return}
+if(a==="hide"||a==="show"){must(await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"}));return route()}
+if(a==="res"){must(await sb.from("reports").update({resolved:true}).eq("id",id).select());return route()}}catch(x){fail(x)}};
 
-async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(h[0]!=="chat"&&activeChatChannel){sb.removeChannel(activeChatChannel);activeChatChannel=null;activeChatId=null}nav();window.scrollTo(0,0);
-try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x)}}
-$("#lg").value=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
-sb.auth.onAuthStateChange((ev)=>{if(ev==="SIGNED_OUT"){me=null;nav()}});window.addEventListener("hashchange",route);
+async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}nav();window.scrollTo(0,0);
+try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(+h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x)}}
+$("#lg").value=lang;document.documentElement.lang=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
+sb.auth.onAuthStateChange(ev=>{if(ev==="SIGNED_OUT"){me=null;nav()}});window.addEventListener("hashchange",route);
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
-refreshMe().catch(e=>fail(e)).finally(route);
+refreshMe().catch(fail).finally(route);
 </script>
 </body>
 </html>
