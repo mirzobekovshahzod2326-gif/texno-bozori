@@ -50,6 +50,20 @@ h1{font-size:clamp(21px,4vw,27px);line-height:1.2;letter-spacing:-.03em;font-wei
 #toast{position:fixed;left:50%;bottom:calc(82px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#14243d;color:#fff;padding:11px 17px;border-radius:999px;display:none;z-index:40;font-weight:700;box-shadow:0 8px 24px rgba(15,35,70,.2);max-width:calc(100vw - 32px);text-align:center}
 @media(min-width:700px){main{padding:28px 24px 40px}.catgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.catitem{min-height:78px}.dash{grid-template-columns:repeat(4,minmax(0,1fr))}nav#nav{left:50%;right:auto;transform:translateX(-50%);width:min(620px,calc(100% - 32px));bottom:12px;border:1px solid var(--l);border-radius:18px;padding:7px;box-shadow:0 12px 35px rgba(15,35,70,.13)}body{padding-bottom:100px}}
 @media(max-width:420px){main{padding:15px 13px 24px}.catgrid{gap:8px}.catitem{min-height:64px;padding:10px;gap:8px}.catitem .ico{width:30px;height:30px;font-size:22px}.catitem .ctxt{font-size:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.in{padding:10px}.in b{font-size:15px}.in span{font-size:13px}.box,.profilebox{padding:14px}.row>*{min-width:calc(50% - 6px)}}
+
+/* Fast, responsive marketplace chat */
+.chat-shell{display:flex;flex-direction:column;gap:12px;min-height:calc(100dvh - 170px)}
+.chat-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.chat-heading h1{margin:0}.chat-list{display:flex;flex-direction:column;gap:9px}
+.chat-item{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid var(--l);border-radius:16px;background:#fff;text-align:left;box-shadow:0 3px 12px rgba(15,35,70,.035)}
+.chat-avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;background:linear-gradient(145deg,#dceaff,#edf5ff);color:#1d4ed8;font-size:20px;font-weight:850}
+.chat-item-main{flex:1;min-width:0}.chat-item-top{display:flex;justify-content:space-between;gap:8px;align-items:center}.chat-item-name{font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-preview{display:block;color:var(--m);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:3px}.chat-time{font-size:11px;color:#94a3b8;white-space:nowrap}.chat-unread{min-width:20px;height:20px;border-radius:99px;background:#2563eb;color:#fff;display:grid;place-items:center;padding:0 5px;font-size:11px;font-weight:800}
+.chat-window{display:flex;flex-direction:column;min-height:calc(100dvh - 170px);max-height:calc(100dvh - 155px);background:#edf3fb;border:1px solid #dce5f1;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px rgba(15,35,70,.06)}
+.chat-top{display:flex;align-items:center;gap:10px;padding:12px;background:#fff;border-bottom:1px solid var(--l)}.chat-back{border:0;background:#eef4ff;color:#1d4ed8;border-radius:11px;width:38px;height:38px;font-size:20px}.chat-top-info{flex:1;min-width:0}.chat-top-info b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-status{font-size:11px;color:#16a36a}.chat-product{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8fbff;border-bottom:1px solid var(--l);font-size:12px}.chat-product img{width:42px;height:42px;object-fit:cover;border-radius:9px;background:#e8eef7}.chat-product-info{flex:1;min-width:0}.chat-product-info b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-product-info small{display:block;color:var(--m)}
+.chat-messages{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:14px 11px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth}.chat-day{align-self:center;background:#fff;color:#718096;border-radius:99px;padding:4px 10px;font-size:10px}.chat-msg{max-width:min(84%,420px);padding:9px 11px;border-radius:15px;background:#fff;color:#24344c;box-shadow:0 2px 5px rgba(15,35,70,.045);overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.4}.chat-msg.mine{align-self:flex-end;background:#dcecff;border-bottom-right-radius:5px}.chat-msg.theirs{align-self:flex-start;border-bottom-left-radius:5px}.chat-msg-sticker{font-size:43px;line-height:1.25;padding:4px 8px;background:transparent;box-shadow:none}.chat-msg-meta{display:flex;justify-content:flex-end;gap:5px;margin-top:4px;font-size:10px;color:#8290a5}.chat-msg.mine .chat-msg-meta{color:#5477a6}.chat-typing{min-height:18px;padding:0 14px 5px;font-size:11px;color:#64748b;background:#edf3fb}
+.chat-composer-wrap{background:#fff;border-top:1px solid var(--l);padding:9px 9px max(9px,env(safe-area-inset-bottom))}.chat-tools{display:flex;align-items:center;gap:7px;margin-bottom:7px}.chat-tool{border:0;background:#f0f5fc;color:#345579;border-radius:10px;width:35px;height:35px;font-size:18px}.chat-compose{display:flex;align-items:flex-end;gap:7px}.chat-compose textarea{flex:1;min-height:43px;max-height:112px;resize:none;border-radius:15px;background:#f7f9fc;padding:10px 12px;font-size:14px}.chat-send{width:44px;height:43px;flex:none;border:0;border-radius:14px;background:#2563eb;color:#fff;font-size:19px;font-weight:800}.chat-send:disabled{opacity:.45;cursor:not-allowed}.sticker-panel{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:10px;margin-bottom:8px;background:#f4f7fc;border:1px solid var(--l);border-radius:14px;max-height:180px;overflow:auto}.sticker-choice{border:0;border-radius:11px;background:#fff;min-height:46px;font-size:26px;box-shadow:0 1px 4px rgba(15,35,70,.06)}.chat-empty{background:#fff;border:1px dashed #cbd6e5;border-radius:16px;padding:30px 16px;text-align:center;color:var(--m)}
+@media(min-width:700px){.chat-shell{min-height:650px}.chat-window{min-height:650px;max-height:760px}.chat-messages{padding:18px 22px}.chat-composer-wrap{padding:12px}}
+
 </style>
 </head>
 <body>
@@ -73,6 +87,15 @@ const CITIES=["Душанбе","Хуҷанд","Бохтар","Кӯлоб","Ис�
 const L={uz:{home:"Bosh sahifa",favs:"Sevimlilar",post:"E’lon",me:"Profil",login:"Kirish",reg:"Ro‘yxatdan o‘tish",out:"Chiqish",q:"Qidirish...",all:"Hammasi",city:"Shahar",dist:"Tuman",cond:"Holati",new:"Yangi",used:"Ishlatilgan",pf:"Narx dan",pt:"Narx gacha",sort:"Saralash",s1:"Yangilari",s2:"Arzonlari",s3:"Qimmatlari",title:"Nomi",descr:"Tavsif",price:"Narxi (TJS)",photos:"Rasmlar (6 tagacha)",save:"Saqlash",del:"O‘chirish",edit:"Tahrirlash",call:"Qo‘ng‘iroq",tg:"Telegram",rep:"Shikoyat",why:"Shikoyat sababi:",sent:"Yuborildi",more:"Yana",none:"E’lonlar topilmadi",name:"Ism",phone:"Telefon",pass:"Parol (8+)",mine:"Mening e’lonlarim",ok:"Saqlandi",err:"Xatolik: ",need:"Avval tizimga kiring",admin:"Admin",hide:"Yashirish",show:"Ko‘rsatish",res:"Yopish",reps:"Shikoyatlar",lst:"E’lonlar",sure:"Ishonchingiz komilmi?",deny:"Ruxsat yo‘q",cat:"Turkum",hid:"Yashirin",chk:"Emailni tasdiqlang yoki qayta kiring"},
 tg:{home:"Асосӣ",favs:"Дӯстдошта",post:"Эълон",me:"Профил",login:"Ворид шудан",reg:"Бақайдгирӣ",out:"Баромадан",q:"Ҷустуҷӯ...",all:"Ҳама",city:"Шаҳр",dist:"Ноҳия",cond:"Ҳолат",new:"Нав",used:"Истифодашуда",pf:"Нарх аз",pt:"Нарх то",sort:"Тартиб",s1:"Навҳо",s2:"Арзонҳо",s3:"Гаронҳо",title:"Ном",descr:"Тавсиф",price:"Нарх (TJS)",photos:"Аксҳо (то 6)",save:"Нигоҳ доштан",del:"Нест кардан",edit:"Таҳрир",call:"Занг",tg:"Telegram",rep:"Шикоят",why:"Сабаби шикоят:",sent:"Фиристода шуд",more:"Боз",none:"Эълон ёфт нашуд",name:"Ном",phone:"Телефон",pass:"Рамз (8+)",mine:"Эълонҳои ман",ok:"Нигоҳ дошта шуд",err:"Хато: ",need:"Аввал ворид шавед",admin:"Админ",hide:"Пинҳон",show:"Нишон",res:"Бастан",reps:"Шикоятҳо",lst:"Эълонҳо",sure:"Боварӣ доред?",deny:"Иҷозат нест",cat:"Категория",hid:"Пинҳон",chk:"Emailро тасдиқ кунед ё дубора ворид шавед"},
 ru:{home:"Главная",favs:"Избранное",post:"Объявление",me:"Профиль",login:"Войти",reg:"Регистрация",out:"Выйти",q:"Поиск...",all:"Все",city:"Город",dist:"Район",cond:"Состояние",new:"Новое",used:"Б/у",pf:"Цена от",pt:"Цена до",sort:"Сортировка",s1:"Новые",s2:"Дешевле",s3:"Дороже",title:"Название",descr:"Описание",price:"Цена (TJS)",photos:"Фото (до 6)",save:"Сохранить",del:"Удалить",edit:"Изменить",call:"Позвонить",tg:"Telegram",rep:"Жалоба",why:"Причина жалобы:",sent:"Отправлено",more:"Ещё",none:"Объявлений нет",name:"Имя",phone:"Телефон",pass:"Пароль (8+)",mine:"Мои объявления",ok:"Сохранено",err:"Ошибка: ",need:"Сначала войдите",admin:"Админ",hide:"Скрыть",show:"Показать",res:"Закрыть",reps:"Жалобы",lst:"Объявления",sure:"Вы уверены?",deny:"Нет доступа",cat:"Категория",hid:"Скрыто",chk:"Подтвердите email или войдите снова"}};
+const CHAT_TXT={
+uz:{chats:"Xabarlar",chat:"Chat",newchat:"Sotuvchiga xabar yozish",nochat:"Hozircha suhbatlar yo‘q",startchat:"Mahsulot sahifasidan sotuvchiga yozishingiz mumkin.",write:"Xabar yozing...",send:"Yuborish",stickers:"Stikerlar",online:"Online",offline:"Oxirgi faollik",typing:"Yozmoqda...",listing:"E’lon",noMessages:"Suhbatni boshlang 👋",chatError:"Chatni ochib bo‘lmadi",selfChat:"O‘zingizga xabar yubora olmaysiz",chatLogin:"Xabar yuborish uchun tizimga kiring",chatSent:"Xabar yuborildi",today:"Bugun",yesterday:"Kecha",unread:"Yangi"},
+tg:{chats:"Паёмҳо",chat:"Чат",newchat:"Ба фурӯшанда паём нависед",nochat:"Ҳоло суҳбат нест",startchat:"Аз саҳифаи маҳсулот ба фурӯшанда нависед.",write:"Паём нависед...",send:"Фиристодан",stickers:"Стикерҳо",online:"Онлайн",offline:"Охирин фаъолият",typing:"Менависад...",listing:"Эълон",noMessages:"Суҳбатро оғоз кунед 👋",chatError:"Чат кушода нашуд",selfChat:"Ба худ паём фиристода намешавад",chatLogin:"Барои паём фиристодан ворид шавед",chatSent:"Паём фиристода шуд",today:"Имрӯз",yesterday:"Дирӯз",unread:"Нав"},
+ru:{chats:"Сообщения",chat:"Чат",newchat:"Написать продавцу",nochat:"Пока нет переписок",startchat:"Напишите продавцу со страницы товара.",write:"Введите сообщение...",send:"Отправить",stickers:"Стикеры",online:"В сети",offline:"Был(а) недавно",typing:"Печатает...",listing:"Объявление",noMessages:"Начните общение 👋",chatError:"Не удалось открыть чат",selfChat:"Нельзя написать самому себе",chatLogin:"Войдите, чтобы отправить сообщение",chatSent:"Сообщение отправлено",today:"Сегодня",yesterday:"Вчера",unread:"Новое"}
+};
+const chatT=k=>(CHAT_TXT[lang]||CHAT_TXT.uz)[k]||CHAT_TXT.uz[k]||k;
+let activeChatChannel=null,activeChatId=null,typingTimer=null,chatTypingTimer=null;
+const CHAT_STICKERS=["😀","😁","😂","🤣","🥰","😍","😘","😎","🤩","🥳","😊","😉","🤝","👍","👎","👏","🙏","💪","🔥","❤️","💙","💯","🎉","😅","🤔","🙌","🫶","🤗","😴","😭"];
+
 let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:"",cond:"",min:"",max:"",sort:"new",n:1},mode="login";
 const t=k=>L[lang][k]||k,$=s=>document.querySelector(s),app=$("#app"),LI={uz:2,tg:3,ru:4};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -98,7 +121,7 @@ const meta=session.user.user_metadata||{};
 me=Object.assign({name:meta.name||"Foydalanuvchi",phone:meta.phone||"",telegram:meta.telegram||"",role:"user"},a.data||{},{id:session.user.id,email:session.user.email});
 favs=new Set((b.data||[]).map(x=>Number(x.listing_id)))
 }
-function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
+function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],[me?"#/chats":"#/auth","💬",chatT("chats")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
 $("#nav").innerHTML=it.map(x=>`<a href="${x[0]}" class="${h===x[0]?"on":""}"><span>${x[1]}</span>${esc(x[2])}</a>`).join("")}
 
 async function home(){
@@ -133,9 +156,67 @@ app.innerHTML=`${l.images.length?`<div class="gal">${l.images.map(u=>`<img src="
 <h1>${esc(l.title)}</h1><h2 style="color:var(--sky)">${fmt(l.price)}</h2>
 <small>${esc(cn(l.cat))} · ${t(l.cond)} · ${esc(l.city)}${l.district?", "+esc(l.district):""} · ${new Date(l.created_at).toLocaleDateString("ru-RU")}${l.status==="hidden"?" · "+t("hid"):""}</small>
 <div class="box" style="white-space:pre-wrap">${esc(l.descr||"")}</div>
-<div class="box"><b>${esc(p.name||"")}</b><div class="row">${ph?`<a class="btn" href="tel:${esc(ph)}">📞 ${t("call")}: ${esc(p.phone)}</a>`:""}${tgu?`<a class="btn g" target="_blank" rel="noopener" href="https://t.me/${esc(tgu)}">✈ ${t("tg")}</a>`:""}</div></div>
+<div class="box"><b>${esc(p.name||"")}</b><div class="row">${!own?`<button class="btn" data-a="chat" data-listing="${l.id}" data-seller="${l.user_id}">💬 ${chatT("newchat")}</button>`:""}${ph?`<a class="btn g" href="tel:${esc(ph)}">📞 ${t("call")}: ${esc(p.phone)}</a>`:""}${tgu?`<a class="btn g" target="_blank" rel="noopener" href="https://t.me/${esc(tgu)}">✈ ${t("tg")}</a>`:""}</div></div>
 <div class="row"><button class="btn g" data-a="fav" data-id="${l.id}">${favs.has(l.id)?"♥":"♡"} ${t("favs")}</button><button class="btn g" data-a="rep" data-id="${l.id}">⚑ ${t("rep")}</button>
 ${own||adm()?`<a class="btn g" href="#/post/${l.id}">${t("edit")}</a><button class="btn r" data-a="del" data-id="${l.id}">${t("del")}</button>`:""}${adm()?`<button class="btn g" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button>`:""}</div>`}
+
+function chatTime(v){if(!v)return "";return new Date(v).toLocaleTimeString(lang==="ru"?"ru-RU":lang==="tg"?"tg-TJ":"uz-UZ",{hour:"2-digit",minute:"2-digit"})}
+function chatDate(v){const d=new Date(v),now=new Date();if(d.toDateString()===now.toDateString())return chatT("today");const y=new Date();y.setDate(y.getDate()-1);if(d.toDateString()===y.toDateString())return chatT("yesterday");return d.toLocaleDateString()}
+async function startChat(listingId,sellerId){
+ if(!me){toast(chatT("chatLogin"));location.hash="#/auth";return}
+ if(sellerId===me.id){toast(chatT("selfChat"));return}
+ try{
+  let q=await sb.from("conversations").select("id").eq("listing_id",listingId).eq("buyer_id",me.id).eq("seller_id",sellerId).maybeSingle();
+  if(q.error)throw q.error;
+  let cid=q.data&&q.data.id;
+  if(!cid){const ins=await sb.from("conversations").insert({listing_id:listingId,buyer_id:me.id,seller_id:sellerId}).select("id").single();if(ins.error){if(ins.error.code==="23505"){const retry=await sb.from("conversations").select("id").eq("listing_id",listingId).eq("buyer_id",me.id).eq("seller_id",sellerId).single();if(retry.error)throw retry.error;cid=retry.data.id}else throw ins.error}else cid=ins.data.id}
+  location.hash="#/chat/"+cid;
+ }catch(e){fail(e)}
+}
+async function chatsV(){
+ if(!me){location.hash="#/auth";return}
+ app.innerHTML=`<div class="chat-shell"><div class="chat-heading"><h1>💬 ${chatT("chats")}</h1><span class="muted">ТЕХНО БОЗОРИ</span></div><div class="chat-list" id="chatList"><div class="chat-empty">⏳</div></div></div>`;
+ const box=$("#chatList");
+ const {data:rows,error}=await sb.from("conversations").select("id,listing_id,buyer_id,seller_id,last_message_at,created_at").or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`).order("last_message_at",{ascending:false}).limit(60);
+ if(error)throw error;
+ if(!rows||!rows.length){box.innerHTML=`<div class="chat-empty"><div style="font-size:34px">💬</div><b>${chatT("nochat")}</b><p style="margin-top:6px;font-size:13px">${chatT("startchat")}</p></div>`;return}
+ const ids=rows.map(x=>x.id),userIds=[...new Set(rows.flatMap(x=>[x.buyer_id,x.seller_id]))],listingIds=[...new Set(rows.map(x=>x.listing_id))];
+ const [pr,lr,mr]=await Promise.all([
+  sb.from("profiles").select("id,name").in("id",userIds),
+  sb.from("listings").select("id,title,images").in("id",listingIds),
+  sb.from("messages").select("id,conversation_id,sender_id,body,sticker,created_at,read_at").in("conversation_id",ids).order("created_at",{ascending:false}).limit(500)
+ ]);
+ if(pr.error)throw pr.error;if(lr.error)throw lr.error;if(mr.error)throw mr.error;
+ const users=new Map((pr.data||[]).map(x=>[x.id,x.name||"Foydalanuvchi"])),listings=new Map((lr.data||[]).map(x=>[x.id,x]));
+ const last=new Map(),unread=new Map();for(const m of mr.data||[]){if(!last.has(m.conversation_id))last.set(m.conversation_id,m);if(m.sender_id!==me.id&&!m.read_at)unread.set(m.conversation_id,(unread.get(m.conversation_id)||0)+1)}
+ box.innerHTML=rows.map(c=>{const other=c.buyer_id===me.id?c.seller_id:c.buyer_id,l=listings.get(c.listing_id)||{},m=last.get(c.id),label=m?(m.sticker||m.body||"📎"):chatT("noMessages"),u=unread.get(c.id)||0;return `<a class="chat-item" href="#/chat/${c.id}"><div class="chat-avatar">${esc((users.get(other)||"?" ).slice(0,1).toUpperCase())}</div><div class="chat-item-main"><div class="chat-item-top"><span class="chat-item-name">${esc(users.get(other)||"Foydalanuvchi")}</span><span class="chat-time">${chatDate(m?m.created_at:c.last_message_at||c.created_at)}</span></div><span class="chat-preview">${esc(l.title||chatT("listing"))} · ${esc(label)}</span></div>${u?`<span class="chat-unread">${u>99?"99+":u}</span>`:""}</a>`}).join("");
+}
+function messageHTML(m){const mine=m.sender_id===me.id,sticker=!!m.sticker;return `<div class="chat-msg ${mine?"mine":"theirs"} ${sticker?"chat-msg-sticker":""}" data-message-id="${m.id}">${sticker?esc(m.sticker):esc(m.body||"")}<div class="chat-msg-meta"><span>${chatTime(m.created_at)}</span>${mine?`<span>${m.read_at?"✓✓":"✓"}</span>`:""}</div></div>`}
+async function markChatRead(id){const r=await sb.from("messages").update({read_at:new Date().toISOString()}).eq("conversation_id",id).neq("sender_id",me.id).is("read_at",null);if(r.error)console.warn("Read receipt:",r.error.message)}
+async function chatV(id){
+ if(!me){location.hash="#/auth";return}
+ if(activeChatChannel){await sb.removeChannel(activeChatChannel);activeChatChannel=null}activeChatId=id;
+ const cr=await sb.from("conversations").select("id,listing_id,buyer_id,seller_id").eq("id",id).maybeSingle();if(cr.error)throw cr.error;if(!cr.data){app.innerHTML=`<div class="chat-empty">${chatT("chatError")}</div>`;return}
+ const c=cr.data,other=c.buyer_id===me.id?c.seller_id:c.buyer_id;if(c.buyer_id!==me.id&&c.seller_id!==me.id){app.innerHTML=`<div class="chat-empty">Ruxsat yo‘q</div>`;return}
+ const [pr,lr,mr]=await Promise.all([sb.from("profiles").select("id,name").eq("id",other).maybeSingle(),sb.from("listings").select("id,title,price,images").eq("id",c.listing_id).maybeSingle(),sb.from("messages").select("id,sender_id,body,sticker,created_at,read_at").eq("conversation_id",id).order("created_at",{ascending:true}).limit(100)]);
+ if(pr.error)throw pr.error;if(lr.error)throw lr.error;if(mr.error)throw mr.error;
+ const person=pr.data||{},listing=lr.data||{},messages=mr.data||[];
+ app.innerHTML=`<div class="chat-shell"><section class="chat-window"><div class="chat-top"><button class="chat-back" id="chatBack" type="button" aria-label="Orqaga">‹</button><div class="chat-avatar">${esc((person.name||"?").slice(0,1).toUpperCase())}</div><div class="chat-top-info"><b>${esc(person.name||"Foydalanuvchi")}</b><span class="chat-status" id="chatStatus">${chatT("online")}</span></div></div><a class="chat-product" href="#/l/${listing.id||c.listing_id}">${listing.images&&listing.images[0]?`<img src="${esc(listing.images[0])}" alt="">`:`<div class="chat-avatar">📦</div>`}<span class="chat-product-info"><b>${esc(listing.title||chatT("listing"))}</b><small>${listing.price!=null?fmt(listing.price):""} · ${chatT("listing")}</small></span><span>›</span></a><div class="chat-messages" id="chatMessages">${messages.length?messages.map(messageHTML).join(""):`<div class="chat-empty">${chatT("noMessages")}</div>`}</div><div class="chat-typing" id="chatTyping"></div><div class="chat-composer-wrap"><div class="sticker-panel" id="stickerPanel" hidden>${CHAT_STICKERS.map(s=>`<button class="sticker-choice" type="button" data-sticker="${s}">${s}</button>`).join("")}</div><div class="chat-tools"><button class="chat-tool" id="stickerToggle" type="button" aria-label="${chatT("stickers")}" title="${chatT("stickers")}">☺</button><span class="form-help">${chatT("stickers")}</span></div><div class="chat-compose"><textarea id="chatInput" rows="1" maxlength="2000" placeholder="${chatT("write")}"></textarea><button class="chat-send" id="chatSend" type="button" aria-label="${chatT("send")}">➤</button></div></div></section></div>`;
+ const msgBox=$("#chatMessages"),input=$("#chatInput"),send=$("#chatSend"),stickerPanel=$("#stickerPanel");
+ const scrollBottom=()=>{msgBox.scrollTop=msgBox.scrollHeight};scrollBottom();await markChatRead(id);
+ $("#chatBack").onclick=()=>{location.hash="#/chats"};
+ $("#stickerToggle").onclick=()=>{stickerPanel.hidden=!stickerPanel.hidden};
+ async function deliver(body,sticker){if(!body&&!sticker)return;if(send.disabled)return;send.disabled=true;try{const r=await sb.from("messages").insert({conversation_id:id,sender_id:me.id,body:body||null,sticker:sticker||null}).select("id,sender_id,body,sticker,created_at,read_at").single();if(r.error)throw r.error;const empty=msgBox.querySelector(".chat-empty");if(empty)empty.remove();if(!msgBox.querySelector(`[data-message-id="${r.data.id}"]`))msgBox.insertAdjacentHTML("beforeend",messageHTML(r.data));scrollBottom();input.value="";input.style.height="auto";stickerPanel.hidden=true;await channel.send({type:"broadcast",event:"typing",payload:{user_id:me.id,typing:false}})}catch(e){fail(e)}finally{send.disabled=false;input.focus()}}
+ send.onclick=()=>deliver(input.value.trim(),null);
+ input.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send.click()}};
+ input.oninput=()=>{input.style.height="auto";input.style.height=Math.min(input.scrollHeight,112)+"px";channel.send({type:"broadcast",event:"typing",payload:{user_id:me.id,typing:!!input.value.trim()}});clearTimeout(typingTimer);typingTimer=setTimeout(()=>channel.send({type:"broadcast",event:"typing",payload:{user_id:me.id,typing:false}}),1300)};
+ stickerPanel.onclick=e=>{const b=e.target.closest("[data-sticker]");if(b)deliver(null,b.dataset.sticker)};
+ const channel=sb.channel("market-chat-"+id,{config:{presence:{key:me.id},broadcast:{self:false}}});
+ channel.on("postgres_changes",{event:"INSERT",schema:"public",table:"messages",filter:"conversation_id=eq."+id},async payload=>{const m=payload.new;if(!msgBox.querySelector(`[data-message-id="${m.id}"]`)){const empty=msgBox.querySelector(".chat-empty");if(empty)empty.remove();msgBox.insertAdjacentHTML("beforeend",messageHTML(m));scrollBottom()}if(m.sender_id!==me.id)await markChatRead(id)});
+ channel.on("broadcast",{event:"typing"},({payload})=>{if(payload.user_id!==me.id)$("#chatTyping").textContent=payload.typing?chatT("typing"):""});
+ channel.on("presence",{event:"sync"},()=>{const state=channel.presenceState();const online=Object.values(state).flat().some(x=>x.user_id===other);$("#chatStatus").textContent=online?chatT("online"):chatT("offline")});
+ channel.subscribe(async status=>{if(status==="SUBSCRIBED"){await channel.track({user_id:me.id,online_at:new Date().toISOString()})}});activeChatChannel=channel;
+}
 
 async function postV(id){
 if(!me){location.hash="#/auth";toast(t("need"));return}
@@ -195,14 +276,15 @@ app.innerHTML=`<h1>⚙ ${t("admin")}</h1><h2>${t("reps")}</h2>${(b.data||[]).map
 app.onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
 try{if(a==="out"){await sb.auth.signOut();me=null;favs=new Set();location.hash="#/";return route()}
 if(!me)return(location.hash="#/auth",toast(t("need")));
+if(a==="chat")return startChat(+b.dataset.listing,b.dataset.seller);
 if(a==="fav"){if(favs.has(id)){await sb.from("favorites").delete().eq("listing_id",id);favs.delete(id)}else{const r=await sb.from("favorites").insert({listing_id:id});if(r.error)throw r.error;favs.add(id)}return route()}
 if(a==="rep"){const w=prompt(t("why"));if(!w||w.trim().length<3)return;const r=await sb.from("reports").insert({listing_id:id,reason:w.trim().slice(0,500)});if(r.error)throw r.error;return toast(t("sent"))}
 if(a==="del"){if(!confirm(t("sure")))return;const{data:l}=await sb.from("listings").select("images").eq("id",id).maybeSingle();const r=await sb.from("listings").delete().eq("id",id);if(r.error)throw r.error;if(l)await rmImgs(l.images);toast(t("ok"));if(location.hash.startsWith("#/l/"))location.hash="#/";else route();return}
 if(a==="hide"||a==="show"){const r=await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"});if(r.error)throw r.error;return route()}
 if(a==="res"){const r=await sb.from("reports").update({resolved:true}).eq("id",id);if(r.error)throw r.error;return route()}}catch(x){fail(x)}};
 
-async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");nav();window.scrollTo(0,0);
-try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x)}}
+async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(h[0]!=="chat"&&activeChatChannel){sb.removeChannel(activeChatChannel);activeChatChannel=null;activeChatId=null}nav();window.scrollTo(0,0);
+try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x)}}
 $("#lg").value=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
 sb.auth.onAuthStateChange((ev)=>{if(ev==="SIGNED_OUT"){me=null;nav()}});window.addEventListener("hashchange",route);
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
