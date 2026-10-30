@@ -1,296 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080b16">
-<meta name="description" content="ТЕХНО БОЗОРИ — foydalanuvchi profili">
-<title>ТЕХНО БОЗОРИ — Profil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05070D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ТЕХНО БОЗОРИ">
+<title>ТЕХНО БОЗОРИ</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
-:root{color-scheme:dark;--bg:#080b16;--surface:#101a32;--surface2:#14213e;--line:#263657;--text:#f4f7ff;--muted:#9aa9c7;--blue:#39a9f5;--blue-dark:#0d2744;--danger:#e45d72;--radius:18px}
-*{box-sizing:border-box}
-html{min-height:100%;background:var(--bg);scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-.topbar{height:68px;padding:0 max(16px,calc((100vw - 760px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:10;background:#080b16ed;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-.brand{font-weight:850;font-size:20px;letter-spacing:.2px;white-space:nowrap}.brand span{color:var(--blue)}
-.icon-button{width:42px;height:42px;border:1px solid var(--line);border-radius:13px;background:var(--surface2);color:var(--text);font-size:20px}
-main{max-width:760px;margin:0 auto;padding:24px 16px calc(100px + env(safe-area-inset-bottom))}
-.profile{padding:6px 0 0}
-.profile-head{display:flex;align-items:center;gap:20px}
-.avatar-wrap{position:relative;flex:0 0 108px;width:108px;height:108px}
-.avatar,.avatar-fallback{width:108px;height:108px;border-radius:50%;border:3px solid #328fe0;background:#1c3155;object-fit:cover}
-.avatar-fallback{display:grid;place-items:center;font-size:42px}
-.avatar-edit{position:absolute;right:0;bottom:0;width:34px;height:34px;border-radius:50%;border:3px solid var(--bg);background:var(--blue);color:#061426;font-weight:900;font-size:20px}
-.identity{flex:1;min-width:0}
-.name{font-size:clamp(19px,4vw,24px);font-weight:850;overflow-wrap:anywhere;line-height:1.2}
-.username{margin-top:5px;color:var(--muted);overflow-wrap:anywhere}
-.stats{display:flex;gap:clamp(15px,5vw,34px);margin-top:15px}
-.stat{min-width:48px;text-align:center}
-.stat strong{display:block;font-size:18px;font-weight:800}
-.stat span{display:block;color:var(--muted);font-size:12px;white-space:nowrap}
-.bio{margin:17px 0 15px;color:#dbe5f7;white-space:pre-wrap;overflow-wrap:anywhere}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.btn{min-height:45px;border-radius:12px;padding:10px 14px;font-weight:750;border:1px solid transparent}
-.btn-primary{background:var(--blue);color:#061426}
-.btn-secondary{background:var(--surface2);border-color:var(--line);color:var(--text)}
-.account-card{margin-top:17px;padding:13px 15px;border:1px solid var(--line);border-radius:15px;background:var(--surface);display:flex;justify-content:space-between;align-items:center;gap:12px}
-.account-title{font-weight:750}.account-sub{font-size:12px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
-.private-label{font-size:12px;color:var(--muted);white-space:nowrap}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);margin-top:25px;border-top:1px solid var(--line)}
-.tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:14px 5px;font-weight:750}
-.tab[aria-selected="true"]{color:var(--blue);border-bottom-color:var(--blue)}
-.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding-top:6px}
-.post{position:relative;min-width:0;aspect-ratio:1;border:1px solid #253759;border-radius:9px;background:linear-gradient(145deg,#18294a,#0d162b);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;gap:5px;overflow:hidden}
-.post-icon{font-size:clamp(25px,7vw,38px)}
-.post-title{font-size:12px;font-weight:750;overflow-wrap:anywhere}
-.post-price{font-size:11px;color:var(--muted)}
-.empty{grid-column:1/-1;text-align:center;padding:42px 14px;color:var(--muted)}
-.empty-icon{font-size:34px;margin-bottom:8px}
-.about-panel{margin-top:10px;padding:16px;border:1px solid var(--line);border-radius:15px;background:var(--surface)}
-.about-panel h2{font-size:17px;margin:0 0 12px}
-.about-row{padding:10px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
-.about-row:last-child{border-bottom:0}
-.bottom-nav{position:fixed;z-index:12;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 4px max(8px,env(safe-area-inset-bottom));background:#0b1328f5;border-top:1px solid var(--line);backdrop-filter:blur(14px)}
-.bottom-nav a{color:var(--muted);text-decoration:none;text-align:center;font-size:12px;padding:3px}
-.bottom-nav a strong{display:block;font-size:23px;line-height:1.3;font-weight:500}
-.bottom-nav a.active{color:var(--blue)}
-dialog{width:min(92vw,480px);max-height:88dvh;overflow:auto;padding:20px;border:1px solid var(--line);border-radius:20px;background:#101a32;color:var(--text)}
-dialog::backdrop{background:#000b;backdrop-filter:blur(3px)}
-.dialog-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.dialog-head h2{font-size:20px;margin:0}
-.close{border:0;background:transparent;color:var(--muted);font-size:25px}
-.field{display:block;margin:14px 0;color:var(--muted);font-size:13px}
-.field input,.field textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);border-radius:11px;background:#0a1225;color:var(--text);font-size:16px}
-.field textarea{min-height:88px;resize:vertical}
-.help{font-size:12px;color:var(--muted);margin-top:5px}
-.dialog-actions{display:flex;gap:10px;margin-top:18px}
-.dialog-actions .btn{flex:1}
-.notice{margin-top:12px;color:var(--muted);font-size:12px;text-align:center}
-[hidden]{display:none!important}
-@media(max-width:430px){main{padding:19px 13px calc(96px + env(safe-area-inset-bottom))}.profile-head{gap:13px}.avatar-wrap,.avatar,.avatar-fallback{width:86px;height:86px;flex-basis:86px}.avatar-fallback{font-size:34px}.stats{gap:15px}.stat span{font-size:11px}.private-label{font-size:11px}}
+:root{color-scheme:dark;--bg:#05070D;--s:#0B1226;--l:#1B2748;--n:#0F1E4A;--sky:#3FA9F5;--ink:#EAF1FF;--m:#8FA0C8}
+*{box-sizing:border-box;margin:0}body{background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+input,select,textarea{width:100%;background:var(--s);border:1.5px solid var(--l);border-radius:10px;padding:10px}textarea{min-height:100px}
+:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--l);padding:calc(8px + env(safe-area-inset-top)) 14px 8px;display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.02em}.brand img{width:30px;height:30px;border-radius:8px}.brand i{font-style:normal;color:var(--sky)}
+header select{width:auto;margin-left:auto;padding:6px}
+main{max-width:1000px;margin:0 auto;padding:14px}
+.btn{border:0;border-radius:10px;background:var(--sky);color:#04101F;padding:10px 16px;font-weight:700;display:inline-block;text-align:center}.btn.g{background:var(--n);color:var(--ink)}.btn.r{background:#7A1F2B;color:#fff}.btn.sm{padding:6px 10px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.row>*{flex:1;min-width:120px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0}.chip{flex:none;border:1.5px solid var(--l);background:var(--s);border-radius:999px;padding:6px 12px;white-space:nowrap}.chip.on{background:var(--n);border-color:var(--sky)}
+.catgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0 14px}.catitem{min-height:54px;text-align:left;border:1px solid var(--l);border-radius:12px;background:var(--s);padding:10px;display:flex;align-items:center;gap:9px}.catitem.on{border-color:var(--sky);background:var(--n)}.catitem .ico{font-size:22px}.catitem .ctxt{font-size:13px;font-weight:650;line-height:1.25}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px}
+.card{background:var(--s);border:1px solid var(--l);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:4/3;background:var(--n);display:grid;place-items:center;font-size:32px}.ph img{width:100%;height:100%;object-fit:cover}
+.in{padding:10px;display:flex;flex-direction:column;gap:2px}.in b{color:var(--sky)}.in span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}small{color:var(--m)}
+.box{background:var(--s);border:1px solid var(--l);border-radius:14px;padding:14px;margin:10px 0}.box label{display:block;margin:10px 0 4px;color:var(--m);font-size:13px}
+.gal{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory}.gal img{height:260px;border-radius:12px;scroll-snap-align:start;max-width:92%}
+.empty{text-align:center;color:var(--m);padding:40px 0}h1{font-size:20px;margin:6px 0}h2{font-size:17px;margin:12px 0 6px}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--s);border-top:1px solid var(--l);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:5}
+nav a{flex:1;text-align:center;padding:9px 0;font-size:12px;color:var(--m)}nav a.on{color:var(--sky)}nav a span{display:block;font-size:20px}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap}.thumbs div{position:relative}.thumbs img{width:70px;height:70px;object-fit:cover;border-radius:8px}.thumbs button{position:absolute;top:-6px;right:-6px;border-radius:50%;width:22px;height:22px;border:0;background:#7A1F2B;color:#fff}
+.li{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--l)}.li>a{flex:1;overflow:hidden}
+.dash{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.dashcard{background:linear-gradient(145deg,#101d3a,#0b1226);border:1px solid var(--l);border-radius:13px;padding:13px}.dashcard b{display:block;font-size:22px;color:var(--sky)}.dashcard span{font-size:12px;color:var(--m)}.profilebox{background:var(--s);border:1px solid var(--l);border-radius:15px;padding:15px;margin:12px 0}.profilebox label{display:block;margin:10px 0 4px;color:var(--m);font-size:13px}.profiletop{display:flex;justify-content:space-between;gap:10px;align-items:center}.muted{color:var(--m)}
+#toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--sky);color:#04101F;padding:9px 16px;border-radius:999px;display:none;z-index:9;font-weight:700}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">ТЕХНО <span>БОЗОРИ</span></div>
-  <button class="icon-button" id="settingsButton" type="button" aria-label="Sozlamalar">⚙</button>
-</header>
-
-<main>
-  <section class="profile" aria-label="Foydalanuvchi profili">
-    <div class="profile-head">
-      <div class="avatar-wrap">
-        <div class="avatar-fallback" id="avatarFallback" aria-label="Profil rasmi yo‘q">👤</div>
-        <img class="avatar" id="avatarImage" alt="Profil rasmi" hidden>
-        <button class="avatar-edit" id="changeAvatarButton" type="button" aria-label="Profil rasmini almashtirish">＋</button>
-        <input id="avatarInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
-      </div>
-      <div class="identity">
-        <div class="name" id="profileName">Shahzod Mirzobekov</div>
-        <div class="username" id="profileUsername">@MirzobekovShahzod</div>
-        <div class="stats" aria-label="Profil statistikasi">
-          <div class="stat"><strong id="listingCount">1</strong><span>E’lonlar</span></div>
-          <div class="stat"><strong id="followersCount">0</strong><span>Obunachilar</span></div>
-          <div class="stat"><strong id="followingCount">0</strong><span>Obunalar</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bio" id="profileBio">📱 Texnika savdosi | Ishonchli oldi-sotdi</div>
-    <div class="actions">
-      <button class="btn btn-primary" id="editProfileButton" type="button">Profilni tahrirlash</button>
-      <button class="btn btn-secondary" id="shareProfileButton" type="button">Ulashish ↗</button>
-    </div>
-
-    <section class="account-card" aria-label="Akkaunt ma’lumotlari">
-      <div>
-        <div class="account-title">Akkaunt ma’lumotlari</div>
-        <div class="account-sub" id="accountEmail">Email: tizimga kirilganda ko‘rinadi</div>
-      </div>
-      <span class="private-label">🔒 Shaxsiy</span>
-    </section>
-  </section>
-
-  <nav class="tabs" aria-label="Profil bo‘limlari">
-    <button class="tab" type="button" data-tab="listings" aria-selected="true">▦ E’lonlar</button>
-    <button class="tab" type="button" data-tab="saved" aria-selected="false">♡ Saqlangan</button>
-    <button class="tab" type="button" data-tab="about" aria-selected="false">ⓘ Haqida</button>
-  </nav>
-
-  <section class="posts" id="listingsPanel" aria-label="Mening e’lonlarim">
-    <article class="post"><div class="post-icon">📱</div><div class="post-title">iPhone 8</div><div class="post-price">450 TJS</div></article>
-  </section>
-  <section class="posts" id="savedPanel" hidden>
-    <div class="empty"><div class="empty-icon">♡</div>Hozircha saqlangan e’lonlar yo‘q</div>
-  </section>
-  <section class="about-panel" id="aboutPanel" hidden>
-    <h2>Profil haqida</h2>
-    <div class="about-row" id="aboutName">Ism: Shahzod Mirzobekov</div>
-    <div class="about-row" id="aboutUsername">Username: @MirzobekovShahzod</div>
-    <div class="about-row" id="aboutTelegram">Telegram: @MirzobekovShahzod</div>
-    <p class="help">Telefon raqami va email kabi shaxsiy ma’lumotlar ommaviy profilga chiqarilmaydi.</p>
-  </section>
-</main>
-
-<nav class="bottom-nav" aria-label="Asosiy navigatsiya">
-  <a href="./" aria-label="Bosh sahifa"><strong>⌂</strong>Bosh sahifa</a>
-  <a href="./#favorites" aria-label="Sevimlilar"><strong>♥</strong>Sevimlilar</a>
-  <a href="./#new-listing" aria-label="E’lon joylash"><strong>＋</strong>E’lon</a>
-  <a class="active" href="index.html" aria-current="page" aria-label="Profil"><strong>●</strong>Profil</a>
-</nav>
-
-<dialog id="editDialog">
-  <div class="dialog-head"><h2>Profilni tahrirlash</h2><button class="close" id="closeDialogButton" type="button" aria-label="Yopish">×</button></div>
-  <p class="help">Profilingizda ko‘rinadigan ma’lumotlarni kiriting.</p>
-  <label class="field">Ism<input id="nameInput" maxlength="60" autocomplete="name"></label>
-  <label class="field">Username<input id="usernameInput" maxlength="30" autocomplete="nickname"><span class="help">Faqat harf, raqam va pastki chiziq ishlating.</span></label>
-  <label class="field">Bio<textarea id="bioInput" maxlength="160"></textarea><span class="help">160 belgigacha.</span></label>
-  <label class="field">Telegram username<input id="telegramInput" maxlength="40" placeholder="@username"></label>
-  <div class="dialog-actions">
-    <button class="btn btn-secondary" id="cancelButton" type="button">Bekor qilish</button>
-    <button class="btn btn-primary" id="saveButton" type="button">Saqlash</button>
-  </div>
-  <div class="notice">Ushbu mustaqil sahifa hozircha ma’lumotlarni shu qurilmada saqlaydi.</div>
-</dialog>
-
+<header><a class="brand" href="#/"><img src="icon.svg" alt=""><span>ТЕХНО <i>БОЗОРИ</i></span></a>
+<select id="lg" aria-label="Til"><option value="uz">O‘zbekcha</option><option value="tg">Тоҷикӣ</option><option value="ru">Русский</option></select></header>
+<main id="app"></main>
+<nav id="nav"></nav><div id="toast" role="status"></div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
-(() => {
-  'use strict';
-  const $ = id => document.getElementById(id);
-  const STORAGE_KEY = 'texno_bozori_profile_v1';
-  const defaults = {
-    name: 'Shahzod Mirzobekov',
-    username: 'MirzobekovShahzod',
-    bio: '📱 Texnika savdosi | Ishonchli oldi-sotdi',
-    telegram: 'MirzobekovShahzod',
-    avatar: ''
-  };
-  let profile = {...defaults};
+"use strict";
+if(!window.supabase||!window.CFG||!CFG.url||!CFG.key){
+  document.querySelector("#app").innerHTML='<section class="box"><h1>Ulanish sozlamasi topilmadi</h1><p>config.js va Supabase kutubxonasini tekshiring. Internet aloqasini ham tekshirib qayta yuklang.</p></section>';
+  throw new Error("Supabase konfiguratsiyasi yoki kutubxonasi yuklanmadi");
+}
+const sb=supabase.createClient(CFG.url,CFG.key);
+const CATS=[["phones","📱","Telefonlar va planshetlar","Телефонҳо ва планшетҳо","Телефоны и планшеты"],["pc","💻","Kompyuterlar va noutbuklar","Компютерҳо ва ноутбукҳо","Компьютеры и ноутбуки"],["tv","📺","Televizorlar va audio texnika","Телевизорҳо ва аудио","Телевизоры и аудио"],["home","🧊","Maishiy texnika","Техникаи маишӣ","Бытовая техника"],["cars","🚗","Avtomobillar va transport","Мошинҳо ва нақлиёт","Авто и транспорт"],["realty","🏠","Uy-joy va ko‘chmas mulk","Манзил ва амвол","Недвижимость"],["clothes","👕","Kiyim-kechak va poyabzal","Либос ва пойафзол","Одежда и обувь"],["furn","🛋️","Mebel va uy jihozlari","Мебел ва рӯзғор","Мебель и товары для дома"],["pets","🐾","Hayvonlar","Ҳайвонот","Животные"],["jobs","🛠️","Ish va xizmatlar","Кор ва хизматрасонӣ","Работа и услуги"],["kids","🧸","Bolalar va o‘yinchoqlar","Кӯдакон ва бозичаҳо","Детям и игрушки"],["sport","⚽","Sport va dam olish","Варзиш ва истироҳат","Спорт и отдых"],["build","🧱","Qurilish va ta’mirlash","Сохтмон ва таъмир","Строительство и ремонт"],["agri","🌾","Qishloq xo‘jaligi","Кишоварзӣ","Сельское хозяйство"],["business","🏪","Biznes va savdo jihozlari","Бизнес ва таҷҳизоти савдо","Бизнес и торговое оборудование"],["personal","🧳","Shaxsiy buyumlar","Ашёи шахсӣ","Личные вещи"],["books","📚","Kitoblar va ta’lim","Китоб ва маориф","Книги и образование"],["beauty","💄","Go‘zallik va parvarish","Зебоӣ ва нигоҳубин","Красота и уход"],["food","🥬","Oziq-ovqat mahsulotlari","Маҳсулоти хӯрокворӣ","Продукты питания"],["music","🎸","Musiqa va cholg‘u asboblari","Мусиқӣ ва асбобҳо","Музыка и инструменты"],["other","📦","Boshqa mahsulotlar","Дигар молҳо","Другое"]];
+const CITIES=["Душанбе","Хуҷанд","Бохтар","Кӯлоб","Истаравшан","Исфара","Б. Ғафуров","Спитамен","Ҷ. Расулов","Панҷакент","Ҳисор","Вахдат","Турсунзода","Дигар ҳудудлар"];
+const L={uz:{home:"Bosh sahifa",favs:"Sevimlilar",post:"E’lon",me:"Profil",login:"Kirish",reg:"Ro‘yxatdan o‘tish",out:"Chiqish",q:"Qidirish...",all:"Hammasi",city:"Shahar",dist:"Tuman",cond:"Holati",new:"Yangi",used:"Ishlatilgan",pf:"Narx dan",pt:"Narx gacha",sort:"Saralash",s1:"Yangilari",s2:"Arzonlari",s3:"Qimmatlari",title:"Nomi",descr:"Tavsif",price:"Narxi (TJS)",photos:"Rasmlar (6 tagacha)",save:"Saqlash",del:"O‘chirish",edit:"Tahrirlash",call:"Qo‘ng‘iroq",tg:"Telegram",rep:"Shikoyat",why:"Shikoyat sababi:",sent:"Yuborildi",more:"Yana",none:"E’lonlar topilmadi",name:"Ism",phone:"Telefon",pass:"Parol (8+)",mine:"Mening e’lonlarim",ok:"Saqlandi",err:"Xatolik: ",need:"Avval tizimga kiring",admin:"Admin",hide:"Yashirish",show:"Ko‘rsatish",res:"Yopish",reps:"Shikoyatlar",lst:"E’lonlar",sure:"Ishonchingiz komilmi?",deny:"Ruxsat yo‘q",cat:"Turkum",hid:"Yashirin",chk:"Emailni tasdiqlang yoki qayta kiring"},
+tg:{home:"Асосӣ",favs:"Дӯстдошта",post:"Эълон",me:"Профил",login:"Ворид шудан",reg:"Бақайдгирӣ",out:"Баромадан",q:"Ҷустуҷӯ...",all:"Ҳама",city:"Шаҳр",dist:"Ноҳия",cond:"Ҳолат",new:"Нав",used:"Истифодашуда",pf:"Нарх аз",pt:"Нарх то",sort:"Тартиб",s1:"Навҳо",s2:"Арзонҳо",s3:"Гаронҳо",title:"Ном",descr:"Тавсиф",price:"Нарх (TJS)",photos:"Аксҳо (то 6)",save:"Нигоҳ доштан",del:"Нест кардан",edit:"Таҳрир",call:"Занг",tg:"Telegram",rep:"Шикоят",why:"Сабаби шикоят:",sent:"Фиристода шуд",more:"Боз",none:"Эълон ёфт нашуд",name:"Ном",phone:"Телефон",pass:"Рамз (8+)",mine:"Эълонҳои ман",ok:"Нигоҳ дошта шуд",err:"Хато: ",need:"Аввал ворид шавед",admin:"Админ",hide:"Пинҳон",show:"Нишон",res:"Бастан",reps:"Шикоятҳо",lst:"Эълонҳо",sure:"Боварӣ доред?",deny:"Иҷозат нест",cat:"Категория",hid:"Пинҳон",chk:"Emailро тасдиқ кунед ё дубора ворид шавед"},
+ru:{home:"Главная",favs:"Избранное",post:"Объявление",me:"Профиль",login:"Войти",reg:"Регистрация",out:"Выйти",q:"Поиск...",all:"Все",city:"Город",dist:"Район",cond:"Состояние",new:"Новое",used:"Б/у",pf:"Цена от",pt:"Цена до",sort:"Сортировка",s1:"Новые",s2:"Дешевле",s3:"Дороже",title:"Название",descr:"Описание",price:"Цена (TJS)",photos:"Фото (до 6)",save:"Сохранить",del:"Удалить",edit:"Изменить",call:"Позвонить",tg:"Telegram",rep:"Жалоба",why:"Причина жалобы:",sent:"Отправлено",more:"Ещё",none:"Объявлений нет",name:"Имя",phone:"Телефон",pass:"Пароль (8+)",mine:"Мои объявления",ok:"Сохранено",err:"Ошибка: ",need:"Сначала войдите",admin:"Админ",hide:"Скрыть",show:"Показать",res:"Закрыть",reps:"Жалобы",lst:"Объявления",sure:"Вы уверены?",deny:"Нет доступа",cat:"Категория",hid:"Скрыто",chk:"Подтвердите email или войдите снова"}};
+let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:"",cond:"",min:"",max:"",sort:"new",n:1},mode="login";
+const t=k=>L[lang][k]||k,$=s=>document.querySelector(s),app=$("#app"),LI={uz:2,tg:3,ru:4};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>Number(n).toLocaleString("ru-RU")+" TJS",cn=s=>(CATS.find(c=>c[0]===s)||CATS[CATS.length-1])[LI[lang]];
+const toast=m=>{const e=$("#toast");e.textContent=m;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2200)};
+const fail=e=>toast(t("err")+(e.message||e)),adm=()=>me&&me.role==="admin";
+const opts=(a,sel,f)=>a.map(x=>`<option value="${esc(f?x[0]:x)}"${(f?x[0]:x)===sel?" selected":""}>${esc(f?f(x):x)}</option>`).join("");
+const card=l=>`<a class="card" href="#/l/${l.id}"><div class="ph">${l.images&&l.images[0]?`<img loading="lazy" src="${esc(l.images[0])}" alt="">`:"📷"}</div><div class="in"><b>${fmt(l.price)}</b><span>${esc(l.title)}</span><small>${esc(l.city)} · ${new Date(l.created_at).toLocaleDateString("ru-RU")}</small></div></a>`;
+const comp=f=>new Promise((ok,no)=>{const i=new Image();i.onload=()=>{const s=Math.min(1,1200/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*s;c.height=i.height*s;c.getContext("2d").drawImage(i,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error("img")),"image/jpeg",.8)};i.onerror=()=>no(new Error("img"));i.src=URL.createObjectURL(f)});
+const path=u=>{const i=u.indexOf("/images/");return i<0?null:decodeURIComponent(u.slice(i+8))};
+const rmImgs=a=>{const p=(a||[]).map(path).filter(Boolean);return p.length?sb.storage.from("images").remove(p):0};
 
-  function loadProfile() {
-    try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-      if (saved && typeof saved === 'object') profile = {...defaults, ...saved};
-    } catch (error) {
-      console.warn('Profil ma’lumotlarini o‘qib bo‘lmadi:', error);
-    }
-  }
+async function refreshMe(){
+const{data:{session},error:sessionError}=await sb.auth.getSession();
+if(sessionError)throw sessionError;
+if(!session){me=null;favs=new Set();return}
+const[a,b]=await Promise.all([
+  sb.from("profiles").select("id,name,phone,telegram,role").eq("id",session.user.id).maybeSingle(),
+  sb.from("favorites").select("listing_id")
+]);
+if(a.error)throw a.error;if(b.error)throw b.error;
+const meta=session.user.user_metadata||{};
+me=Object.assign({name:meta.name||"Foydalanuvchi",phone:meta.phone||"",telegram:meta.telegram||"",role:"user"},a.data||{},{id:session.user.id,email:session.user.email});
+favs=new Set((b.data||[]).map(x=>Number(x.listing_id)))
+}
+function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
+$("#nav").innerHTML=it.map(x=>`<a href="${x[0]}" class="${h===x[0]?"on":""}"><span>${x[1]}</span>${esc(x[2])}</a>`).join("")}
 
-  function renderProfile() {
-    $('profileName').textContent = profile.name || defaults.name;
-    $('profileUsername').textContent = '@' + (profile.username || defaults.username);
-    $('profileBio').textContent = profile.bio || '';
-    $('aboutName').textContent = 'Ism: ' + (profile.name || defaults.name);
-    $('aboutUsername').textContent = 'Username: @' + (profile.username || defaults.username);
-    $('aboutTelegram').textContent = 'Telegram: @' + (profile.telegram || 'kiritilmagan');
-    if (profile.avatar) {
-      $('avatarImage').src = profile.avatar;
-      $('avatarImage').hidden = false;
-      $('avatarFallback').hidden = true;
-    } else {
-      $('avatarImage').hidden = true;
-      $('avatarFallback').hidden = false;
-    }
-  }
+async function home(){
+app.innerHTML=`<input id="q" placeholder="${t("q")}" value="${esc(F.q)}"><h2>${t("cat")}</h2><div class="catgrid"><button class="catitem${F.cat?"":" on"}" data-c=""><span class="ico">▦</span><span class="ctxt">${t("all")}</span></button>${CATS.map(c=>`<button class="catitem${F.cat===c[0]?" on":""}" data-c="${c[0]}"><span class="ico">${c[1]}</span><span class="ctxt">${esc(c[LI[lang]])}</span></button>`).join("")}</div>
+<div class="row"><select id="fc"><option value="">${t("city")}: ${t("all")}</option>${opts(CITIES,F.city)}</select><select id="fd"><option value="">${t("cond")}: ${t("all")}</option><option value="new"${F.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${F.cond==="used"?" selected":""}>${t("used")}</option></select><select id="fs"><option value="new">${t("s1")}</option><option value="asc"${F.sort==="asc"?" selected":""}>${t("s2")}</option><option value="desc"${F.sort==="desc"?" selected":""}>${t("s3")}</option></select></div>
+<div class="row"><input id="pf" type="number" min="0" placeholder="${t("pf")}" value="${esc(F.min)}"><input id="pt" type="number" min="0" placeholder="${t("pt")}" value="${esc(F.max)}"></div><div id="list"></div>`;
+const go=()=>{F.n=1;list()};let tm;
+$("#q").oninput=e=>{F.q=e.target.value;clearTimeout(tm);tm=setTimeout(go,350)};
+$("#fc").onchange=e=>{F.city=e.target.value;go()};$("#fd").onchange=e=>{F.cond=e.target.value;go()};$("#fs").onchange=e=>{F.sort=e.target.value;go()};
+$("#pf").onchange=e=>{F.min=e.target.value;go()};$("#pt").onchange=e=>{F.max=e.target.value;go()};
+app.querySelector(".catgrid").onclick=e=>{const c=e.target.closest("[data-c]");if(c){F.cat=c.dataset.c;home()}};list()}
+async function list(){
+let q=sb.from("listings").select("id,title,price,city,images,created_at",{count:"exact"}).eq("status","active");
+if(F.cat)q=q.eq("cat",F.cat);if(F.city)q=q.eq("city",F.city);if(F.cond)q=q.eq("cond",F.cond);if(F.min!=="")q=q.gte("price",F.min);if(F.max!=="")q=q.lte("price",F.max);
+if(F.q.trim())q=q.ilike("title","%"+F.q.replace(/[%,_()]/g," ").trim()+"%");
+q=(F.sort==="new"?q.order("created_at",{ascending:false}):q.order("price",{ascending:F.sort==="asc"})).range(0,F.n*20-1);
+const{data,count,error}=await q;if(error)return fail(error);const el=$("#list");if(!el)return;const rows=data||[];
+el.innerHTML=rows.length?`<div class="grid">${rows.map(card).join("")}</div>`+(count>rows.length?`<p style="text-align:center;margin:14px"><button class="btn g" id="more">${t("more")}</button></p>`:""):`<p class="empty">${t("none")}</p>`;
+const m=$("#more");if(m)m.onclick=()=>{F.n++;list()}}
 
-  function saveProfile() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
-      return true;
-    } catch (error) {
-      alert('Ma’lumotni saqlab bo‘lmadi. Profil rasmi juda katta bo‘lishi mumkin.');
-      return false;
-    }
-  }
+async function favsV(){if(!me){location.hash="#/auth";return}
+const{data,error}=await sb.from("favorites").select("listings(id,title,price,city,images,created_at,status)").order("listing_id",{ascending:false});if(error)return fail(error);
+const a=(data||[]).map(x=>x.listings).filter(x=>x&&x.status==="active");
+app.innerHTML=`<h1>♥ ${t("favs")}</h1>`+(a.length?`<div class="grid">${a.map(card).join("")}</div>`:`<p class="empty">${t("none")}</p>`)}
 
-  function openEditor() {
-    $('nameInput').value = profile.name;
-    $('usernameInput').value = profile.username;
-    $('bioInput').value = profile.bio;
-    $('telegramInput').value = profile.telegram;
-    $('editDialog').showModal();
-  }
+async function detail(id){
+const{data:l,error}=await sb.from("listings").select("*,profiles(name,phone,telegram)").eq("id",id).maybeSingle();
+if(error||!l){app.innerHTML=`<p class="empty">${t("none")}</p>`;return}
+const p=l.profiles||{},own=me&&me.id===l.user_id,tgu=(p.telegram||"").replace(/^@/,"").replace(/[^\w]/g,""),ph=(p.phone||"").replace(/[^\d+]/g,"");
+app.innerHTML=`${l.images.length?`<div class="gal">${l.images.map(u=>`<img src="${esc(u)}" alt="">`).join("")}</div>`:""}
+<h1>${esc(l.title)}</h1><h2 style="color:var(--sky)">${fmt(l.price)}</h2>
+<small>${esc(cn(l.cat))} · ${t(l.cond)} · ${esc(l.city)}${l.district?", "+esc(l.district):""} · ${new Date(l.created_at).toLocaleDateString("ru-RU")}${l.status==="hidden"?" · "+t("hid"):""}</small>
+<div class="box" style="white-space:pre-wrap">${esc(l.descr||"")}</div>
+<div class="box"><b>${esc(p.name||"")}</b><div class="row">${ph?`<a class="btn" href="tel:${esc(ph)}">📞 ${t("call")}: ${esc(p.phone)}</a>`:""}${tgu?`<a class="btn g" target="_blank" rel="noopener" href="https://t.me/${esc(tgu)}">✈ ${t("tg")}</a>`:""}</div></div>
+<div class="row"><button class="btn g" data-a="fav" data-id="${l.id}">${favs.has(l.id)?"♥":"♡"} ${t("favs")}</button><button class="btn g" data-a="rep" data-id="${l.id}">⚑ ${t("rep")}</button>
+${own||adm()?`<a class="btn g" href="#/post/${l.id}">${t("edit")}</a><button class="btn r" data-a="del" data-id="${l.id}">${t("del")}</button>`:""}${adm()?`<button class="btn g" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button>`:""}</div>`}
 
-  $('editProfileButton').addEventListener('click', openEditor);
-  $('closeDialogButton').addEventListener('click', () => $('editDialog').close());
-  $('cancelButton').addEventListener('click', () => $('editDialog').close());
+async function postV(id){
+if(!me){location.hash="#/auth";toast(t("need"));return}
+let old=null;if(id){const r=await sb.from("listings").select("*").eq("id",id).maybeSingle();old=r.data;if(!old||(old.user_id!==me.id&&!adm())){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}}
+let imgs=[...(old?old.images:[])],files=[];const o=old||{cat:"phones",cond:"used",city:CITIES[0]};
+app.innerHTML=`<h1>${old?t("edit"):t("post")}</h1><form class="box" id="pf2"><label>${t("cat")}</label><select name="cat">${opts(CATS,o.cat,c=>c[1]+" "+c[LI[lang]])}</select>
+<label>${t("title")}</label><input name="title" required minlength="3" maxlength="120" value="${esc(o.title)}"><label>${t("descr")}</label><textarea name="descr" maxlength="3000">${esc(o.descr)}</textarea>
+<label>${t("price")}</label><input name="price" type="number" min="0" step="0.01" required value="${esc(o.price)}"><label>${t("cond")}</label><select name="cond"><option value="new"${o.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${o.cond==="used"?" selected":""}>${t("used")}</option></select>
+<label>${t("city")}</label><select name="city">${opts(CITIES,o.city)}</select><label>${t("dist")}</label><input name="district" maxlength="80" value="${esc(o.district)}">
+<label>${t("photos")}</label><input type="file" id="fi" accept="image/*" multiple><div class="thumbs" id="th"></div><p style="margin-top:14px"><button class="btn" id="sv">${t("save")}</button></p></form>`;
+const th=()=>{$("#th").innerHTML=imgs.map((u,i)=>`<div><img src="${esc(u)}" alt=""><button type="button" data-i="${i}">×</button></div>`).join("")+files.map((f,i)=>`<div><img src="${URL.createObjectURL(f)}" alt=""><button type="button" data-f="${i}">×</button></div>`).join("")};th();
+$("#fi").onchange=e=>{for(const f of e.target.files)if(imgs.length+files.length<6)files.push(f);e.target.value="";th()};
+$("#th").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.i!=null)imgs.splice(+b.dataset.i,1);else files.splice(+b.dataset.f,1);th()};
+$("#pf2").onsubmit=async e=>{e.preventDefault();const b=$("#sv");b.disabled=true;
+try{if(!me.phone){throw new Error(t("phone"))}const up=[];
+for(const[i,f]of files.entries()){const bl=await comp(f),pa=`${me.id}/${Date.now()}_${i}.jpg`,r=await sb.storage.from("images").upload(pa,bl,{contentType:"image/jpeg"});if(r.error)throw r.error;up.push(sb.storage.from("images").getPublicUrl(pa).data.publicUrl)}
+const d=Object.fromEntries(new FormData(e.target));const row={cat:d.cat,title:d.title.trim(),descr:d.descr.trim(),price:+d.price,cond:d.cond,city:d.city,district:d.district.trim()||null,images:[...imgs,...up]};
+const r=old?await sb.from("listings").update(row).eq("id",old.id).select("id").single():await sb.from("listings").insert(row).select("id").single();if(r.error)throw r.error;
+if(old)await rmImgs(old.images.filter(u=>!imgs.includes(u)));toast(t("ok"));location.hash="#/l/"+r.data.id}catch(x){fail(x)}b.disabled=false}}
 
-  $('saveButton').addEventListener('click', () => {
-    const name = $('nameInput').value.trim();
-    const username = $('usernameInput').value.trim().replace(/^@/, '');
-    const bio = $('bioInput').value.trim();
-    const telegram = $('telegramInput').value.trim().replace(/^@/, '');
-    if (!name) return alert('Ismni kiriting.');
-    if (!/^[A-Za-z0-9_]{3,30}$/.test(username)) return alert('Username 3–30 belgidan iborat bo‘lsin: harf, raqam yoki _');
-    profile = {...profile, name, username, bio, telegram};
-    if (saveProfile()) {
-      renderProfile();
-      $('editDialog').close();
-    }
-  });
+function authV(){if(me){location.hash="#/me";return}const r=mode==="reg";
+app.innerHTML=`<h1>${r?t("reg"):t("login")}</h1><form class="box" id="af">${r?`<label>${t("name")}</label><input name="name" required maxlength="80"><label>${t("phone")}</label><input name="phone" type="tel" required placeholder="+992..."><label>Telegram</label><input name="telegram" placeholder="@username">`:""}
+<label>Email</label><input name="email" type="email" required autocomplete="email"><label>${t("pass")}</label><input name="pw" type="password" required minlength="8" autocomplete="${r?"new":"current"}-password"><p style="margin-top:14px"><button class="btn">${r?t("reg"):t("login")}</button> <button type="button" class="btn g" id="sw">${r?t("login"):t("reg")}</button></p></form>`;
+$("#sw").onclick=()=>{mode=r?"login":"reg";authV()};
+$("#af").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));
+const res=r?await sb.auth.signUp({email:d.email,password:d.pw,options:{data:{name:d.name,phone:d.phone,telegram:d.telegram}}}):await sb.auth.signInWithPassword({email:d.email,password:d.pw});
+if(res.error)return fail(res.error);if(r&&!res.data.session){toast(t("chk"));mode="login";return authV()}await refreshMe();location.hash="#/me"}}
 
-  $('changeAvatarButton').addEventListener('click', () => $('avatarInput').click());
-  $('avatarInput').addEventListener('change', event => {
-    const file = event.target.files && event.target.files[0];
-    if (!file) return;
-    if (!['image/jpeg','image/png','image/webp'].includes(file.type)) {
-      alert('JPG, PNG yoki WEBP rasm tanlang.');
-      event.target.value = '';
-      return;
-    }
-    if (file.size > 2 * 1024 * 1024) {
-      alert('Rasm hajmi 2 MB dan kichik bo‘lsin.');
-      event.target.value = '';
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      profile.avatar = String(reader.result);
-      if (saveProfile()) renderProfile();
-    };
-    reader.onerror = () => alert('Rasmni o‘qib bo‘lmadi. Qayta urinib ko‘ring.');
-    reader.readAsDataURL(file);
-  });
+async function meV(){if(!me){location.hash="#/auth";return}
+const{data,error}=await sb.from("listings").select("id,title,price,status").eq("user_id",me.id).order("created_at",{ascending:false});
+if(error)return fail(error);
+const items=data||[],active=items.filter(x=>x.status==="active").length,hidden=items.length-active;
+app.innerHTML=`<h1>👤 ${esc(me.name)}</h1><small>${esc(me.email)}${adm()?" · "+t("admin"):""}</small>
+<div class="dash"><div class="dashcard"><b>${items.length}</b><span>Jami e’lonlar</span></div><div class="dashcard"><b>${active}</b><span>Faol e’lonlar</span></div><div class="dashcard"><b>${hidden}</b><span>Yashirilgan e’lonlar</span></div><div class="dashcard"><b>${favs.size}</b><span>Sevimlilar</span></div></div>
+<section class="profilebox"><div class="profiletop"><b>Shaxsiy ma’lumotlar</b><span class="muted">🔒</span></div><form id="pr"><label>${t("name")}</label><input name="name" required maxlength="80" value="${esc(me.name)}"><label>${t("phone")}</label><input name="phone" type="tel" required maxlength="30" value="${esc(me.phone)}"><label>Telegram</label><input name="telegram" maxlength="40" value="${esc(me.telegram)}"><p class="muted" style="font-size:12px;margin-top:7px">Bu ma’lumotlar sotuvchi bilan aloqa uchun ishlatiladi.</p><p style="margin-top:12px"><button class="btn">${t("save")}</button></p></form></section>
+<div class="row">${adm()?`<a class="btn g" href="#/admin">⚙ ${t("admin")}</a>`:""}<button class="btn g" data-a="out">${t("out")}</button></div><h2>${t("mine")}</h2>
+${items.map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><a class="btn g sm" href="#/post/${l.id}">${t("edit")}</a><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")||`<p class="empty">${t("none")}</p>`}`;
+$("#pr").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));const r=await sb.from("profiles").update({name:d.name.trim(),phone:d.phone.trim(),telegram:d.telegram.trim()}).eq("id",me.id);if(r.error)return fail(r.error);await refreshMe();toast(t("ok"))}}
 
-  document.querySelectorAll('[data-tab]').forEach(button => {
-    button.addEventListener('click', () => {
-      const tab = button.dataset.tab;
-      document.querySelectorAll('[data-tab]').forEach(item => item.setAttribute('aria-selected', String(item === button)));
-      $('listingsPanel').hidden = tab !== 'listings';
-      $('savedPanel').hidden = tab !== 'saved';
-      $('aboutPanel').hidden = tab !== 'about';
-    });
-  });
+async function adminV(){if(!adm()){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}
+const[a,b]=await Promise.all([sb.from("listings").select("id,title,price,status,city").order("created_at",{ascending:false}).limit(60),sb.from("reports").select("id,reason,resolved,listing_id,listings(title)").order("created_at",{ascending:false}).limit(60)]);
+app.innerHTML=`<h1>⚙ ${t("admin")}</h1><h2>${t("reps")}</h2>${(b.data||[]).map(r=>`<div class="li"><a href="#/l/${r.listing_id}">${esc(r.listings?r.listings.title:"—")}<br><small>${esc(r.reason)}${r.resolved?" ✓":""}</small></a>${r.resolved?"":`<button class="btn g sm" data-a="res" data-id="${r.id}">${t("res")}</button>`}</div>`).join("")||`<p class="empty">—</p>`}
+<h2>${t("lst")}</h2>${(a.data||[]).map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)} · ${esc(l.city)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><button class="btn g sm" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")}`}
 
-  $('shareProfileButton').addEventListener('click', async () => {
-    const shareData = {
-      title: 'ТЕХНО БОЗОРИ — ' + profile.name,
-      text: '@' + profile.username + ' — ' + profile.bio,
-      url: location.href
-    };
-    try {
-      if (navigator.share) await navigator.share(shareData);
-      else if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(shareData.url);
-        alert('Profil havolasi nusxalandi.');
-      } else {
-        prompt('Profil havolasini nusxalang:', shareData.url);
-      }
-    } catch (error) {
-      if (error && error.name !== 'AbortError') alert('Ulashib bo‘lmadi. Qayta urinib ko‘ring.');
-    }
-  });
+app.onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
+try{if(a==="out"){await sb.auth.signOut();me=null;favs=new Set();location.hash="#/";return route()}
+if(!me)return(location.hash="#/auth",toast(t("need")));
+if(a==="fav"){if(favs.has(id)){await sb.from("favorites").delete().eq("listing_id",id);favs.delete(id)}else{const r=await sb.from("favorites").insert({listing_id:id});if(r.error)throw r.error;favs.add(id)}return route()}
+if(a==="rep"){const w=prompt(t("why"));if(!w||w.trim().length<3)return;const r=await sb.from("reports").insert({listing_id:id,reason:w.trim().slice(0,500)});if(r.error)throw r.error;return toast(t("sent"))}
+if(a==="del"){if(!confirm(t("sure")))return;const{data:l}=await sb.from("listings").select("images").eq("id",id).maybeSingle();const r=await sb.from("listings").delete().eq("id",id);if(r.error)throw r.error;if(l)await rmImgs(l.images);toast(t("ok"));if(location.hash.startsWith("#/l/"))location.hash="#/";else route();return}
+if(a==="hide"||a==="show"){const r=await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"});if(r.error)throw r.error;return route()}
+if(a==="res"){const r=await sb.from("reports").update({resolved:true}).eq("id",id);if(r.error)throw r.error;return route()}}catch(x){fail(x)}};
 
-  $('settingsButton').addEventListener('click', () => {
-    alert('Akkaunt sozlamalari, kirish va xavfsizlik bo‘limlari asosiy Supabase tizimiga ulangandan keyin yoqiladi.');
-  });
-
-  loadProfile();
-  renderProfile();
-})();
+async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");nav();window.scrollTo(0,0);
+try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x)}}
+$("#lg").value=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
+sb.auth.onAuthStateChange((ev)=>{if(ev==="SIGNED_OUT"){me=null;nav()}});window.addEventListener("hashchange",route);
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+refreshMe().catch(e=>fail(e)).finally(route);
 </script>
 </body>
 </html>
