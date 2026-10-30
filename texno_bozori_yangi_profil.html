@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b16">
+<title>ТЕХНО БОЗОРИ — Profil</title>
+<style>
+:root{--bg:#080b16;--panel:#101a32;--panel2:#14213e;--line:#263657;--text:#f4f7ff;--muted:#9aa9c7;--blue:#39a9f5;--blue2:#1675d1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:sticky;top:0;background:#080b16ee;backdrop-filter:blur(12px);z-index:3}
+.brand{font-weight:850;font-size:20px;letter-spacing:.2px}.brand span{color:var(--blue)}button{border:0;cursor:pointer;font:inherit;color:inherit}
+.iconbtn{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 13px}
+main{max-width:760px;margin:0 auto;padding:25px 16px 100px}
+.profile-head{display:flex;gap:20px;align-items:center;padding:10px 0 18px}
+.avatar-wrap{position:relative;flex:0 0 104px}.avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;background:#20345b;border:3px solid #2e91e7;display:grid;place-items:center;font-size:38px}
+.camera{position:absolute;right:0;bottom:0;background:var(--blue);color:#061426;border:3px solid var(--bg);border-radius:50%;width:34px;height:34px;font-size:17px}
+.identity{min-width:0;flex:1}.name-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.name{font-size:23px;font-weight:800;overflow-wrap:anywhere}.handle{color:var(--muted);margin-top:3px}
+.stats{display:flex;gap:clamp(14px,5vw,34px);margin-top:15px}.stat{text-align:center;min-width:48px}.stat strong{display:block;font-size:18px}.stat span{font-size:12px;color:var(--muted)}
+.bio{white-space:pre-wrap;color:#d8e2f6;margin:10px 0 16px}
+.actions{display:flex;gap:9px}.primary,.secondary{border-radius:12px;padding:11px 15px;font-weight:750;flex:1}.primary{background:var(--blue);color:#061426}.secondary{background:var(--panel2);border:1px solid var(--line)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:16px;margin-top:16px}
+.section-title{font-size:17px;font-weight:800;margin:0 0 12px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:23px}
+.tab{padding:15px 8px;background:transparent;color:var(--muted);border-bottom:2px solid transparent;font-weight:700}.tab.active{color:var(--blue);border-color:var(--blue)}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:5px}
+.post{aspect-ratio:1;background:linear-gradient(145deg,#142647,#0c1428);border:1px solid #233657;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;gap:5px;min-width:0}
+.post .emoji{font-size:30px}.post b{font-size:12px;overflow-wrap:anywhere}.post small{color:var(--muted);font-size:11px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:35px 10px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#0b1328f5;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 4px max(8px,env(safe-area-inset-bottom));z-index:4}
+.bottom a{color:var(--muted);text-decoration:none;text-align:center;font-size:12px;padding:4px}.bottom a strong{display:block;font-size:22px;font-weight:500}.bottom a.active{color:var(--blue)}
+dialog{width:min(92vw,480px);border:1px solid var(--line);border-radius:18px;background:#101a32;color:var(--text);padding:20px}
+dialog::backdrop{background:#000b}.field{display:block;margin:12px 0;color:var(--muted);font-size:13px}.field input,.field textarea{display:block;width:100%;margin-top:6px;background:#0a1225;border:1px solid var(--line);border-radius:11px;padding:12px;color:var(--text);font:inherit}.field textarea{min-height:80px;resize:vertical}.dialog-actions{display:flex;gap:10px;margin-top:16px}.dialog-actions button{flex:1}
+@media(max-width:420px){main{padding:19px 13px 95px}.profile-head{gap:14px}.avatar-wrap,.avatar{width:86px;height:86px;flex-basis:86px}.avatar{font-size:32px}.name{font-size:19px}.stats{gap:15px}.stat span{font-size:11px}}
+</style>
+</head>
+<body>
+<header><div class="brand">ТЕХНО <span>БОЗОРИ</span></div><button class="iconbtn" id="settingsBtn" aria-label="Sozlamalar">⚙</button></header>
+<main>
+  <section class="profile-head">
+    <div class="avatar-wrap"><img class="avatar" id="avatar" alt="Profil rasmi" src="" style="display:none"><div class="avatar" id="avatarFallback">👤</div><button class="camera" id="avatarBtn" aria-label="Rasm yuklash">＋</button><input id="avatarInput" type="file" accept="image/*" hidden></div>
+    <div class="identity">
+      <div class="name-line"><div class="name" id="displayName">Shahzod Mirzobekov</div></div>
+      <div class="handle" id="displayHandle">@MirzobekovShahzod</div>
+      <div class="stats">
+        <div class="stat"><strong id="postCount">1</strong><span>E’lonlar</span></div>
+        <div class="stat"><strong>0</strong><span>Obunachilar</span></div>
+        <div class="stat"><strong>0</strong><span>Obunalar</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="bio" id="displayBio">📱 Texnika savdosi | Ishonchli oldi-sotdi</div>
+  <div class="actions"><button class="primary" id="editBtn">Profilni tahrirlash</button><button class="secondary" id="shareBtn">Ulashish ↗</button></div>
+  <section class="panel" style="padding:13px 15px"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><div><b>Akkaunt ma’lumotlari</b><div style="color:var(--muted);font-size:13px" id="emailText">Email: tizimga ulanganda ko‘rinadi</div></div><span>🔒</span></div></section>
+  <nav class="tabs" aria-label="Profil bo‘limlari"><button class="tab active" data-tab="posts">▦ E’lonlar</button><button class="tab" data-tab="saved">♡ Saqlangan</button><button class="tab" data-tab="about">ⓘ Haqida</button></nav>
+  <section id="postsView" class="posts">
+    <article class="post"><div class="emoji">📱</div><b>iPhone 8</b><small>450 TJS</small></article>
+  </section>
+  <section id="savedView" class="posts" hidden><div class="empty">Hozircha saqlangan e’lonlar yo‘q</div></section>
+  <section id="aboutView" class="panel" hidden><h2 class="section-title">Profil haqida</h2><p id="aboutName">Ism: Shahzod Mirzobekov</p><p id="aboutHandle">Telegram: @MirzobekovShahzod</p><p style="color:var(--muted);font-size:13px">Telefon va email kabi shaxsiy ma’lumotlar ommaviy ko‘rsatilmaydi.</p></section>
+</main>
+<nav class="bottom"><a href="#"><strong>⌂</strong>Bosh sahifa</a><a href="#"><strong>♥</strong>Sevimlilar</a><a href="#"><strong>＋</strong>E’lon</a><a class="active" href="#"><strong>●</strong>Profil</a></nav>
+<dialog id="editDialog">
+  <h2 style="margin:0 0 5px">Profilni tahrirlash</h2><p style="color:var(--muted);font-size:13px;margin-top:0">O‘z profilingizdagi ma’lumotlarni yangilang.</p>
+  <label class="field">Ism<input id="nameInput" maxlength="60"></label>
+  <label class="field">Username<input id="handleInput" maxlength="30"></label>
+  <label class="field">Bio<textarea id="bioInput" maxlength="160"></textarea></label>
+  <label class="field">Telegram username<input id="telegramInput" maxlength="40"></label>
+  <div class="dialog-actions"><button class="secondary" id="cancelBtn">Bekor qilish</button><button class="primary" id="saveBtn">Saqlash</button></div>
+</dialog>
+<script>
+const $=id=>document.getElementById(id);
+const dialog=$('editDialog');
+$('editBtn').onclick=()=>{ $('nameInput').value=$('displayName').textContent; $('handleInput').value=$('displayHandle').textContent.replace(/^@/,''); $('bioInput').value=$('displayBio').textContent; $('telegramInput').value='MirzobekovShahzod'; dialog.showModal(); };
+$('cancelBtn').onclick=()=>dialog.close();
+$('saveBtn').onclick=()=>{const name=$('nameInput').value.trim()||'Foydalanuvchi';let handle=$('handleInput').value.trim().replace(/^@/,'').replace(/\s/g,'');$('displayName').textContent=name;$('displayHandle').textContent='@'+handle;$('displayBio').textContent=$('bioInput').value.trim();$('aboutName').textContent='Ism: '+name;$('aboutHandle').textContent='Telegram: @'+$('telegramInput').value.trim().replace(/^@/,'');dialog.close();};
+$('avatarBtn').onclick=()=>$('avatarInput').click();
+$('avatarInput').onchange=e=>{const file=e.target.files[0];if(!file)return;if(!file.type.startsWith('image/'))return alert('Rasm faylini tanlang.');const reader=new FileReader();reader.onload=()=>{$('avatar').src=reader.result;$('avatar').style.display='block';$('avatarFallback').style.display='none';};reader.readAsDataURL(file);};
+document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===btn));['posts','saved','about'].forEach(k=>$(k+'View').hidden=k!==btn.dataset.tab);});
+$('shareBtn').onclick=async()=>{const data={title:'ТЕХНО БОЗОРИ — '+$('displayName').textContent,text:$('displayHandle').textContent+' | '+$('displayBio').textContent,url:location.href};try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(data.text+' '+data.url);alert('Profil ma’lumoti nusxalandi.');}else alert(data.text);}catch(e){}};
+$('settingsBtn').onclick=()=>alert('Sozlamalar va akkaunt xavfsizligi keyingi bosqichda Supabase bilan ulanadi.');
+</script>
+</body>
+</html>
