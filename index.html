@@ -93,13 +93,32 @@ body.inchat .cw{position:fixed;left:0;right:0;top:0;height:100dvh;max-height:non
 .stk{grid-template-columns:repeat(6,1fr);background:#f4f7fc;border-radius:16px;padding:8px}.stk button{min-height:46px;font-size:26px}
 .ct #bk{width:40px;height:40px;border-radius:50%;font-size:24px;padding:0;line-height:1}
 .ci{box-shadow:0 2px 8px rgba(15,35,70,.04)}.ci .av{width:50px;height:50px}.ci .cr b{font-size:16px}
+.bell{margin-left:auto;position:relative;width:40px;height:40px;border-radius:12px;border:1px solid var(--l);background:#f8fafc;font-size:18px;padding:0}.bell .nb{top:-4px;left:auto;right:-4px}header select{margin-left:0}
+.loc{display:flex;align-items:center;gap:6px;margin-bottom:10px;font-weight:700}.loc select{width:auto;min-height:38px;padding:6px 12px;border-radius:99px;background:#fff;font-weight:750;color:#102B52}
+.sb{position:relative;display:flex;gap:8px;margin-bottom:14px}.sb input{padding-left:44px;border-radius:16px;min-height:52px;box-shadow:0 4px 14px rgba(16,43,82,.06)}.si{position:absolute;left:15px;top:15px;font-size:18px;z-index:1}
+.fbtn{flex:none;width:52px;height:52px;border-radius:16px;border:0;background:#102B52;color:#fff;font-size:20px;position:relative}.fbtn i{position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;border-radius:99px;background:#38BDF8;color:#102B52;font-size:11px;font-style:normal;font-weight:800;display:grid;place-items:center}
+.sug{position:absolute;left:0;right:60px;top:56px;background:#fff;border:1px solid var(--l);border-radius:16px;box-shadow:0 14px 34px rgba(16,43,82,.16);z-index:15;overflow:hidden}.sgi{display:flex;justify-content:space-between;gap:10px;width:100%;padding:12px 14px;border:0;border-bottom:1px solid #eef2f8;background:#fff;text-align:left}.sgi small{flex:none;color:#2563eb;font-weight:800}.sgh{display:block;padding:10px 14px 4px;color:var(--m);font-weight:700}
+.bn{margin-bottom:14px}.bt{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:22px}.bt::-webkit-scrollbar{display:none}
+.bs{flex:none;width:100%;scroll-snap-align:start;min-height:168px;padding:20px;color:#fff;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.bs.s0{background:radial-gradient(circle at 88% 12%,rgba(56,189,248,.65),transparent 38%),linear-gradient(120deg,#102B52,#1d4fb8 65%,#2563EB)}.bs.s1{background:radial-gradient(circle at 12% 90%,rgba(56,189,248,.55),transparent 40%),linear-gradient(135deg,#0b1f3d,#102B52 55%,#1a5fb4)}.bs.s2{background:radial-gradient(circle at 85% 85%,rgba(255,255,255,.2),transparent 35%),linear-gradient(120deg,#2563EB,#38BDF8)}
+.bs::after{content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;border:22px solid rgba(255,255,255,.08)}.bx{position:relative;z-index:1}.bx small{color:#bfe6ff;font-weight:800;letter-spacing:.08em}.bx b{display:block;font-size:21px;line-height:1.2;margin:4px 0 2px}.bx p{color:#dbeafe;font-size:13px;margin:0 0 12px}.bx .btn{background:#fff;color:#102B52;min-height:38px;padding:8px 16px}
+.bd{display:flex;justify-content:center;gap:6px;margin-top:8px}.bd i{width:7px;height:7px;border-radius:99px;background:#c3d2ea;transition:.25s}.bd i.on{width:20px;background:#2563EB}
+.sc{margin:6px 0 10px}.sh{display:flex;justify-content:space-between;align-items:center}.sh h2{margin:12px 0 8px}.more{color:#2563EB;font-weight:750;font-size:13px}
+.hs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 10px;scrollbar-width:none}.hs::-webkit-scrollbar{display:none}.hs .card{flex:none;width:158px;scroll-snap-align:start}
+.ph{position:relative}.hrt{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 2px 8px rgba(16,43,82,.18);font-size:19px;line-height:1;padding:0;color:#64748b}.hrt.on{color:#ef4444}.nw{position:absolute;left:8px;top:8px;background:#2563EB;color:#fff;font-size:10px;font-style:normal;font-weight:800;padding:2px 8px;border-radius:99px}
+.sk .ph{background:linear-gradient(90deg,#e8eef7 25%,#f4f7fc 50%,#e8eef7 75%);background-size:200% 100%;animation:shm 1.2s infinite}.sk .in i{display:block;height:11px;border-radius:6px;background:linear-gradient(90deg,#e8eef7 25%,#f4f7fc 50%,#e8eef7 75%);background-size:200% 100%;animation:shm 1.2s infinite;margin:4px 0}@keyframes shm{to{background-position:-200% 0}}
+.eb{padding:16px;text-align:center;background:#fff;border:1px dashed #f0b4b4;border-radius:14px;color:#9b1c1c;width:100%}.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.chip{flex:none;border:1.5px solid var(--l);background:#fff;border-radius:99px;padding:8px 14px;white-space:nowrap;font-weight:650;color:#475569}.chip.on{background:#102B52;border-color:#102B52;color:#fff}.chip .ico{margin-right:4px}
+.rh{margin:4px 0 10px}.chs{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.fc{border:0;background:#eaf2ff;color:#1d4ed8;border-radius:99px;padding:5px 12px;font-weight:700;font-size:13px}
+.sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end}.sbk{position:absolute;inset:0;background:rgba(10,20,40,.5)}.sp{position:relative;width:100%;max-height:88dvh;overflow-y:auto;background:#fff;border-radius:24px 24px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));animation:up .25s}@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sp label{display:block;margin:12px 0 6px;color:#53647c;font-size:13px;font-weight:700}.sh2{display:flex;justify-content:space-between;align-items:center;font-size:18px}.sh2 button{width:36px;height:36px;border-radius:50%;border:0;background:#eef4ff;font-size:22px;line-height:1}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.three .opt{padding:12px 4px}
+header{gap:8px}.brand{white-space:nowrap;font-size:16px;gap:8px}.brand img{width:32px;height:32px}header select{max-width:104px}
 #toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#14243d;color:#fff;padding:11px 17px;border-radius:999px;display:none;z-index:40;font-weight:700;max-width:calc(100vw - 32px);text-align:center}
 @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}.catgrid{grid-template-columns:repeat(4,1fr)}.dash{grid-template-columns:repeat(4,1fr)}nav{left:50%;right:auto;transform:translateX(-50%);width:min(620px,calc(100% - 32px));bottom:12px;border:1px solid var(--l);border-radius:18px}}
 </style>
 </head>
 <body>
 <header><a class="brand" href="#/"><img src="icon.svg" alt=""><span>ТЕХНО <i>БОЗОРИ</i></span></a>
-<select id="lg" aria-label="Til"><option value="uz">O‘zbekcha</option><option value="tg">Тоҷикӣ</option><option value="ru">Русский</option></select></header>
+<button type="button" class="bell" id="bell" aria-label="Notifications">🔔<i class="nb" id="bb" hidden></i></button><select id="lg" aria-label="Til"><option value="uz">O‘zbekcha</option><option value="tg">Тоҷикӣ</option><option value="ru">Русский</option></select></header>
 <main id="app"></main>
 <nav id="nav"></nav><div id="toast" role="status"></div>
 <script src="config.js"></script>
@@ -118,8 +137,14 @@ const D={home:["Bosh sahifa","Асосӣ","Главная"],favs:["Sevimlilar","
 Object.assign(D,{today:["Bugun","Имрӯз","Сегодня"],yday:["Kecha","Дирӯз","Вчера"],typing:["yozmoqda...","менависад...","печатает..."],online:["onlayn","онлайн","в сети"],q1:["Salom! Hali sotilmadimi?","Салом! Ин ҳоло ҳам ҳаст?","Здравствуйте! Ещё продаётся?"],q2:["Narxi kelishiladimi?","Нарх тағйир меёбад?","Торг возможен?"],q3:["Qayerda ko‘rsa bo‘ladi?","Дар куҷо дидан мумкин?","Где можно посмотреть?"],newmsg:["Yangi xabar","Паёми нав","Новое сообщение"],photo:["Rasm o‘zgartirish","Иваз кардани акс","Сменить фото"],avh:["Rasm saqlanmadi. Supabase’da schema-profile.sql ni ishga tushiring.","Акс нигоҳ дошта нашуд. schema-profile.sql-ро дар Supabase иҷро кунед.","Фото не сохранено. Запустите schema-profile.sql в Supabase."]});
 Object.assign(D,{s_cat:["Turkumni tanlang","Категорияро интихоб кунед","Выберите категорию"],s_rev:["Ko‘rib chiqish","Баррасӣ","Проверка"],next:["Davom etish","Идома","Далее"],back:["Orqaga","Ба қафо","Назад"],stp:["Qadam","Қадам","Шаг"],mainph:["Asosiy","Асосӣ","Главное"],e_title:["Nom kamida 3 belgi bo‘lsin","Ном на камтар аз 3 ҳарф","Название от 3 символов"],e_price:["Narxni kiriting","Нархро ворид кунед","Укажите цену"],e_city:["Shaharni tanlang","Шаҳрро интихоб кунед","Выберите город"],h_title:["Masalan: iPhone 13 Pro 256GB","Масалан: iPhone 13 Pro 256GB","Например: iPhone 13 Pro 256GB"],h_desc:["Holati, xususiyatlari, komplektatsiyasi...","Ҳолат, хусусият, таркиб...","Состояние, характеристики, комплектация..."],h_ph:["Birinchi rasm asosiy bo‘ladi. Aniq va yorug‘ suratlar ko‘proq xaridor jalb qiladi.","Акси аввал асосӣ мешавад. Аксҳои равшан харидорони бештар ҷалб мекунанд.","Первое фото будет главным. Чёткие и светлые снимки привлекают больше покупателей."],h_rev:["Hammasi to‘g‘rimi? E’lon shunday ko‘rinadi.","Ҳама дуруст аст? Эълон чунин менамояд.","Всё верно? Так будет выглядеть объявление."]});
 Object.assign(D,{next:["Davom etish","Идома","Далее"],back:["Orqaga","Бозгашт","Назад"],stp:["Qadam","Қадам","Шаг"],first:["Asosiy","Асосӣ","Главное"],need_t:["Nomni kiriting (kamida 3 harf)","Номро ворид кунед (камаш 3 ҳарф)","Введите название (мин. 3 символа)"],need_p:["Narxni kiriting","Нархро ворид кунед","Укажите цену"],review:["Tekshirib ko‘ring","Санҷида бинед","Проверьте"],s_cat:["Turkumni tanlang","Категорияро интихоб кунед","Выберите категорию"],s_det:["Nomi va tavsif","Ном ва тавсиф","Название и описание"],s_ph:["Rasmlar","Аксҳо","Фото"],s_pr:["Narx va holati","Нарх ва ҳолат","Цена и состояние"],s_loc:["Joylashuv","Ҷойгиршавӣ","Местоположение"],pub:["E’lonni joylashtirish","Гузоштани эълон","Опубликовать"],nph:["Rasm yo‘q","Бе акс","Без фото"],ph_n:["ta rasm","акс","фото"]});
+Object.assign(D,{sort:["Saralash","Тартиб","Сортировка"],filt:["Filtr","Филтр","Фильтр"],reset:["Tozalash","Тоза кардан","Сбросить"],apply:["Qo‘llash","Татбиқ","Применить"],region:["Hudud","Ҳудуд","Регион"],allr:["Barcha hududlar","Ҳамаи ҳудудҳо","Все регионы"],found:["ta natija","натиҷа","результатов"],retry:["Qayta urinish","Бори дигар","Повторить"],rcnt:["So‘nggi qidiruvlar","Ҷустуҷӯҳои охирин","Недавние поиски"],
+sec_rec:["Tavsiya etilgan","Тавсияшуда","Рекомендуем"],sec_new:["Yangi e’lonlar","Эълонҳои нав","Новые объявления"],sec_pop:["Mashhur mahsulotlar","Маҳсулоти машҳур","Популярное"],sec_cheap:["Arzon takliflar","Пешниҳодҳои арзон","Выгодные предложения"],
+agoN:["hozir","ҳозир","сейчас"],agoM:["daq. oldin","дақ. пеш","мин. назад"],agoH:["soat oldin","соат пеш","ч. назад"],agoD:["kun oldin","рӯз пеш","дн. назад"],
+b1:["Mahsulotingizni bepul soting","Маҳсулоти худро ройгон фурӯшед","Продавайте бесплатно"],b1s:["Bir necha qadamda e’lon joylang","Эълонро дар чанд қадам гузоред","Разместите объявление за пару шагов"],b1c:["E’lon berish","Гузоштани эълон","Подать объявление"],
+b2:["21 ta turkum, bitta bozor","21 категория, як бозор","21 категория, один рынок"],b2s:["Telefondan mashinagacha","Аз телефон то мошин","От телефона до авто"],b2c:["Turkumlarni ko‘rish","Дидани категорияҳо","Смотреть категории"],
+b3:["Sotuvchi bilan to‘g‘ridan-to‘g‘ri chat","Чат бевосита бо фурӯшанда","Чат напрямую с продавцом"],b3s:["Tez va qulay","Тез ва қулай","Быстро и удобно"],b3c:["Xabarlar","Паёмҳо","Сообщения"],notif:["Bildirishnomalar","Огоҳиномаҳо","Уведомления"]});
 const LN={uz:0,tg:1,ru:2},CI={uz:2,tg:3,ru:4};
-let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:"",cond:"",min:"",max:"",sort:"new",n:1},mode="login",chan=null;
+let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:(()=>{try{return localStorage.tb_city||""}catch(e){return""}})(),cond:"",min:"",max:"",sort:"new",n:1},mode="login",chan=null;
 const t=k=>(D[k]||[k,k,k])[LN[lang]],$=s=>document.querySelector(s),app=$("#app");
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmt=n=>Number(n).toLocaleString("ru-RU")+" TJS",cn=s=>(CATS.find(c=>c[0]===s)||CATS[CATS.length-1])[CI[lang]];
@@ -127,7 +152,8 @@ const toast=m=>{const e=$("#toast");e.textContent=m;e.style.display="block";clea
 const fail=e=>{console.error(e);toast(t("err")+(e&&e.message||e))},adm=()=>me&&me.role==="admin";
 const opts=(a,sel,f)=>a.map(x=>{const v=f?x[0]:x;return`<option value="${esc(v)}"${v===sel?" selected":""}>${esc(f?f(x):x)}</option>`}).join("");
 const dt=v=>new Date(v).toLocaleDateString("ru-RU"),tm=v=>new Date(v).toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"});
-const card=l=>`<a class="card" href="#/l/${l.id}"><div class="ph">${l.images&&l.images[0]?`<img loading="lazy" src="${esc(l.images[0])}" alt="">`:"📷"}</div><div class="in"><b>${fmt(l.price)}</b><span>${esc(l.title)}</span><small>${esc(l.city)} · ${dt(l.created_at)}</small></div></a>`;
+const card=l=>{const f=favs.has(l.id);return`<a class="card" href="#/l/${l.id}"><div class="ph">${l.images&&l.images[0]?`<img loading="lazy" decoding="async" src="${esc(l.images[0])}" alt="">`:"📷"}<button type="button" class="hrt${f?" on":""}" data-h="${l.id}" aria-label="Favorite">${f?"♥":"♡"}</button>${l.cond==="new"?`<em class="nw">${t("new")}</em>`:""}</div><div class="in"><b>${fmt(l.price)}</b><span>${esc(l.title)}</span><small>📍 ${esc(l.city)} · ${agoS(l.created_at)}</small></div></a>`};
+const agoS=v=>{const m=Math.floor((Date.now()-new Date(v))/6e4);if(m<1)return t("agoN");if(m<60)return m+" "+t("agoM");const h=Math.floor(m/60);if(h<24)return h+" "+t("agoH");const d=Math.floor(h/24);return d<7?d+" "+t("agoD"):dt(v)};
 const comp=f=>new Promise((ok,no)=>{const i=new Image();i.onload=()=>{const s=Math.min(1,1200/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*s;c.height=i.height*s;c.getContext("2d").drawImage(i,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error("img")),"image/jpeg",.8)};i.onerror=()=>no(new Error("img"));i.src=URL.createObjectURL(f)});
 const rmImgs=a=>{const p=(a||[]).map(u=>{const i=u.indexOf("/images/");return i<0?null:decodeURIComponent(u.slice(i+8))}).filter(Boolean);return p.length?sb.storage.from("images").remove(p):0};
 const must=r=>{if(r.error)throw r.error;return r.data};
@@ -137,29 +163,100 @@ const[a,b]=await Promise.all([sb.from("profiles").select("*").eq("id",session.us
 const m=session.user.user_metadata||{};
 me=Object.assign({name:m.name||"User",phone:m.phone||"",telegram:m.telegram||"",role:"user"},a.data||{},{id:session.user.id,email:session.user.email});
 favs=new Set((b.data||[]).map(x=>Number(x.listing_id)));loadUnread().catch(()=>0);watchInbox()}
+let bnT=null;const seenV=new Set();
+const bump=async l=>{
+  const key=String(l.id);
+  if(!l||!l.id||seenV.has(key)||(me&&me.id===l.user_id))return;
+  seenV.add(key);
+  try{
+    const {error}=await sb.rpc("bump_view",{lid:l.id});
+    if(error)throw error;
+  }catch(error){
+    seenV.delete(key);
+    console.warn("Ko'rishlar sonini yangilash amalga oshmadi:",error);
+  }
+};
 const isOn=(x,h)=>x==="#/"?(h==="#/"||h===""||h.startsWith("#/l/")):h===x||(x==="#/chats"&&h.startsWith("#/chat/"))||(x==="#/post"&&h.startsWith("#/post"))||(x==="#/me"&&h==="#/admin");
 function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],[me?"#/chats":"#/auth","💬",t("chats")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
 $("#nav").innerHTML=it.map(x=>`<a href="${x[0]}" class="${isOn(x[0],h)?"on":""}"><span>${x[1]}</span>${esc(x[2])}${x[0]==="#/chats"&&unread>0?`<i class="nb">${unread>99?"99+":unread}</i>`:""}</a>`).join("")}
 
-async function home(){
-const soc=`<section class="soc"><div><b>📣 ${t("foll")}</b></div>${SOC.telegram?`<a href="${esc(SOC.telegram)}" target="_blank" rel="noopener">✈ Telegram</a>`:""}${SOC.instagram?`<a href="${esc(SOC.instagram)}" target="_blank" rel="noopener">◎ Instagram</a>`:""}</section>`;
-app.innerHTML=`<div class="hero">${t("hero")}</div><input id="q" placeholder="${t("q")}" value="${esc(F.q)}">${soc}<h2>${t("cat")}</h2><div class="catgrid"><button class="cat${F.cat?"":" on"}" data-c=""><span class="ico">▦</span>${t("all")}</button>${CATS.map(c=>`<button class="cat${F.cat===c[0]?" on":""}" data-c="${c[0]}"><span class="ico">${c[1]}</span>${esc(c[CI[lang]])}</button>`).join("")}</div>
-<div class="row"><select id="fc"><option value="">${t("city")}: ${t("all")}</option>${opts(CITIES,F.city)}</select><select id="fd"><option value="">${t("cond")}: ${t("all")}</option><option value="new"${F.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${F.cond==="used"?" selected":""}>${t("used")}</option></select><select id="fs"><option value="new">${t("s1")}</option><option value="asc"${F.sort==="asc"?" selected":""}>${t("s2")}</option><option value="desc"${F.sort==="desc"?" selected":""}>${t("s3")}</option></select></div>
-<div class="row"><input id="pf" type="number" min="0" placeholder="${t("pf")}" value="${esc(F.min)}"><input id="pt" type="number" min="0" placeholder="${t("pt")}" value="${esc(F.max)}"></div><div id="list"></div>`;
-const go=()=>{F.n=1;list()};let tmr;
-$("#q").oninput=e=>{F.q=e.target.value;clearTimeout(tmr);tmr=setTimeout(go,350)};
-$("#fc").onchange=e=>{F.city=e.target.value;go()};$("#fd").onchange=e=>{F.cond=e.target.value;go()};$("#fs").onchange=e=>{F.sort=e.target.value;go()};
-$("#pf").onchange=e=>{F.min=e.target.value;go()};$("#pt").onchange=e=>{F.max=e.target.value;go()};
-app.querySelector(".catgrid").onclick=e=>{const c=e.target.closest("[data-c]");if(c){F.cat=c.dataset.c;home()}};list()}
-async function list(){
-let q=sb.from("listings").select("id,title,price,city,images,created_at",{count:"exact"}).eq("status","active");
-if(F.cat)q=q.eq("cat",F.cat);if(F.city)q=q.eq("city",F.city);if(F.cond)q=q.eq("cond",F.cond);if(F.min!=="")q=q.gte("price",F.min);if(F.max!=="")q=q.lte("price",F.max);
-if(F.q.trim())q=q.ilike("title","%"+F.q.replace(/[%,_()]/g," ").trim()+"%");
-q=(F.sort==="new"?q.order("created_at",{ascending:false}):q.order("price",{ascending:F.sort==="asc"})).range(0,F.n*20-1);
-const{data,count,error}=await q;if(error)return fail(error);const el=$("#list");if(!el)return;const r=data||[];
+const MODES={rec:["⭐","sec_rec"],new:["🆕","sec_new"],pop:["🔥","sec_pop"],cheap:["💸","sec_cheap"]};
+const filtOn=()=>!!(F.q.trim()||F.cat||F.cond||F.min!==""||F.max!=="");
+const nAct=()=>(F.cond?1:0)+(F.min!==""?1:0)+(F.max!==""?1:0)+(F.sort!=="new"?1:0);
+const likeQ=v=>"%"+String(v).replace(/[%,_()\\]/g," ").trim()+"%";
+const getRecent=()=>{try{return JSON.parse(localStorage.tb_rc||"[]")}catch(e){return[]}};
+const saveRecent=v=>{v=v.trim();if(v.length<2)return;try{localStorage.tb_rc=JSON.stringify([v,...getRecent().filter(x=>x!==v)].slice(0,5))}catch(e){}};
+const skCards=n=>Array.from({length:n},()=>`<div class="card sk"><div class="ph"></div><div class="in"><i></i><i></i><i style="width:60%"></i></div></div>`).join("");
+const errBox=(x,k)=>`<div class="eb">⚠ ${esc((x&&x.message)||x)}<br><button type="button" class="btn g sm" data-rt="${k}">${t("retry")}</button></div>`;
+function baseQ(all){let q=sb.from("listings").select("id,title,price,city,images,created_at,cond,cat",{count:"exact"}).eq("status","active");if(F.city)q=q.eq("city",F.city);
+if(all){if(F.cat)q=q.eq("cat",F.cat);if(F.cond)q=q.eq("cond",F.cond);if(F.min!=="")q=q.gte("price",F.min);if(F.max!=="")q=q.lte("price",F.max);if(F.q.trim())q=q.ilike("title",likeQ(F.q))}return q}
+let RC=null;
+async function recCats(){if(!me||!favs.size)return[];if(RC&&RC.n===favs.size)return RC.c;const r=await sb.from("listings").select("cat").in("id",[...favs]),cnt={};(r.data||[]).forEach(x=>cnt[x.cat]=(cnt[x.cat]||0)+1);const c=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]).slice(0,3);RC={n:favs.size,c};return c}
+async function build(m){let q=baseQ(m==="res");
+if(m==="cheap")q=q.gte("price",1).order("price",{ascending:true});
+else if(m==="pop")q=q.order("views",{ascending:false}).order("created_at",{ascending:false});
+else if(m==="rec"){const c=await recCats();if(c.length)q=q.in("cat",c);if(me)q=q.neq("user_id",me.id);q=q.order("created_at",{ascending:false})}
+else if(m==="res"&&F.sort!=="new")q=q.order("price",{ascending:F.sort==="asc"});
+else q=q.order("created_at",{ascending:false});return{q}}
+async function loadSec(k){const el=$("#sec-"+k);if(!el)return;el.innerHTML=skCards(4);
+try{const{q}=await build(k),{data,error}=await q.range(0,k==="rec"?15:7);if(error)throw error;let r=data||[];if(k==="rec"&&!favs.size)r=r.filter(x=>x.images&&x.images[0]);r=r.slice(0,8);
+if(!r.length){el.parentElement.hidden=true;return}el.innerHTML=r.map(card).join("")}catch(x){if(k==="pop"){el.parentElement.hidden=true;return}el.innerHTML=errBox(x,k)}}
+function banner(){const S=[["b1","b1s","b1c","#/post"],["b2","b2s","b2c","cats"],["b3","b3s","b3c","chats"]];
+return`<div class="bn" id="bn"><div class="bt" id="bt">${S.map((x,i)=>`<div class="bs s${i}"><div class="bx"><small>✦ PREMIUM</small><b>${t(x[0])}</b><p>${t(x[1])}</p><button type="button" class="btn" data-bn="${x[3]}">${t(x[2])}</button></div></div>`).join("")}</div><div class="bd">${S.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div></div>`}
+function initBanner(){const bt=$("#bt");if(!bt)return;const dots=[...document.querySelectorAll("#bn .bd i")];let i=0;
+bt.onscroll=()=>{const n=Math.round(bt.scrollLeft/bt.clientWidth);dots.forEach((d,j)=>d.classList.toggle("on",j===n));i=n};
+bnT=setInterval(()=>{if(!bt.isConnected){clearInterval(bnT);return}i=(i+1)%dots.length;bt.scrollTo({left:i*bt.clientWidth,behavior:"smooth"})},4500)}
+const chipList=()=>{const a=[];if(F.q.trim())a.push(["q",'“'+F.q.trim()+'”']);if(F.cat)a.push(["cat",cn(F.cat)]);if(F.cond)a.push(["cond",t(F.cond)]);if(F.min!==""||F.max!=="")a.push(["pr",(F.min||0)+" – "+(F.max||"∞")+" TJS"]);if(F.sort!=="new")a.push(["sort",t(F.sort==="asc"?"s2":"s3")]);return a.map(x=>`<button type="button" class="fc" data-x="${x[0]}">${esc(x[1])} ×</button>`).join("")};
+async function runResults(){const el=$("#rs");if(!el)return;el.innerHTML=`<div class="grid">${skCards(6)}</div>`;
+try{const{q}=await build("res"),{data,count,error}=await q.range(0,F.n*20-1);if(error)throw error;const r=data||[];
+el.innerHTML=`<div class="rh"><b>${count==null?r.length:count} ${t("found")}</b><div class="chs">${chipList()}</div></div>`+(r.length?`<div class="grid">${r.map(card).join("")}</div>`+(count>r.length?`<p style="text-align:center;margin:14px"><button class="btn g" id="more">${t("more")}</button></p>`:""):`<p class="empty">${t("none")}</p>`);
+const m=$("#more");if(m)m.onclick=()=>{F.n++;runResults()}}catch(x){el.innerHTML=errBox(x,"res")}}
+function renderBody(){const b=$("#bd");if(!b)return;clearInterval(bnT);const f=filtOn(),fb=$("#fbtn");if(fb)fb.innerHTML="⚙"+(nAct()?`<i>${nAct()}</i>`:"");
+const all=`<button type="button" class="${f?"chip":"cat"}${F.cat?"":" on"}" data-c="">${f?"":'<span class="ico">▦</span>'}${t("all")}</button>`;
+const cats=CATS.map(c=>`<button type="button" class="${f?"chip":"cat"}${F.cat===c[0]?" on":""}" data-c="${c[0]}"><span class="ico">${c[1]}</span>${esc(c[CI[lang]])}</button>`).join("");
+if(f){b.innerHTML=`<div class="chips" id="cg">${all}${cats}</div><div id="rs"></div>`;runResults()}
+else{b.innerHTML=banner()+`<h2>${t("cat")}</h2><div class="catgrid" id="cg">${all}${cats}</div>`+Object.keys(MODES).map(k=>`<section class="sc" id="w-${k}"><div class="sh"><h2>${MODES[k][0]} ${t(MODES[k][1])}</h2><a class="more" href="#/browse/${k}">${t("all")} ›</a></div><div class="hs" id="sec-${k}"></div></section>`).join("");initBanner();Object.keys(MODES).forEach(loadSec)}
+b.onclick=e=>{const c=e.target.closest("[data-c]");if(c){F.cat=c.dataset.c;F.n=1;renderBody();return}
+const bn=e.target.closest("[data-bn]");if(bn){const v=bn.dataset.bn;if(v==="cats"){const g=$("#cg");if(g)g.scrollIntoView({behavior:"smooth",block:"start"})}else location.hash=v==="chats"?(me?"#/chats":"#/auth"):v;return}
+const x=e.target.closest("[data-x]");if(x){const k=x.dataset.x;if(k==="q"){F.q="";$("#q").value=""}if(k==="cat")F.cat="";if(k==="cond")F.cond="";if(k==="pr"){F.min="";F.max=""}if(k==="sort")F.sort="new";F.n=1;renderBody();return}
+const r=e.target.closest("[data-rt]");if(r){const k=r.dataset.rt;if(k==="res")runResults();else loadSec(k)}}}
+async function suggest(){const el=$("#sug");if(!el)return;const v=F.q.trim();
+if(v.length<2){const rc=getRecent();if(!rc.length||document.activeElement!==$("#q")){el.hidden=true;return}el.innerHTML=`<small class="sgh">${t("rcnt")}</small>`+rc.map(x=>`<button type="button" class="sgi" data-sq="${esc(x)}">🕘 ${esc(x)}</button>`).join("");el.hidden=false;return}
+const lv=v.toLowerCase(),cs=CATS.filter(c=>c[CI[lang]].toLowerCase().includes(lv)).slice(0,3);let ls=[];
+try{const r=await sb.from("listings").select("id,title,price").eq("status","active").ilike("title",likeQ(v)).limit(5);ls=r.data||[]}catch(e){}
+if(F.q.trim()!==v)return;
+el.innerHTML=cs.map(c=>`<button type="button" class="sgi" data-sc="${c[0]}">${c[1]} ${esc(c[CI[lang]])}</button>`).join("")+ls.map(l=>`<a class="sgi" href="#/l/${l.id}"><span>${esc(l.title)}</span><small>${fmt(l.price)}</small></a>`).join("");el.hidden=!(cs.length||ls.length)}
+function openFilters(){const o=$("#fsh");if(o)o.remove();const d=document.createElement("div");d.id="fsh";d.className="sheet";
+d.innerHTML=`<div class="sbk" id="fbk"></div><div class="sp"><div class="sh2"><b>${t("filt")}</b><button type="button" id="fx" aria-label="Close">×</button></div>
+<label>${t("sort")}</label><select id="f-s"><option value="new">${t("s1")}</option><option value="asc"${F.sort==="asc"?" selected":""}>${t("s2")}</option><option value="desc"${F.sort==="desc"?" selected":""}>${t("s3")}</option></select>
+<label>${t("cond")}</label><div class="three" id="f-k">${[["",t("all")],["new",t("new")],["used",t("used")]].map(x=>`<button type="button" class="opt${F.cond===x[0]?" on":""}" data-k="${x[0]}">${esc(x[1])}</button>`).join("")}</div>
+<label>${t("price")}</label><div class="row"><input id="f-a" type="number" min="0" inputmode="decimal" placeholder="${t("pf")}" value="${esc(F.min)}"><input id="f-b" type="number" min="0" inputmode="decimal" placeholder="${t("pt")}" value="${esc(F.max)}"></div>
+<label>${t("region")}</label><select id="f-c"><option value="">${t("allr")}</option>${opts(CITIES,F.city)}</select>
+<div class="row" style="margin-top:16px"><button type="button" class="btn g" id="f-r">${t("reset")}</button><button type="button" class="btn" id="f-ok">${t("apply")}</button></div></div>`;
+document.body.appendChild(d);let ck=F.cond;const close=()=>d.remove();$("#fbk").onclick=$("#fx").onclick=close;
+$("#f-k").onclick=e=>{const b=e.target.closest("[data-k]");if(!b)return;ck=b.dataset.k;d.querySelectorAll("#f-k .opt").forEach(x=>x.classList.toggle("on",x===b))};
+const done=()=>{try{localStorage.tb_city=F.city}catch(e){}F.n=1;close();const r=$("#rg");if(r)r.value=F.city;renderBody()};
+$("#f-r").onclick=()=>{F.cond="";F.min="";F.max="";F.sort="new";F.city="";done()};
+$("#f-ok").onclick=()=>{const a=$("#f-a").value,b=$("#f-b").value;if(a!==""&&b!==""&&+a>+b){toast(t("pf")+" > "+t("pt"));return}F.sort=$("#f-s").value;F.cond=ck;F.min=a;F.max=b;F.city=$("#f-c").value;done()}}
+async function home(){clearInterval(bnT);
+app.innerHTML=`<div class="loc"><span>📍</span><select id="rg" aria-label="${t("region")}"><option value="">${t("allr")}</option>${opts(CITIES,F.city)}</select></div>
+<div class="sb"><span class="si">🔍</span><input id="q" type="search" placeholder="${t("q")}" autocomplete="off" enterkeyhint="search" maxlength="80" value="${esc(F.q)}"><button type="button" class="fbtn" id="fbtn" aria-label="${t("filt")}">⚙</button><div class="sug" id="sug" hidden></div></div><div id="bd"></div>`;
+const q=$("#q");let t1,t2;
+$("#rg").onchange=e=>{F.city=e.target.value;try{localStorage.tb_city=F.city}catch(x){}F.n=1;renderBody()};
+q.oninput=e=>{F.q=e.target.value;clearTimeout(t1);clearTimeout(t2);t1=setTimeout(suggest,250);t2=setTimeout(()=>{F.n=1;renderBody()},450)};
+q.onfocus=suggest;q.onblur=()=>{const s=$("#sug");if(s)s.hidden=true};
+q.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();clearTimeout(t2);saveRecent(F.q);$("#sug").hidden=true;q.blur();F.n=1;renderBody()}};
+const sg=$("#sug");sg.onpointerdown=e=>e.preventDefault();
+sg.onclick=e=>{const sq=e.target.closest("[data-sq]"),sc=e.target.closest("[data-sc]");if(sq){F.q=sq.dataset.sq;q.value=F.q}else if(sc){F.cat=sc.dataset.sc;F.q="";q.value=""}else return;sg.hidden=true;F.n=1;renderBody()};
+$("#fbtn").onclick=openFilters;renderBody()}
+let BN=1;
+async function browseV(k){if(!MODES[k])k="new";BN=1;app.innerHTML=`<h1>${MODES[k][0]} ${t(MODES[k][1])}</h1><div id="rs"></div>`;
+const run=async()=>{const el=$("#rs");el.innerHTML=`<div class="grid">${skCards(6)}</div>`;try{const{q}=await build(k),{data,count,error}=await q.range(0,BN*20-1);if(error)throw error;const r=data||[];
 el.innerHTML=r.length?`<div class="grid">${r.map(card).join("")}</div>`+(count>r.length?`<p style="text-align:center;margin:14px"><button class="btn g" id="more">${t("more")}</button></p>`:""):`<p class="empty">${t("none")}</p>`;
-const m=$("#more");if(m)m.onclick=()=>{F.n++;list()}}
-
+const m=$("#more");if(m)m.onclick=()=>{BN++;run()}}catch(x){el.innerHTML=errBox(x,"b");const r=el.querySelector("[data-rt]");if(r)r.onclick=run}};await run()}
+async function toggleFav(id){if(!me){toast(t("need"));location.hash="#/auth";return}
+try{if(favs.has(id)){must(await sb.from("favorites").delete().eq("listing_id",id).select());favs.delete(id)}else{must(await sb.from("favorites").insert({listing_id:id}).select());favs.add(id)}
+document.querySelectorAll(`[data-h="${id}"]`).forEach(b=>{const on=favs.has(id);b.classList.toggle("on",on);b.textContent=on?"♥":"♡"})}catch(x){fail(x)}}
 async function favsV(){if(!me){location.hash="#/auth";return}
 const ids=must(await sb.from("favorites").select("listing_id")).map(x=>x.listing_id);
 const a=ids.length?must(await sb.from("listings").select("id,title,price,city,images,created_at").in("id",ids).eq("status","active")):[];
@@ -169,7 +266,7 @@ async function detail(id){
 const{data:l,error}=await sb.from("listings").select("*").eq("id",id).maybeSingle();
 if(error)fail(error);if(error||!l){app.innerHTML=`<p class="empty">${t("none")}</p>`;return}
 const pr=await sb.from("profiles").select("*").eq("id",l.user_id).maybeSingle(),p=pr.data||{};
-const own=me&&me.id===l.user_id,tgu=(p.telegram||"").replace(/^@/,"").replace(/[^\w]/g,""),ph=(p.phone||"").replace(/[^\d+]/g,""),im=l.images||[];
+bump(l);const own=me&&me.id===l.user_id,tgu=(p.telegram||"").replace(/^@/,"").replace(/[^\w]/g,""),ph=(p.phone||"").replace(/[^\d+]/g,""),im=l.images||[];
 app.innerHTML=`${im.length?`<div class="gal">${im.map(u=>`<img src="${esc(u)}" alt="">`).join("")}</div>`:""}
 <h1>${esc(l.title)}</h1><h2 style="color:var(--sky);margin-top:0">${fmt(l.price)}</h2>
 <small>${esc(cn(l.cat))} · ${t(l.cond)} · ${esc(l.city)}${l.district?", "+esc(l.district):""} · ${dt(l.created_at)}${l.status==="hidden"?" · "+t("hid"):""}</small>
@@ -187,9 +284,38 @@ let inbox=null,unread=0;
 const av=(p,cls="")=>`<div class="av ${cls}">${p&&p.avatar_url?`<img src="${esc(p.avatar_url)}" alt="">`:esc(((p&&p.name)||"?").slice(0,1).toUpperCase())}</div>`;
 const dayLabel=v=>{const d=new Date(v),n=new Date(),y=new Date();y.setDate(n.getDate()-1);return d.toDateString()===n.toDateString()?t("today"):d.toDateString()===y.toDateString()?t("yday"):dt(v)};
 const shortT=v=>new Date(v).toDateString()===new Date().toDateString()?tm(v):dt(v).slice(0,5);
-async function loadUnread(){if(!me){unread=0;return}const r=await sb.from("messages").select("id",{count:"exact",head:true}).neq("sender_id",me.id).is("read_at",null);if(!r.error){unread=r.count||0;nav()}}
-function watchInbox(){if(inbox){sb.removeChannel(inbox);inbox=null}if(!me)return;
-inbox=sb.channel("inbox-"+me.id).on("postgres_changes",{event:"INSERT",schema:"public",table:"messages"},p=>{const m=p.new;if(!m||m.sender_id===me.id)return;if(location.hash==="#/chat/"+m.conversation_id)return;unread++;nav();toast("💬 "+t("newmsg"));if(location.hash==="#/chats")chatsV().catch(fail)}).subscribe()}
+async function loadUnread(){
+  if(!me){unread=0;nav();return}
+  try{
+    const cr=await sb.from("conversations").select("id").or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`);
+    if(cr.error)throw cr.error;
+    const ids=(cr.data||[]).map(x=>x.id);
+    if(!ids.length){unread=0;nav();return}
+    const r=await sb.from("messages").select("id",{count:"exact",head:true})
+      .in("conversation_id",ids).neq("sender_id",me.id).is("read_at",null);
+    if(r.error)throw r.error;
+    unread=r.count||0;nav();
+  }catch(error){console.warn("O'qilmagan xabarlar sonini olish amalga oshmadi:",error)}
+}
+function watchInbox(){
+  if(inbox){sb.removeChannel(inbox);inbox=null}
+  if(!me)return;
+  inbox=sb.channel("inbox-"+me.id)
+    .on("postgres_changes",{event:"INSERT",schema:"public",table:"messages"},async p=>{
+      const m=p.new;if(!m||m.sender_id===me.id)return;
+      try{
+        const r=await sb.from("conversations").select("id")
+          .eq("id",m.conversation_id)
+          .or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`).maybeSingle();
+        if(r.error||!r.data)return;
+        if(location.hash!=="#/chat/"+m.conversation_id){
+          toast("💬 "+t("newmsg"));
+          if(location.hash==="#/chats")chatsV().catch(fail);
+        }
+        await loadUnread();
+      }catch(error){console.warn("Inbox yangilanishida xato:",error)}
+    }).subscribe();
+}
 async function chatsV(){if(!me){location.hash="#/auth";return}
 const rows=must(await sb.from("conversations").select("id,listing_id,buyer_id,seller_id,last_message_at,created_at").or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`).order("last_message_at",{ascending:false}).limit(60));
 app.innerHTML=`<h1>💬 ${t("chats")}</h1><div id="cl">${rows.length?"":`<p class="empty"><span style="font-size:40px">💬</span><br>${t("nochat")}</p>`}</div>`;if(!rows.length)return;
@@ -295,7 +421,7 @@ if(ids.length)must(await sb.from("listings").select("id,title").in("id",ids)).fo
 app.innerHTML=`<h1>⚙ ${t("admin")}</h1><h2>${t("reps")}</h2>${R.map(r=>`<div class="li"><a href="#/l/${r.listing_id}">${esc(T.get(r.listing_id)||"—")}<br><small>${esc(r.reason)}${r.resolved?" ✓":""}</small></a>${r.resolved?"":`<button class="btn g sm" data-a="res" data-id="${r.id}">${t("res")}</button>`}</div>`).join("")||`<p class="empty">—</p>`}
 <h2>${t("lst")}</h2>${L.map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)} · ${esc(l.city)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><button class="btn g sm" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")}`}
 
-app.onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
+app.onclick=async e=>{const hh=e.target.closest("[data-h]");if(hh){e.preventDefault();return toggleFav(+hh.dataset.h)}const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
 try{if(a==="out"){await sb.auth.signOut();me=null;favs=new Set();unread=0;watchInbox();location.hash="#/";return route()}
 if(!me)return(location.hash="#/auth",toast(t("need")));
 if(a==="chat")return await startChat(+b.dataset.l,b.dataset.s);
@@ -305,11 +431,18 @@ if(a==="del"){if(!confirm(t("sure")))return;const l=must(await sb.from("listings
 if(a==="hide"||a==="show"){must(await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"}));return route()}
 if(a==="res"){must(await sb.from("reports").update({resolved:true}).eq("id",id).select());return route()}}catch(x){fail(x)}};
 
-async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}document.body.classList.toggle("inchat",h[0]==="chat");nav();window.scrollTo(0,0);
-try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x);app.innerHTML=`<div class="empty" style="word-break:break-word"><b>${esc(t("err"))}</b><br>${esc((x&&x.message)||x)}</div>`}}
-$("#lg").value=lang;document.documentElement.lang=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
+async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}clearInterval(bnT);document.body.classList.toggle("inchat",h[0]==="chat");nav();window.scrollTo(0,0);
+try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"browse":return await browseV(h[1]);case"chats":return await chatsV();case"chat":return await chatV(h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x);app.innerHTML=`<div class="empty" style="word-break:break-word"><b>${esc(t("err"))}</b><br>${esc((x&&x.message)||x)}</div>`}}
+$("#bell").onclick=()=>{location.hash=me?"#/chats":"#/auth"};$("#lg").value=lang;document.documentElement.lang=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
 sb.auth.onAuthStateChange(ev=>{if(ev==="SIGNED_OUT"){me=null;unread=0;nav()}});window.addEventListener("hashchange",route);
-if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("./sw.js",{scope:"./"})
+      .then(reg=>reg.update().catch(()=>{}))
+      .catch(error=>console.warn("Service Worker ro'yxatdan o'tmadi:",error));
+  },{once:true});
+}
+{const _n=nav;nav=function(){_n();const b=$("#bb");if(b){b.hidden=!(unread>0);b.textContent=unread>99?"99+":unread}}}
 refreshMe().catch(fail).finally(route);
 </script>
 </body>
