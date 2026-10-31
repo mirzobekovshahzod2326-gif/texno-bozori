@@ -213,7 +213,7 @@ if(a==="hide"||a==="show"){must(await sb.rpc("admin_set_status",{lid:id,s:a==="h
 if(a==="res"){must(await sb.from("reports").update({resolved:true}).eq("id",id).select());return route()}}catch(x){fail(x)}};
 
 async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}nav();window.scrollTo(0,0);
-try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(+h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x);app.innerHTML=`<div class="empty" style="word-break:break-word"><b>${esc(t("err"))}</b><br>${esc((x&&x.message)||x)}</div>`}}
+try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x);app.innerHTML=`<div class="empty" style="word-break:break-word"><b>${esc(t("err"))}</b><br>${esc((x&&x.message)||x)}</div>`}}
 $("#lg").value=lang;document.documentElement.lang=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
 sb.auth.onAuthStateChange(ev=>{if(ev==="SIGNED_OUT"){me=null;nav()}});window.addEventListener("hashchange",route);
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
