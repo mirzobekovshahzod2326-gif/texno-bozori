@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.mirzobekovshahzod2326_gif.twa",
+        "sha256_cert_fingerprints": ["CA:2A:FF:20:23:B8:35:24:6E:9A:CF:93:9C:18:24:48:18:E6:37:AD:EA:38:AF:3C:40:A9:91:75:42:D4:A6:E1"]
+      }
+    }]
