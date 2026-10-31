@@ -2,7 +2,7 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <meta name="theme-color" content="#10213f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="ТЕХНО БОЗОРИ">
@@ -77,6 +77,22 @@ nav a{position:relative}.nb{position:absolute;top:1px;left:calc(50% + 6px);min-w
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.opt{border:1.5px solid var(--l);background:#fff;border-radius:16px;padding:18px 8px;font-weight:800;font-size:15px}.opt.on{border-color:#2563eb;background:#eef4ff;color:#1d4ed8}
 .thumbs div{position:relative}.fi1{position:absolute;left:4px;bottom:4px;background:#2563eb;color:#fff;font-size:10px;font-style:normal;font-weight:800;padding:1px 7px;border-radius:99px}
 .rv{display:flex;gap:12px;background:#fff;border:1px solid var(--l);border-radius:16px;padding:10px}.rv .mt{width:96px;height:96px}.rv .mi b{display:block;text-align:left}.rv .mi{align-items:flex-start}
+html,body{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{touch-action:manipulation;overscroll-behavior-y:none}
+input,select,textarea{font-size:16px}header select{font-size:15px;padding:7px 8px}
+body.inchat{padding-bottom:0;overflow:hidden}body.inchat header,body.inchat nav{display:none}body.inchat main{padding:0;max-width:none}
+body.inchat .cw{position:fixed;left:0;right:0;top:0;height:100dvh;max-height:none;border:0;border-radius:0;z-index:30;background:#e9eff8}
+.cw .ct{padding:calc(10px + env(safe-area-inset-top)) 12px 10px;box-shadow:0 2px 10px rgba(15,35,70,.07);position:relative;z-index:2}.cw .ct .av{width:42px;height:42px}.cw .ct b{font-size:16px}.cw .ct small{color:#16a36a;font-weight:650}
+.cw .cp{padding:7px 12px;font-size:13px}.cw .cp b{font-size:13px}.cw .cp small{color:#1d4ed8;font-weight:800}
+.cms{padding:14px 12px;gap:6px;background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.7),transparent 40%),#e6edf7}
+.mg{font-size:16px;line-height:1.38;padding:8px 12px 6px;border-radius:18px;box-shadow:0 1px 2px rgba(15,35,70,.08);max-width:80%}
+.mg.me{background:linear-gradient(135deg,#2563eb,#1f7ae0);color:#fff;border-bottom-right-radius:6px}.mg.th{border-bottom-left-radius:6px}.mg.me small{color:rgba(255,255,255,.78)}.mg.me .tk{color:#cfe6ff}
+.mg small{font-size:10.5px;margin-top:1px}.mg.st{background:transparent;box-shadow:none;color:inherit;font-size:46px;padding:2px 6px}.mg.st small{color:#64748b}
+.cc{padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -2px 10px rgba(15,35,70,.05)}
+.cf{align-items:flex-end;gap:8px}.cf textarea{min-height:44px;border-radius:22px;background:#f1f5fb;border:1.5px solid transparent;padding:11px 16px;line-height:1.3}.cf textarea:focus{background:#fff;border-color:#9bbcff}
+.cf button{width:44px;height:44px;border-radius:50%;font-size:20px;display:grid;place-items:center;padding:0}.cf .snd{background:#2563eb;color:#fff;box-shadow:0 4px 12px rgba(37,99,235,.35)}.cf .snd:disabled{box-shadow:none}
+.stk{grid-template-columns:repeat(6,1fr);background:#f4f7fc;border-radius:16px;padding:8px}.stk button{min-height:46px;font-size:26px}
+.ct #bk{width:40px;height:40px;border-radius:50%;font-size:24px;padding:0;line-height:1}
+.ci{box-shadow:0 2px 8px rgba(15,35,70,.04)}.ci .av{width:50px;height:50px}.ci .cr b{font-size:16px}
 #toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#14243d;color:#fff;padding:11px 17px;border-radius:999px;display:none;z-index:40;font-weight:700;max-width:calc(100vw - 32px);text-align:center}
 @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}.catgrid{grid-template-columns:repeat(4,1fr)}.dash{grid-template-columns:repeat(4,1fr)}nav{left:50%;right:auto;transform:translateX(-50%);width:min(620px,calc(100% - 32px));bottom:12px;border:1px solid var(--l);border-radius:18px}}
 </style>
@@ -197,6 +213,8 @@ app.innerHTML=`<section class="cw"><div class="ct"><button id="bk" aria-label="B
 <div class="cms" id="cms">${msgs.length?msgs.map(mh).join(""):`<p class="empty" style="margin:auto;background:none;border:0">${t("nomsg")}</p>`}</div>
 ${msgs.length?"":`<div class="qk" id="qk">${[t("q1"),t("q2"),t("q3")].map(x=>`<button type="button">${esc(x)}</button>`).join("")}</div>`}
 <div class="cc"><div class="stk" id="stk" hidden>${STK.map(x=>`<button type="button" data-s="${x}">${x}</button>`).join("")}</div><div class="cf"><button type="button" id="st" aria-label="Stickers">☺</button><textarea id="ci" rows="1" maxlength="2000" placeholder="${t("write")}"></textarea><button class="snd" id="sn" type="button" disabled>➤</button></div></div></section>`;
+const cw=app.querySelector(".cw"),vv=window.visualViewport;
+const fit=()=>{if(!cw.isConnected){if(vv)vv.removeEventListener("resize",fit);return}if(vv)cw.style.height=vv.height+"px";const m=$("#cms");if(m)m.scrollTop=m.scrollHeight};if(vv){vv.addEventListener("resize",fit);fit()}
 const box=$("#cms"),inp=$("#ci"),sn=$("#sn"),cst=$("#cst");let online=false,tt=null,lt=0,ch=null;
 const stat=()=>{cst.textContent=cst.dataset.typ?t("typing"):online?t("online"):""};
 const down=()=>{box.scrollTop=box.scrollHeight};down();markRead(id);
@@ -287,7 +305,7 @@ if(a==="del"){if(!confirm(t("sure")))return;const l=must(await sb.from("listings
 if(a==="hide"||a==="show"){must(await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"}));return route()}
 if(a==="res"){must(await sb.from("reports").update({resolved:true}).eq("id",id).select());return route()}}catch(x){fail(x)}};
 
-async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}nav();window.scrollTo(0,0);
+async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}document.body.classList.toggle("inchat",h[0]==="chat");nav();window.scrollTo(0,0);
 try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x);app.innerHTML=`<div class="empty" style="word-break:break-word"><b>${esc(t("err"))}</b><br>${esc((x&&x.message)||x)}</div>`}}
 $("#lg").value=lang;document.documentElement.lang=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
 sb.auth.onAuthStateChange(ev=>{if(ev==="SIGNED_OUT"){me=null;unread=0;nav()}});window.addEventListener("hashchange",route);
