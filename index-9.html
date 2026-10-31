@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10213f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ТЕХНО БОЗОРИ">
+<title>ТЕХНО БОЗОРИ</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{--bg:#f3f6fb;--l:#e2e8f0;--sky:#2563eb;--ink:#152238;--m:#64748b;--sh:0 8px 28px rgba(15,35,70,.07)}
+*{box-sizing:border-box;margin:0}html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+input,select,textarea{width:100%;background:#fff;border:1px solid #d8e1ed;border-radius:12px;padding:12px 14px;min-height:46px}textarea{min-height:105px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--sky);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);border-bottom:1px solid var(--l);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:18px;color:#14243d}.brand img{width:36px;height:36px;border-radius:11px}.brand i{font-style:normal;color:var(--sky)}
+header select{width:auto;max-width:132px;margin-left:auto;padding:8px 10px;min-height:0;font-size:13px;font-weight:650;background:#f8fafc}
+main{max-width:1120px;margin:0 auto;padding:18px 16px 28px}
+h1{font-size:clamp(21px,4vw,27px);line-height:1.2;font-weight:850;margin:8px 0 10px;color:#14243d}h2{font-size:17px;margin:20px 0 10px;color:#20324e;font-weight:800}small{color:var(--m)}
+.hero{display:flex;align-items:flex-end;min-height:112px;padding:22px;margin-bottom:16px;border-radius:20px;color:#fff;font-size:clamp(21px,4vw,30px);font-weight:850;line-height:1.15;background:radial-gradient(circle at 85% 15%,rgba(79,195,247,.5),transparent 28%),linear-gradient(115deg,#10264b,#174b91 55%,#1685b7)}
+.btn{border:0;border-radius:12px;background:var(--sky);color:#fff;padding:10px 16px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px}.btn.g{background:#eef4ff;color:#1d4ed8;border:1px solid #d9e6ff}.btn.r{background:#fff1f2;color:#be123c;border:1px solid #ffe0e5}.btn.sm{padding:6px 10px;min-height:34px;font-size:13px;border-radius:9px}.btn:disabled{opacity:.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.row>*{flex:1;min-width:120px}
+.catgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 16px}.cat{min-height:64px;text-align:left;border:1px solid var(--l);border-radius:15px;background:#fff;padding:10px;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:750;color:#263751}.cat.on{border-color:#8ab4ff;background:#f0f6ff}.cat .ico{font-size:23px;width:32px;height:32px;display:grid;place-items:center;flex:none;background:#f2f6fc;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#fff;border:1px solid var(--l);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:4/3;background:linear-gradient(145deg,#edf3fb,#e4ecf7);display:grid;place-items:center;font-size:36px;overflow:hidden}.ph img{width:100%;height:100%;object-fit:cover}
+.in{padding:10px;display:flex;flex-direction:column;gap:3px}.in b{color:#1d4ed8;font-size:15px;font-weight:850}.in span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:700}.in small{font-size:11px}
+.box{background:#fff;border:1px solid var(--l);border-radius:17px;padding:16px;margin:12px 0;box-shadow:var(--sh)}.box label,.fs label{display:block;margin:12px 0 6px;color:#53647c;font-size:13px;font-weight:700}
+.gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:8px 0 14px}.gal img{height:clamp(220px,55vw,360px);border-radius:15px;scroll-snap-align:start;max-width:92%;object-fit:cover}
+.empty{text-align:center;color:var(--m);padding:44px 16px;background:#fff;border:1px dashed #cbd6e5;border-radius:16px;margin:12px 0}
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--l);display:flex;padding:7px 5px max(8px,env(safe-area-inset-bottom));z-index:25}
+nav a{flex:1;text-align:center;padding:5px 2px;font-size:11px;font-weight:650;color:#8290a5;border-radius:12px}nav a.on{color:#1d4ed8;background:#eef4ff}nav a span{display:block;font-size:21px;line-height:1.25}
+.thumbs{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.thumbs div{position:relative}.thumbs img{width:76px;height:76px;object-fit:cover;border-radius:12px}.thumbs button{position:absolute;top:-6px;right:-6px;border-radius:50%;width:23px;height:23px;border:2px solid #fff;background:#dc3545;color:#fff;font-weight:800}
+.li{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--l)}.li>a{flex:1;overflow:hidden;font-weight:700}
+.dash{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.dc{background:#fff;border:1px solid #dfe8f5;border-radius:16px;padding:14px}.dc b{display:block;font-size:26px;color:#2563eb}.dc span{font-size:12px;color:#667892;font-weight:650}
+.intro{background:linear-gradient(125deg,#10264b,#1760a5 68%,#1685b7);color:#fff;border-radius:18px;padding:16px;margin:8px 0 12px}.intro b{display:block;font-size:18px}.intro p{font-size:13px;color:#e4efff}
+.fs{background:#fff;border:1px solid var(--l);border-radius:17px;padding:16px;margin:12px 0;box-shadow:var(--sh)}.fh{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-weight:800}.fh i{font-style:normal;width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#eaf2ff;color:#1d4ed8}
+.drop{display:flex;align-items:center;justify-content:center;min-height:90px;border:2px dashed #b9cbea;border-radius:15px;background:#f7faff;color:#2458a8;font-weight:800;text-align:center;cursor:pointer}.drop input{display:none}
+.submit{position:sticky;bottom:calc(78px + env(safe-area-inset-bottom));width:100%;min-height:52px;font-size:16px;box-shadow:0 8px 22px rgba(37,99,235,.23)}
+.soc{background:linear-gradient(120deg,#10264b,#173d78);border-radius:18px;padding:14px;color:#fff;margin:14px 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}.soc div{flex:1;min-width:160px}.soc small{color:#d8e7ff}.soc a{border-radius:11px;padding:8px 12px;background:#fff;color:#173d78;font-size:12px;font-weight:850}
+.ci{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--l);border-radius:16px;background:#fff;margin-bottom:9px}.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;background:#dceaff;color:#1d4ed8;font-weight:850}.cm{flex:1;min-width:0}.cm b,.cm small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.un{min-width:20px;height:20px;border-radius:99px;background:#2563eb;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;padding:0 5px}
+.cw{display:flex;flex-direction:column;height:calc(100dvh - 160px);background:#edf3fb;border:1px solid #dce5f1;border-radius:18px;overflow:hidden}.ct{display:flex;align-items:center;gap:10px;padding:10px;background:#fff;border-bottom:1px solid var(--l)}.ct button{border:0;background:#eef4ff;color:#1d4ed8;border-radius:11px;width:38px;height:38px;font-size:20px}
+.cp{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#f8fbff;border-bottom:1px solid var(--l);font-size:12px}.cp img{width:40px;height:40px;object-fit:cover;border-radius:9px}
+.cms{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.mg{max-width:84%;padding:8px 11px;border-radius:15px;background:#fff;overflow-wrap:anywhere;white-space:pre-wrap}.mg.me{align-self:flex-end;background:#dcecff;border-bottom-right-radius:5px}.mg.st{font-size:42px;background:transparent;padding:2px 6px}.mg small{display:block;text-align:right;font-size:10px}
+.cc{background:#fff;border-top:1px solid var(--l);padding:8px}.stk{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:8px}.stk button{border:0;background:#f4f7fc;border-radius:10px;min-height:42px;font-size:24px}.cf{display:flex;gap:7px;align-items:flex-end}.cf textarea{min-height:44px;max-height:110px;border-radius:15px;resize:none;padding:10px 12px}.cf button{flex:none;width:44px;height:44px;border:0;border-radius:14px;background:#f0f5fc;font-size:19px}.cf .snd{background:#2563eb;color:#fff}
+#toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#14243d;color:#fff;padding:11px 17px;border-radius:999px;display:none;z-index:40;font-weight:700;max-width:calc(100vw - 32px);text-align:center}
+@media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}.catgrid{grid-template-columns:repeat(4,1fr)}.dash{grid-template-columns:repeat(4,1fr)}nav{left:50%;right:auto;transform:translateX(-50%);width:min(620px,calc(100% - 32px));bottom:12px;border:1px solid var(--l);border-radius:18px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#/"><img src="icon.svg" alt=""><span>ТЕХНО <i>БОЗОРИ</i></span></a>
+<select id="lg" aria-label="Til"><option value="uz">O‘zbekcha</option><option value="tg">Тоҷикӣ</option><option value="ru">Русский</option></select></header>
+<main id="app"></main>
+<nav id="nav"></nav><div id="toast" role="status"></div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+"use strict";
+if(!window.supabase||!window.CFG||!CFG.url||!CFG.key){document.querySelector("#app").innerHTML='<section class="box"><h1>Ulanish sozlamasi topilmadi</h1><p>config.js va internetni tekshiring.</p></section>';throw new Error("config")}
+const sb=supabase.createClient(CFG.url,CFG.key);
+const DOM="phone.tehnobozori.app";
+const normPh=x=>{x=String(x).replace(/\D/g,"");if(x.startsWith("00"))x=x.slice(2);if(x.length===9)x="992"+x;return x};
+const idEmail=id=>{id=String(id).trim();if(id.includes("@"))return id.toLowerCase();const n=normPh(id);if(n.length<9||n.length>15)throw new Error(t("phone")+": +992 900 00 00 00");return n+"@"+DOM};
+const SOC={telegram:"https://t.me/tehno_bozori",instagram:"https://www.instagram.com/tehno.bozori?exln=MXhubm05YTVoZ3NseA=="};
+const CATS=[["phones","📱","Telefonlar va planshetlar","Телефонҳо ва планшетҳо","Телефоны и планшеты"],["pc","💻","Kompyuterlar va noutbuklar","Компютерҳо ва ноутбукҳо","Компьютеры и ноутбуки"],["tv","📺","Televizorlar va audio texnika","Телевизорҳо ва аудио","Телевизоры и аудио"],["home","🧊","Maishiy texnika","Техникаи маишӣ","Бытовая техника"],["cars","🚗","Avtomobillar va transport","Мошинҳо ва нақлиёт","Авто и транспорт"],["realty","🏠","Uy-joy va ko‘chmas mulk","Манзил ва амвол","Недвижимость"],["clothes","👕","Kiyim-kechak va poyabzal","Либос ва пойафзол","Одежда и обувь"],["furn","🛋️","Mebel va uy jihozlari","Мебел ва рӯзғор","Мебель и товары для дома"],["pets","🐾","Hayvonlar","Ҳайвонот","Животные"],["jobs","🛠️","Ish va xizmatlar","Кор ва хизматрасонӣ","Работа и услуги"],["kids","🧸","Bolalar va o‘yinchoqlar","Кӯдакон ва бозичаҳо","Детям и игрушки"],["sport","⚽","Sport va dam olish","Варзиш ва истироҳат","Спорт и отдых"],["build","🧱","Qurilish va ta’mirlash","Сохтмон ва таъмир","Строительство и ремонт"],["agri","🌾","Qishloq xo‘jaligi","Кишоварзӣ","Сельское хозяйство"],["business","🏪","Biznes va savdo jihozlari","Бизнес ва таҷҳизот","Бизнес и оборудование"],["personal","🧳","Shaxsiy buyumlar","Ашёи шахсӣ","Личные вещи"],["books","📚","Kitoblar va ta’lim","Китоб ва маориф","Книги и образование"],["beauty","💄","Go‘zallik va parvarish","Зебоӣ ва нигоҳубин","Красота и уход"],["food","🥬","Oziq-ovqat","Маҳсулоти хӯрокворӣ","Продукты питания"],["music","🎸","Musiqa asboblari","Мусиқӣ ва асбобҳо","Музыка и инструменты"],["other","📦","Boshqa mahsulotlar","Дигар молҳо","Другое"]];
+const CITIES=["Душанбе","Хуҷанд","Бохтар","Кӯлоб","Истаравшан","Исфара","Б. Ғафуров","Спитамен","Ҷ. Расулов","Панҷакент","Ҳисор","Вахдат","Турсунзода","Дигар ҳудудлар"];
+const D={home:["Bosh sahifa","Асосӣ","Главная"],favs:["Sevimlilar","Дӯстдошта","Избранное"],chats:["Xabarlar","Паёмҳо","Сообщения"],post:["E’lon","Эълон","Объявление"],me:["Profil","Профил","Профиль"],login:["Kirish","Ворид шудан","Войти"],reg:["Ro‘yxatdan o‘tish","Бақайдгирӣ","Регистрация"],out:["Chiqish","Баромадан","Выйти"],q:["Qidirish...","Ҷустуҷӯ...","Поиск..."],all:["Hammasi","Ҳама","Все"],city:["Shahar","Шаҳр","Город"],dist:["Tuman","Ноҳия","Район"],cond:["Holati","Ҳолат","Состояние"],new:["Yangi","Нав","Новое"],used:["Ishlatilgan","Истифодашуда","Б/у"],pf:["Narx dan","Нарх аз","Цена от"],pt:["Narx gacha","Нарх то","Цена до"],s1:["Yangilari","Навҳо","Новые"],s2:["Arzonlari","Арзонҳо","Дешевле"],s3:["Qimmatlari","Гаронҳо","Дороже"],title:["Nomi","Ном","Название"],descr:["Tavsif","Тавсиф","Описание"],price:["Narxi (TJS)","Нарх (TJS)","Цена (TJS)"],photos:["Rasm qo‘shish (6 tagacha)","Иловаи акс (то 6)","Добавить фото (до 6)"],save:["Saqlash","Нигоҳ доштан","Сохранить"],del:["O‘chirish","Нест кардан","Удалить"],edit:["Tahrirlash","Таҳрир","Изменить"],call:["Qo‘ng‘iroq","Занг","Позвонить"],rep:["Shikoyat","Шикоят","Жалоба"],why:["Shikoyat sababi:","Сабаби шикоят:","Причина жалобы:"],sent:["Yuborildi","Фиристода шуд","Отправлено"],more:["Yana","Боз","Ещё"],none:["E’lonlar topilmadi","Эълон ёфт нашуд","Объявлений нет"],name:["Ism","Ном","Имя"],phone:["Telefon","Телефон","Телефон"],pass:["Parol (8+)","Рамз (8+)","Пароль (8+)"],mine:["Mening e’lonlarim","Эълонҳои ман","Мои объявления"],ok:["Saqlandi","Нигоҳ дошта шуд","Сохранено"],err:["Xatolik: ","Хато: ","Ошибка: "],need:["Avval tizimga kiring","Аввал ворид шавед","Сначала войдите"],admin:["Admin","Админ","Админ"],hide:["Yashirish","Пинҳон","Скрыть"],show:["Ko‘rsatish","Нишон","Показать"],res:["Yopish","Бастан","Закрыть"],reps:["Shikoyatlar","Шикоятҳо","Жалобы"],lst:["E’lonlar","Эълонҳо","Объявления"],sure:["Ishonchingiz komilmi?","Боварӣ доред?","Вы уверены?"],deny:["Ruxsat yo‘q","Иҷозат нест","Нет доступа"],cat:["Turkum","Категория","Категория"],hid:["Yashirin","Пинҳон","Скрыто"],chk:["Emailni tasdiqlang yoki qayta kiring","Emailро тасдиқ кунед ё дубора ворид шавед","Подтвердите email или войдите снова"],write:["Xabar yozing...","Паём нависед...","Введите сообщение..."],msg:["Sotuvchiga yozish","Ба фурӯшанда нависед","Написать продавцу"],nochat:["Hozircha suhbatlar yo‘q. Mahsulot sahifasidan sotuvchiga yozing.","Ҳоло суҳбат нест. Аз саҳифаи маҳсулот нависед.","Пока нет переписок. Напишите продавцу со страницы товара."],nomsg:["Suhbatni boshlang 👋","Суҳбатро оғоз кунед 👋","Начните общение 👋"],self:["O‘zingizga yozib bo‘lmaydi","Ба худ навиштан мумкин нест","Нельзя писать самому себе"],tot:["Jami e’lonlar","Ҳамаи эълонҳо","Всего объявлений"],act:["Faol","Фаъол","Активные"],hidn:["Yashirin","Пинҳон","Скрытые"],posth:["E’lon joylashtirish","Гузоштани эълон","Подать объявление"],postp:["Ma’lumotlarni to‘ldiring, rasm qo‘shing va xaridorlarga ko‘rsating.","Маълумотро пур кунед, акс илова кунед.","Заполните данные, добавьте фото."],hero:["Sotib oling. Soting. Toping.","Харид кунед. Фурӯшед. Ёбед.","Покупай. Продавай. Находи."],foll:["ТЕХНО БОЗОРИни кузатиб боринг","ТЕХНО БОЗОРИро пайгирӣ кунед","Следите за ТЕХНО БОЗОРИ"],step1:["Mahsulot haqida","Дар бораи маҳсулот","О товаре"],step2:["Narx va holati","Нарх ва ҳолат","Цена и состояние"],step3:["Joylashuv","Ҷойгиршавӣ","Местоположение"],step4:["Rasmlar","Аксҳо","Фото"],pers:["Shaxsiy ma’lumotlar","Маълумоти шахсӣ","Личные данные"],load:["Saqlanmoqda...","Нигоҳ дошта мешавад...","Сохранение..."]};
+const LN={uz:0,tg:1,ru:2},CI={uz:2,tg:3,ru:4};
+let lang=localStorage.lang||"uz",me=null,favs=new Set(),F={cat:"",q:"",city:"",cond:"",min:"",max:"",sort:"new",n:1},mode="login",chan=null;
+const t=k=>(D[k]||[k,k,k])[LN[lang]],$=s=>document.querySelector(s),app=$("#app");
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>Number(n).toLocaleString("ru-RU")+" TJS",cn=s=>(CATS.find(c=>c[0]===s)||CATS[CATS.length-1])[CI[lang]];
+const toast=m=>{const e=$("#toast");e.textContent=m;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2600)};
+const fail=e=>{console.error(e);toast(t("err")+(e&&e.message||e))},adm=()=>me&&me.role==="admin";
+const opts=(a,sel,f)=>a.map(x=>{const v=f?x[0]:x;return`<option value="${esc(v)}"${v===sel?" selected":""}>${esc(f?f(x):x)}</option>`}).join("");
+const dt=v=>new Date(v).toLocaleDateString("ru-RU"),tm=v=>new Date(v).toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"});
+const card=l=>`<a class="card" href="#/l/${l.id}"><div class="ph">${l.images&&l.images[0]?`<img loading="lazy" src="${esc(l.images[0])}" alt="">`:"📷"}</div><div class="in"><b>${fmt(l.price)}</b><span>${esc(l.title)}</span><small>${esc(l.city)} · ${dt(l.created_at)}</small></div></a>`;
+const comp=f=>new Promise((ok,no)=>{const i=new Image();i.onload=()=>{const s=Math.min(1,1200/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*s;c.height=i.height*s;c.getContext("2d").drawImage(i,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error("img")),"image/jpeg",.8)};i.onerror=()=>no(new Error("img"));i.src=URL.createObjectURL(f)});
+const rmImgs=a=>{const p=(a||[]).map(u=>{const i=u.indexOf("/images/");return i<0?null:decodeURIComponent(u.slice(i+8))}).filter(Boolean);return p.length?sb.storage.from("images").remove(p):0};
+const must=r=>{if(r.error)throw r.error;return r.data};
+
+async function refreshMe(){const{data:{session}}=await sb.auth.getSession();if(!session){me=null;favs=new Set();return}
+const[a,b]=await Promise.all([sb.from("profiles").select("id,name,phone,telegram,role").eq("id",session.user.id).maybeSingle(),sb.from("favorites").select("listing_id")]);
+const m=session.user.user_metadata||{};
+me=Object.assign({name:m.name||"User",phone:m.phone||"",telegram:m.telegram||"",role:"user"},a.data||{},{id:session.user.id,email:session.user.email});
+favs=new Set((b.data||[]).map(x=>Number(x.listing_id)))}
+function nav(){const h=location.hash||"#/";const it=[["#/","🏠",t("home")],["#/favs","♥",t("favs")],[me?"#/chats":"#/auth","💬",t("chats")],["#/post","＋",t("post")],[me?"#/me":"#/auth","👤",me?t("me"):t("login")]];
+$("#nav").innerHTML=it.map(x=>`<a href="${x[0]}" class="${h===x[0]?"on":""}"><span>${x[1]}</span>${esc(x[2])}</a>`).join("")}
+
+async function home(){
+const soc=`<section class="soc"><div><b>📣 ${t("foll")}</b></div>${SOC.telegram?`<a href="${esc(SOC.telegram)}" target="_blank" rel="noopener">✈ Telegram</a>`:""}${SOC.instagram?`<a href="${esc(SOC.instagram)}" target="_blank" rel="noopener">◎ Instagram</a>`:""}</section>`;
+app.innerHTML=`<div class="hero">${t("hero")}</div><input id="q" placeholder="${t("q")}" value="${esc(F.q)}">${soc}<h2>${t("cat")}</h2><div class="catgrid"><button class="cat${F.cat?"":" on"}" data-c=""><span class="ico">▦</span>${t("all")}</button>${CATS.map(c=>`<button class="cat${F.cat===c[0]?" on":""}" data-c="${c[0]}"><span class="ico">${c[1]}</span>${esc(c[CI[lang]])}</button>`).join("")}</div>
+<div class="row"><select id="fc"><option value="">${t("city")}: ${t("all")}</option>${opts(CITIES,F.city)}</select><select id="fd"><option value="">${t("cond")}: ${t("all")}</option><option value="new"${F.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${F.cond==="used"?" selected":""}>${t("used")}</option></select><select id="fs"><option value="new">${t("s1")}</option><option value="asc"${F.sort==="asc"?" selected":""}>${t("s2")}</option><option value="desc"${F.sort==="desc"?" selected":""}>${t("s3")}</option></select></div>
+<div class="row"><input id="pf" type="number" min="0" placeholder="${t("pf")}" value="${esc(F.min)}"><input id="pt" type="number" min="0" placeholder="${t("pt")}" value="${esc(F.max)}"></div><div id="list"></div>`;
+const go=()=>{F.n=1;list()};let tmr;
+$("#q").oninput=e=>{F.q=e.target.value;clearTimeout(tmr);tmr=setTimeout(go,350)};
+$("#fc").onchange=e=>{F.city=e.target.value;go()};$("#fd").onchange=e=>{F.cond=e.target.value;go()};$("#fs").onchange=e=>{F.sort=e.target.value;go()};
+$("#pf").onchange=e=>{F.min=e.target.value;go()};$("#pt").onchange=e=>{F.max=e.target.value;go()};
+app.querySelector(".catgrid").onclick=e=>{const c=e.target.closest("[data-c]");if(c){F.cat=c.dataset.c;home()}};list()}
+async function list(){
+let q=sb.from("listings").select("id,title,price,city,images,created_at",{count:"exact"}).eq("status","active");
+if(F.cat)q=q.eq("cat",F.cat);if(F.city)q=q.eq("city",F.city);if(F.cond)q=q.eq("cond",F.cond);if(F.min!=="")q=q.gte("price",F.min);if(F.max!=="")q=q.lte("price",F.max);
+if(F.q.trim())q=q.ilike("title","%"+F.q.replace(/[%,_()]/g," ").trim()+"%");
+q=(F.sort==="new"?q.order("created_at",{ascending:false}):q.order("price",{ascending:F.sort==="asc"})).range(0,F.n*20-1);
+const{data,count,error}=await q;if(error)return fail(error);const el=$("#list");if(!el)return;const r=data||[];
+el.innerHTML=r.length?`<div class="grid">${r.map(card).join("")}</div>`+(count>r.length?`<p style="text-align:center;margin:14px"><button class="btn g" id="more">${t("more")}</button></p>`:""):`<p class="empty">${t("none")}</p>`;
+const m=$("#more");if(m)m.onclick=()=>{F.n++;list()}}
+
+async function favsV(){if(!me){location.hash="#/auth";return}
+const ids=must(await sb.from("favorites").select("listing_id")).map(x=>x.listing_id);
+const a=ids.length?must(await sb.from("listings").select("id,title,price,city,images,created_at").in("id",ids).eq("status","active")):[];
+app.innerHTML=`<h1>♥ ${t("favs")}</h1>`+(a.length?`<div class="grid">${a.map(card).join("")}</div>`:`<p class="empty">${t("none")}</p>`)}
+
+async function detail(id){
+const{data:l,error}=await sb.from("listings").select("*").eq("id",id).maybeSingle();
+if(error)fail(error);if(error||!l){app.innerHTML=`<p class="empty">${t("none")}</p>`;return}
+const pr=await sb.from("profiles").select("name,phone,telegram").eq("id",l.user_id).maybeSingle(),p=pr.data||{};
+const own=me&&me.id===l.user_id,tgu=(p.telegram||"").replace(/^@/,"").replace(/[^\w]/g,""),ph=(p.phone||"").replace(/[^\d+]/g,""),im=l.images||[];
+app.innerHTML=`${im.length?`<div class="gal">${im.map(u=>`<img src="${esc(u)}" alt="">`).join("")}</div>`:""}
+<h1>${esc(l.title)}</h1><h2 style="color:var(--sky);margin-top:0">${fmt(l.price)}</h2>
+<small>${esc(cn(l.cat))} · ${t(l.cond)} · ${esc(l.city)}${l.district?", "+esc(l.district):""} · ${dt(l.created_at)}${l.status==="hidden"?" · "+t("hid"):""}</small>
+<div class="box" style="white-space:pre-wrap">${esc(l.descr||"")}</div>
+<div class="box"><b>${esc(p.name||"")}</b><div class="row">${!own?`<button class="btn" data-a="chat" data-l="${l.id}" data-s="${l.user_id}">💬 ${t("msg")}</button>`:""}${ph?`<a class="btn g" href="tel:${esc(ph)}">📞 ${t("call")}: ${esc(p.phone)}</a>`:""}${tgu?`<a class="btn g" target="_blank" rel="noopener" href="https://t.me/${esc(tgu)}">✈ Telegram</a>`:""}</div></div>
+<div class="row"><button class="btn g" data-a="fav" data-id="${l.id}">${favs.has(l.id)?"♥":"♡"} ${t("favs")}</button><button class="btn g" data-a="rep" data-id="${l.id}">⚑ ${t("rep")}</button>
+${own||adm()?`<a class="btn g" href="#/post/${l.id}">${t("edit")}</a><button class="btn r" data-a="del" data-id="${l.id}">${t("del")}</button>`:""}${adm()?`<button class="btn g" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button>`:""}</div>`}
+
+async function startChat(lid,sid){
+if(!me){toast(t("need"));location.hash="#/auth";return}if(sid===me.id){toast(t("self"));return}
+const f=()=>sb.from("conversations").select("id").eq("listing_id",lid).eq("buyer_id",me.id).eq("seller_id",sid).maybeSingle();
+let r=must(await f());if(!r){const i=await sb.from("conversations").insert({listing_id:lid,buyer_id:me.id,seller_id:sid}).select("id").single();if(i.error){if(i.error.code==="23505")r=must(await f());else throw i.error}else r=i.data}
+location.hash="#/chat/"+r.id}
+async function chatsV(){if(!me){location.hash="#/auth";return}
+const rows=must(await sb.from("conversations").select("id,listing_id,buyer_id,seller_id,last_message_at,created_at").or(`buyer_id.eq.${me.id},seller_id.eq.${me.id}`).order("last_message_at",{ascending:false}).limit(60));
+app.innerHTML=`<h1>💬 ${t("chats")}</h1><div id="cl">${rows.length?"":`<p class="empty">${t("nochat")}</p>`}</div>`;if(!rows.length)return;
+const uids=[...new Set(rows.flatMap(x=>[x.buyer_id,x.seller_id]))],lids=[...new Set(rows.map(x=>x.listing_id))],cids=rows.map(x=>x.id);
+const[p,ls,ms]=await Promise.all([sb.from("profiles").select("id,name").in("id",uids),sb.from("listings").select("id,title").in("id",lids),sb.from("messages").select("conversation_id,sender_id,body,sticker,created_at,read_at").in("conversation_id",cids).order("created_at",{ascending:false}).limit(400)]);
+const U=new Map(must(p).map(x=>[x.id,x.name||"?"])),Ls=new Map(must(ls).map(x=>[x.id,x.title])),last=new Map(),un=new Map();
+for(const m of must(ms)){if(!last.has(m.conversation_id))last.set(m.conversation_id,m);if(m.sender_id!==me.id&&!m.read_at)un.set(m.conversation_id,(un.get(m.conversation_id)||0)+1)}
+$("#cl").innerHTML=rows.map(c=>{const o=c.buyer_id===me.id?c.seller_id:c.buyer_id,m=last.get(c.id),u=un.get(c.id)||0;return`<a class="ci" href="#/chat/${c.id}"><div class="av">${esc((U.get(o)||"?").slice(0,1).toUpperCase())}</div><div class="cm"><b>${esc(U.get(o)||"?")}</b><small>${esc(Ls.get(c.listing_id)||"")} · ${esc(m?(m.sticker||m.body||""):t("nomsg"))}</small></div>${u?`<span class="un">${u}</span>`:""}</a>`}).join("")}
+const STK=["😀","😂","🥰","😍","😎","🤝","👍","👏","🙏","🔥","❤️","🎉"];
+const mh=m=>`<div class="mg ${m.sender_id===me.id?"me":""} ${m.sticker?"st":""}" data-id="${m.id}">${esc(m.sticker||m.body||"")}<small>${tm(m.created_at)}${m.sender_id===me.id?(m.read_at?" ✓✓":" ✓"):""}</small></div>`;
+const markRead=id=>sb.from("messages").update({read_at:new Date().toISOString()}).eq("conversation_id",id).neq("sender_id",me.id).is("read_at",null).then(()=>0,()=>0);
+async function chatV(id){if(!me){location.hash="#/auth";return}
+const c=must(await sb.from("conversations").select("id,listing_id,buyer_id,seller_id").eq("id",id).maybeSingle());if(!c){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}
+const o=c.buyer_id===me.id?c.seller_id:c.buyer_id;
+const[p,l,ms]=await Promise.all([sb.from("profiles").select("name").eq("id",o).maybeSingle(),sb.from("listings").select("id,title,price,images").eq("id",c.listing_id).maybeSingle(),sb.from("messages").select("id,sender_id,body,sticker,created_at,read_at").eq("conversation_id",id).order("created_at",{ascending:true}).limit(200)]);
+const pn=(p.data&&p.data.name)||"?",li=l.data||{},list=must(ms);
+app.innerHTML=`<section class="cw"><div class="ct"><button id="bk" aria-label="Back">‹</button><div class="av">${esc(pn.slice(0,1).toUpperCase())}</div><b>${esc(pn)}</b></div><a class="cp" href="#/l/${c.listing_id}">${li.images&&li.images[0]?`<img src="${esc(li.images[0])}" alt="">`:"📦"}<span class="cm"><b>${esc(li.title||"")}</b><small>${li.price!=null?fmt(li.price):""}</small></span>›</a><div class="cms" id="cms">${list.length?list.map(mh).join(""):`<p class="empty" style="margin:auto">${t("nomsg")}</p>`}</div><div class="cc"><div class="stk" id="stk" hidden>${STK.map(s=>`<button data-s="${s}">${s}</button>`).join("")}</div><div class="cf"><button id="st">☺</button><textarea id="ci" rows="1" maxlength="2000" placeholder="${t("write")}"></textarea><button class="snd" id="sn">➤</button></div></div></section>`;
+const box=$("#cms"),inp=$("#ci"),sn=$("#sn"),down=()=>{box.scrollTop=box.scrollHeight};down();markRead(id);
+const add=m=>{if(box.querySelector(`[data-id="${m.id}"]`))return;const e=box.querySelector(".empty");if(e)e.remove();box.insertAdjacentHTML("beforeend",mh(m));down()};
+$("#bk").onclick=()=>{location.hash="#/chats"};$("#st").onclick=()=>{$("#stk").hidden=!$("#stk").hidden};
+async function send(body,st){if(!body&&!st||sn.disabled)return;sn.disabled=true;try{const m=must(await sb.from("messages").insert({conversation_id:id,sender_id:me.id,body:body||null,sticker:st||null}).select("id,sender_id,body,sticker,created_at,read_at").single());add(m);inp.value="";$("#stk").hidden=true}catch(e){fail(e)}sn.disabled=false}
+sn.onclick=()=>send(inp.value.trim(),null);inp.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sn.click()}};
+$("#stk").onclick=e=>{const b=e.target.closest("[data-s]");if(b)send(null,b.dataset.s)};
+chan=sb.channel("chat-"+id).on("postgres_changes",{event:"INSERT",schema:"public",table:"messages",filter:"conversation_id=eq."+id},p=>{add(p.new);if(p.new.sender_id!==me.id)markRead(id)}).subscribe()}
+
+async function postV(id){
+if(!me){location.hash="#/auth";toast(t("need"));return}
+let old=null;if(id){old=must(await sb.from("listings").select("*").eq("id",id).maybeSingle());if(!old||(old.user_id!==me.id&&!adm())){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}}
+let imgs=[...(old?old.images||[]:[])],files=[];const o=old||{cat:"phones",cond:"used",city:CITIES[0]};
+app.innerHTML=`<h1>${old?t("edit"):t("posth")}</h1><div class="intro"><b>📦 ${t("posth")}</b><p>${t("postp")}</p></div>
+<form id="pf2"><section class="fs"><div class="fh"><i>1</i>${t("step1")}</div><label>${t("cat")} *</label><select name="cat" required>${opts(CATS,o.cat,c=>c[1]+" "+c[CI[lang]])}</select><label>${t("title")} *</label><input name="title" required minlength="3" maxlength="120" value="${esc(o.title)}"><label>${t("descr")}</label><textarea name="descr" maxlength="3000">${esc(o.descr)}</textarea></section>
+<section class="fs"><div class="fh"><i>2</i>${t("step2")}</div><label>${t("price")} *</label><input name="price" type="number" min="0" step="0.01" required inputmode="decimal" value="${esc(o.price)}"><label>${t("cond")}</label><select name="cond"><option value="new"${o.cond==="new"?" selected":""}>${t("new")}</option><option value="used"${o.cond==="used"?" selected":""}>${t("used")}</option></select></section>
+<section class="fs"><div class="fh"><i>3</i>${t("step3")}</div><label>${t("city")} *</label><select name="city" required>${opts(CITIES,o.city)}</select><label>${t("dist")}</label><input name="district" maxlength="80" value="${esc(o.district)}"></section>
+<section class="fs"><div class="fh"><i>4</i>${t("step4")}</div><label class="drop" for="fi">＋ 📷 ${t("photos")}<input type="file" id="fi" accept="image/*" multiple></label><div class="thumbs" id="th"></div></section>
+<button class="btn submit" id="sv">${old?t("save"):"✓ "+t("posth")}</button></form>`;
+const th=()=>{$("#th").innerHTML=imgs.map((u,i)=>`<div><img src="${esc(u)}" alt=""><button type="button" data-i="${i}">×</button></div>`).join("")+files.map((f,i)=>`<div><img src="${URL.createObjectURL(f)}" alt=""><button type="button" data-f="${i}">×</button></div>`).join("")};th();
+$("#fi").onchange=e=>{for(const f of e.target.files){if(imgs.length+files.length>=6)break;if(f.type.startsWith("image/"))files.push(f)}e.target.value="";th()};
+$("#th").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.i!=null)imgs.splice(+b.dataset.i,1);else files.splice(+b.dataset.f,1);th()};
+$("#pf2").onsubmit=async e=>{e.preventDefault();const b=$("#sv");b.disabled=true;b.textContent=t("load");
+try{if(!me.phone)throw new Error(t("phone"));const up=[];
+for(const[i,f]of files.entries()){const bl=await comp(f),pa=`${me.id}/${Date.now()}_${i}.jpg`;must(await sb.storage.from("images").upload(pa,bl,{contentType:"image/jpeg"}));up.push(sb.storage.from("images").getPublicUrl(pa).data.publicUrl)}
+const d=Object.fromEntries(new FormData(e.target)),row={cat:d.cat,title:d.title.trim(),descr:d.descr.trim(),price:+d.price,cond:d.cond,city:d.city,district:d.district.trim()||null,images:[...imgs,...up]};
+const r=old?await sb.from("listings").update(row).eq("id",old.id).select("id").single():await sb.from("listings").insert(row).select("id").single();
+const nid=must(r).id;if(old)await rmImgs((old.images||[]).filter(u=>!imgs.includes(u)));toast(t("ok"));location.hash="#/l/"+nid}catch(x){fail(x)}
+b.disabled=false;b.textContent=old?t("save"):"✓ "+t("posth")}}
+
+function authV(){if(me){location.hash="#/me";return}const r=mode==="reg";
+app.innerHTML=`<h1>${r?t("reg"):t("login")}</h1><form class="box" id="af">${r?`<label>${t("name")}</label><input name="name" required maxlength="80">`:""}<label>${t("phone")}${r?"":" / Email"}</label><input name="id" required ${r?'type="tel" inputmode="tel" placeholder="+992 900 00 00 00"':'autocomplete="username"'}>${r?`<label>Telegram</label><input name="telegram" placeholder="@username">`:""}<label>${t("pass")}</label><input name="pw" type="password" required minlength="8" autocomplete="${r?"new":"current"}-password"><p style="margin-top:14px"><button class="btn">${r?t("reg"):t("login")}</button> <button type="button" class="btn g" id="sw">${r?t("login"):t("reg")}</button></p></form>`;
+$("#sw").onclick=()=>{mode=r?"login":"reg";authV()};
+$("#af").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));
+try{const em=r?normPh(d.id).length>=9&&normPh(d.id).length<=15?normPh(d.id)+"@"+DOM:idEmail("x"):idEmail(d.id);const res=r?await sb.auth.signUp({email:em,password:d.pw,options:{data:{name:d.name,phone:"+"+normPh(d.id),telegram:d.telegram}}}):await sb.auth.signInWithPassword({email:em,password:d.pw});
+if(res.error)throw res.error;if(r&&!res.data.session){toast(t("chk"));mode="login";return authV()}await refreshMe();location.hash="#/me"}catch(x){fail(x)}}}
+
+async function meV(){if(!me){location.hash="#/auth";return}
+const items=must(await sb.from("listings").select("id,title,price,status").eq("user_id",me.id).order("created_at",{ascending:false})),act=items.filter(x=>x.status==="active").length;
+app.innerHTML=`<h1>👤 ${esc(me.name)}</h1><small>${esc(me.email&&me.email.endsWith("@"+DOM)?me.phone:me.email)}${adm()?" · "+t("admin"):""}</small>
+<div class="dash"><div class="dc"><b>${items.length}</b><span>${t("tot")}</span></div><div class="dc"><b>${act}</b><span>${t("act")}</span></div><div class="dc"><b>${items.length-act}</b><span>${t("hidn")}</span></div><div class="dc"><b>${favs.size}</b><span>${t("favs")}</span></div></div>
+<section class="box"><b>${t("pers")} 🔒</b><form id="pr"><label>${t("name")}</label><input name="name" required maxlength="80" value="${esc(me.name)}"><label>${t("phone")}</label><input name="phone" type="tel" required maxlength="30" value="${esc(me.phone)}"><label>Telegram</label><input name="telegram" maxlength="40" value="${esc(me.telegram)}"><p style="margin-top:12px"><button class="btn">${t("save")}</button></p></form></section>
+<div class="row">${adm()?`<a class="btn g" href="#/admin">⚙ ${t("admin")}</a>`:""}<button class="btn g" data-a="out">${t("out")}</button></div><h2>${t("mine")}</h2>
+${items.map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><a class="btn g sm" href="#/post/${l.id}">${t("edit")}</a><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")||`<p class="empty">${t("none")}</p>`}`;
+$("#pr").onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));try{must(await sb.from("profiles").update({name:d.name.trim(),phone:d.phone.trim(),telegram:d.telegram.trim()}).eq("id",me.id).select("id"));await refreshMe();toast(t("ok"))}catch(x){fail(x)}}}
+
+async function adminV(){if(!adm()){app.innerHTML=`<p class="empty">${t("deny")}</p>`;return}
+const[a,b]=await Promise.all([sb.from("listings").select("id,title,price,status,city").order("created_at",{ascending:false}).limit(60),sb.from("reports").select("id,reason,resolved,listing_id").order("created_at",{ascending:false}).limit(60)]);
+const L=must(a),R=must(b),ids=[...new Set(R.map(r=>r.listing_id))],T=new Map();
+if(ids.length)must(await sb.from("listings").select("id,title").in("id",ids)).forEach(x=>T.set(x.id,x.title));
+app.innerHTML=`<h1>⚙ ${t("admin")}</h1><h2>${t("reps")}</h2>${R.map(r=>`<div class="li"><a href="#/l/${r.listing_id}">${esc(T.get(r.listing_id)||"—")}<br><small>${esc(r.reason)}${r.resolved?" ✓":""}</small></a>${r.resolved?"":`<button class="btn g sm" data-a="res" data-id="${r.id}">${t("res")}</button>`}</div>`).join("")||`<p class="empty">—</p>`}
+<h2>${t("lst")}</h2>${L.map(l=>`<div class="li"><a href="#/l/${l.id}">${esc(l.title)}<br><small>${fmt(l.price)} · ${esc(l.city)}${l.status==="hidden"?" · "+t("hid"):""}</small></a><button class="btn g sm" data-a="${l.status==="active"?"hide":"show"}" data-id="${l.id}">${l.status==="active"?t("hide"):t("show")}</button><button class="btn r sm" data-a="del" data-id="${l.id}">${t("del")}</button></div>`).join("")}`}
+
+app.onclick=async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
+try{if(a==="out"){await sb.auth.signOut();me=null;favs=new Set();location.hash="#/";return route()}
+if(!me)return(location.hash="#/auth",toast(t("need")));
+if(a==="chat")return await startChat(+b.dataset.l,b.dataset.s);
+if(a==="fav"){if(favs.has(id)){must(await sb.from("favorites").delete().eq("listing_id",id).select());favs.delete(id)}else{must(await sb.from("favorites").insert({listing_id:id}).select());favs.add(id)}return route()}
+if(a==="rep"){const w=prompt(t("why"));if(!w||w.trim().length<3)return;must(await sb.from("reports").insert({listing_id:id,reason:w.trim().slice(0,500)}).select());return toast(t("sent"))}
+if(a==="del"){if(!confirm(t("sure")))return;const l=must(await sb.from("listings").select("images").eq("id",id).maybeSingle());must(await sb.from("listings").delete().eq("id",id).select());if(l)await rmImgs(l.images);toast(t("ok"));if(location.hash.startsWith("#/l/"))location.hash="#/";else route();return}
+if(a==="hide"||a==="show"){must(await sb.rpc("admin_set_status",{lid:id,s:a==="hide"?"hidden":"active"}));return route()}
+if(a==="res"){must(await sb.from("reports").update({resolved:true}).eq("id",id).select());return route()}}catch(x){fail(x)}};
+
+async function route(){const h=location.hash.replace(/^#\/?/,"").split("/");if(chan){sb.removeChannel(chan);chan=null}nav();window.scrollTo(0,0);
+try{switch(h[0]){case"l":return await detail(+h[1]);case"favs":return await favsV();case"chats":return await chatsV();case"chat":return await chatV(+h[1]);case"post":return await postV(h[1]?+h[1]:null);case"auth":return authV();case"me":return await meV();case"admin":return await adminV();default:return await home()}}catch(x){fail(x)}}
+$("#lg").value=lang;document.documentElement.lang=lang;$("#lg").onchange=e=>{lang=e.target.value;localStorage.lang=lang;document.documentElement.lang=lang;route()};
+sb.auth.onAuthStateChange(ev=>{if(ev==="SIGNED_OUT"){me=null;nav()}});window.addEventListener("hashchange",route);
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+refreshMe().catch(fail).finally(route);
+</script>
+</body>
+</html>
