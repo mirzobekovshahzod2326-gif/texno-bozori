@@ -1,0 +1,45 @@
+name: Build TEXNO BOZORI APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'TEXNO-BOZORI-android-safe.zip'
+      - '.github/workflows/build-apk.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Android SDK packages
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Extract Android project
+        run: unzip -q TEXNO-BOZORI-android-safe.zip -d proj
+
+      - name: Build APK
+        working-directory: proj/TEXNO-BOZORI-android
+        run: gradle assembleRelease --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: TEXNO-BOZORI-APK
+          path: proj/TEXNO-BOZORI-android/app/build/outputs/apk/release/*.apk
