@@ -1,0 +1,30 @@
+name: Build APK
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "TEXNO-BOZORI-android.zip"
+      - ".github/workflows/build-apk.yml"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+      - name: Loyihani ochish
+        run: unzip -q TEXNO-BOZORI-android.zip -d proj
+      - name: APK yig'ish (release, imzolangan)
+        working-directory: proj/TEXNO-BOZORI-android
+        run: gradle assembleRelease --no-daemon --stacktrace
+      - name: Imzoni tekshirish va faylni tayyorlash
+        run: | mkdir out cp proj/TEXNO-BOZORI-android/app/build/outputs/apk/release/app-release.apk out/TEXNO-BOZORI.apk APKSIGNER=$(ls -d "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -1) "$APKSIGNER" verify --verbose out/TEXNO-BOZORI.apk ls -l out       - uses: actions/upload-artifact@v4
+        with:
+          name: TEXNO-BOZORI-apk
+          path: out/TEXNO-BOZORI.apk
